@@ -13,3 +13,13 @@ C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_amp
 \\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
 \\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
 \\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.exe
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.pdb
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.xml
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\ResolveAssemblyReference.cache
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.BudgetForm.resources
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.GameForm.resources
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.MenuForm.resources
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.Resources.resources
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.read.1.tlog
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.write.1.tlog
