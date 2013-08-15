@@ -1,0 +1,12 @@
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.exe
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.pdb
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.xml
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.BudgetForm.resources
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.GameForm.resources
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.MenuForm.resources
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.vbproj.GenerateResource.Cache
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
+C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
