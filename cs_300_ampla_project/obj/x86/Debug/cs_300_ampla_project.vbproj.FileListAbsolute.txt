@@ -10,3 +10,6 @@ C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_amp
 C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
 C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
 C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
