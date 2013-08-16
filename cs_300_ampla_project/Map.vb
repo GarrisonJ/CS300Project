@@ -29,6 +29,9 @@
     Sub Draw_map(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
         Graph_Window = graphic_to_display_graph
         Graph_Window.SetClip(rectange_window)
+        For Each c In list_of_cells
+            c.Draw_cell(graphic_to_display_graph)
+        Next
     End Sub
 
 End Class
