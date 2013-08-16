@@ -4,12 +4,13 @@
 
 
     Sub Display_current_state(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
-
+        current_state.Draw(graphic_to_display_graph, rectange_window)
     End Sub
 
     Sub Display_initial_state(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
-
+        initial_state.Draw(graphic_to_display_graph, rectange_window)
     End Sub
+
 
 
 
