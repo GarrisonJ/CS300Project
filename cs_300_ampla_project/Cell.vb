@@ -10,6 +10,11 @@
         Cell_pen.Color = Cell_color
     End Sub
 
+    Sub Set_cell_point(ByRef x_placement As Integer, ByRef y_placement As Integer)
+        Location.X = x_placement
+        Location.Y = y_placement
+    End Sub
+
     Sub Draw_cell(ByRef graphic_contex As Graphics)
         Dim rec As Rectangle = New Rectangle(Location, New Size(Location))
         graphic_contex.DrawRectangle(Cell_pen, rec)

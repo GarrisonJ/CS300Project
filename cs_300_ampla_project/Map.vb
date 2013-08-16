@@ -13,6 +13,7 @@
         Dim j As Integer
         While i < Cell_Map_X_dim
             While j < Cell_Map_Y_dim
+                Cell_Array(i, j).Set_cell_point(i, j)
                 list_of_cells.Add(Cell_Array(i, j))
                 j = j + 1
             End While
@@ -26,7 +27,8 @@
     End Sub
 
     Sub Draw_map(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
-
+        Graph_Window = graphic_to_display_graph
+        Graph_Window.SetClip(rectange_window)
     End Sub
 
 End Class
