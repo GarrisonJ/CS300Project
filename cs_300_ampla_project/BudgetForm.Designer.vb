@@ -32,7 +32,7 @@ Partial Class BudgetForm
         Me.GreenProjects = New System.Windows.Forms.Label()
         Me.OrangeBudget = New System.Windows.Forms.TextBox()
         Me.YellowBudget = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.GreenBudget = New System.Windows.Forms.TextBox()
         Me.SaveBudgetButton = New System.Windows.Forms.Button()
         Me.BudgetTitle = New System.Windows.Forms.Label()
         Me.RemainingBudget = New System.Windows.Forms.Label()
@@ -121,12 +121,12 @@ Partial Class BudgetForm
         Me.YellowBudget.Size = New System.Drawing.Size(100, 20)
         Me.YellowBudget.TabIndex = 9
         '
-        'TextBox1
+        'GreenBudget
         '
-        Me.TextBox1.Location = New System.Drawing.Point(152, 134)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 10
+        Me.GreenBudget.Location = New System.Drawing.Point(152, 134)
+        Me.GreenBudget.Name = "GreenBudget"
+        Me.GreenBudget.Size = New System.Drawing.Size(100, 20)
+        Me.GreenBudget.TabIndex = 10
         '
         'SaveBudgetButton
         '
@@ -173,7 +173,7 @@ Partial Class BudgetForm
         Me.Controls.Add(Me.RemainingBudget)
         Me.Controls.Add(Me.BudgetTitle)
         Me.Controls.Add(Me.SaveBudgetButton)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.GreenBudget)
         Me.Controls.Add(Me.YellowBudget)
         Me.Controls.Add(Me.OrangeBudget)
         Me.Controls.Add(Me.GreenProjects)
@@ -200,7 +200,7 @@ Partial Class BudgetForm
     Friend WithEvents GreenProjects As System.Windows.Forms.Label
     Friend WithEvents OrangeBudget As System.Windows.Forms.TextBox
     Friend WithEvents YellowBudget As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents GreenBudget As System.Windows.Forms.TextBox
     Friend WithEvents SaveBudgetButton As System.Windows.Forms.Button
     Friend WithEvents BudgetTitle As System.Windows.Forms.Label
     Friend WithEvents RemainingBudget As System.Windows.Forms.Label

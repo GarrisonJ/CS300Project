@@ -78,6 +78,14 @@
     <Compile Include="BudgetForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Cell.vb" />
+    <Compile Include="DifficultyForm.Designer.vb">
+      <DependentUpon>DifficultyForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DifficultyForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Map.vb" />
     <Compile Include="MenuForm.Designer.vb">
       <DependentUpon>MenuForm.vb</DependentUpon>
     </Compile>
@@ -91,6 +99,7 @@
       <DependentUpon>GameForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mine.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -106,10 +115,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Planet_state.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BudgetForm.resx">
       <DependentUpon>BudgetForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DifficultyForm.resx">
+      <DependentUpon>DifficultyForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.vb</DependentUpon>
