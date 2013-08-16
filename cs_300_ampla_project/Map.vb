@@ -9,7 +9,11 @@
         Map_state = initial_state
     End Sub
 
-    Sub Draw(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
+    Sub New_map_state(ByRef new_map_state As State)
+        Map_state = new_map_state
+    End Sub
+
+    Sub Draw_map(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
 
     End Sub
 

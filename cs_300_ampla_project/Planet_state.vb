@@ -14,17 +14,17 @@ Public Class Planet_state
         Dim current_state As New Map(planet_size_x, planet_size_y, initial_planet_state)
     End Sub
 
+    Sub update_state(ByRef new_state As State)
+        current_state.New_map_state(new_state)
+    End Sub
+
     Sub Display_current_state(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
-        current_state.Draw(graphic_to_display_graph, rectange_window)
+        current_state.Draw_map(graphic_to_display_graph, rectange_window)
     End Sub
 
     Sub Display_initial_state(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
-        initial_state.Draw(graphic_to_display_graph, rectange_window)
+        initial_state.Draw_map(graphic_to_display_graph, rectange_window)
     End Sub
-
-
-
-
 
 
 End Class
