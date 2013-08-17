@@ -32,6 +32,14 @@
         Map_state = new_map_state
     End Sub
 
+
+    Sub Update_map()
+        For Each c In list_of_cells
+            c.Set_cell_color(Color.FromArgb(Map_state.Env Mod 255, Map_state.Food Mod 255, Map_state.Pop Mod 244))
+        Next
+    End Sub
+
+
     Sub Draw_map(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
         Graph_Window = graphic_to_display_graph
         Graph_Window.SetClip(rectange_window)

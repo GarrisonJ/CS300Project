@@ -16,6 +16,7 @@ Public Class Planet_state
 
     Sub update_state(ByRef new_state As State)
         current_state.New_map_state(new_state)
+        current_state.Update_map()
     End Sub
 
     Sub Display_current_state(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
