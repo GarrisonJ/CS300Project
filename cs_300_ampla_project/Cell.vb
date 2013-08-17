@@ -4,6 +4,9 @@
     Dim SideLength As Integer
     Dim Location As Point
 
+    Sub set_side_length(ByRef new_side_length As Integer)
+        SideLength = new_side_length
+    End Sub
 
     Sub Set_cell_color(ByRef new_cell_color As Color)
         Cell_color = new_cell_color
