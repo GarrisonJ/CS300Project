@@ -19,7 +19,7 @@
     End Sub
 
     Sub Draw_cell(ByRef graphic_contex As Graphics)
-        Dim rec As Rectangle = New Rectangle(Location, New Size(Location))
+        Dim rec As Rectangle = New Rectangle(Location.X, Location.Y, SideLength, SideLength)
         graphic_contex.DrawRectangle(Cell_pen, rec)
     End Sub
 End Class
