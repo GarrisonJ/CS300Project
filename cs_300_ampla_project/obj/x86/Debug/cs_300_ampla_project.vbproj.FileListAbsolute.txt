@@ -34,3 +34,4 @@ C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Deb
 C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.MenuForm.resources
 C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.Resources.resources
 C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.vbproj.GenerateResource.Cache
+C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.DifficultyForm.resources

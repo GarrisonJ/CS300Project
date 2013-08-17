@@ -9,11 +9,14 @@
     Sub New(ByRef Cell_Map_X_dim As Integer, ByRef Cell_Map_Y_dim As Integer, ByRef initial_state As State)
         Dim Cell_Array(Cell_Map_X_dim, Cell_Map_Y_dim) As Cell
         num_of_cells = Cell_Map_X_dim * Cell_Map_Y_dim
+        list_of_cells = New List(Of Cell)
         Dim i As Integer
         Dim j As Integer
         While i < Cell_Map_X_dim
             While j < Cell_Map_Y_dim
+                Cell_Array(i, j) = New Cell
                 Cell_Array(i, j).Set_cell_point(i, j)
+                Cell_Array(i, j).Set_cell_color(Color.Black)
                 list_of_cells.Add(Cell_Array(i, j))
                 j = j + 1
             End While

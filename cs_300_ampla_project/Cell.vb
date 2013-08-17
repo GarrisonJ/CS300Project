@@ -7,6 +7,9 @@
 
     Sub Set_cell_color(ByRef new_cell_color As Color)
         Cell_color = new_cell_color
+        If IsNothing(Cell_pen) Then
+            Cell_pen = New Pen(Brushes.Black)
+        End If
         Cell_pen.Color = Cell_color
     End Sub
 
