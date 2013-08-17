@@ -16,6 +16,7 @@
             While j < Cell_Map_Y_dim
                 Cell_Array(i, j) = New Cell
                 Cell_Array(i, j).Set_cell_point(i, j)
+                Cell_Array(i, j).set_side_length(1)
                 Cell_Array(i, j).Set_cell_color(Color.Black)
                 list_of_cells.Add(Cell_Array(i, j))
                 j = j + 1
