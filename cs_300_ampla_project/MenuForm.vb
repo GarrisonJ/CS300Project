@@ -1,14 +1,10 @@
 ﻿Public Class MenuForm
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles LoadButton.Click
-
-    End Sub
-
-    Private Sub SaveButton_Click(sender As System.Object, e As System.EventArgs) Handles SaveButton.Click
-
-    End Sub
-
-    Private Sub NewGameButton_Click(sender As System.Object, e As System.EventArgs) Handles NewGameButton.Click
-
+    Private Sub LoadButton_Click(sender As System.Object, e As System.EventArgs) Handles LoadButton.Click
+        LoadDialog.InitialDirectory = ""
+        LoadDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*"
+        LoadDialog.FilterIndex = 2
+        LoadDialog.RestoreDirectory = True
+        LoadDialog.ShowDialog()
     End Sub
 End Class

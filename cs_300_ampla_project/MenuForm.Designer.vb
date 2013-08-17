@@ -22,30 +22,13 @@ Partial Class MenuForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.LoadButton = New System.Windows.Forms.Button()
-        Me.SaveButton = New System.Windows.Forms.Button()
         Me.NewGameButton = New System.Windows.Forms.Button()
         Me.QuitButton = New System.Windows.Forms.Button()
         Me.ContinueButton = New System.Windows.Forms.Button()
+        Me.SaveButton = New System.Windows.Forms.Button()
+        Me.LoadButton = New System.Windows.Forms.Button()
+        Me.LoadDialog = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
-        '
-        'LoadButton
-        '
-        Me.LoadButton.Location = New System.Drawing.Point(93, 108)
-        Me.LoadButton.Name = "LoadButton"
-        Me.LoadButton.Size = New System.Drawing.Size(103, 23)
-        Me.LoadButton.TabIndex = 0
-        Me.LoadButton.Text = "Load Game"
-        Me.LoadButton.UseVisualStyleBackColor = True
-        '
-        'SaveButton
-        '
-        Me.SaveButton.Location = New System.Drawing.Point(93, 160)
-        Me.SaveButton.Name = "SaveButton"
-        Me.SaveButton.Size = New System.Drawing.Size(103, 23)
-        Me.SaveButton.TabIndex = 1
-        Me.SaveButton.Text = "Save Game"
-        Me.SaveButton.UseVisualStyleBackColor = True
         '
         'NewGameButton
         '
@@ -74,6 +57,28 @@ Partial Class MenuForm
         Me.ContinueButton.Text = "Continue Game"
         Me.ContinueButton.UseVisualStyleBackColor = True
         '
+        'SaveButton
+        '
+        Me.SaveButton.Location = New System.Drawing.Point(93, 160)
+        Me.SaveButton.Name = "SaveButton"
+        Me.SaveButton.Size = New System.Drawing.Size(103, 23)
+        Me.SaveButton.TabIndex = 1
+        Me.SaveButton.Text = "Save Game"
+        Me.SaveButton.UseVisualStyleBackColor = True
+        '
+        'LoadButton
+        '
+        Me.LoadButton.Location = New System.Drawing.Point(93, 108)
+        Me.LoadButton.Name = "LoadButton"
+        Me.LoadButton.Size = New System.Drawing.Size(103, 23)
+        Me.LoadButton.TabIndex = 0
+        Me.LoadButton.Text = "Load Game"
+        Me.LoadButton.UseVisualStyleBackColor = True
+        '
+        'LoadDialog
+        '
+        Me.LoadDialog.FileName = "LoadDialog"
+        '
         'MenuForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -89,9 +94,10 @@ Partial Class MenuForm
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents LoadButton As System.Windows.Forms.Button
-    Friend WithEvents SaveButton As System.Windows.Forms.Button
     Friend WithEvents NewGameButton As System.Windows.Forms.Button
     Friend WithEvents QuitButton As System.Windows.Forms.Button
     Friend WithEvents ContinueButton As System.Windows.Forms.Button
+    Friend WithEvents SaveButton As System.Windows.Forms.Button
+    Friend WithEvents LoadButton As System.Windows.Forms.Button
+    Friend WithEvents LoadDialog As System.Windows.Forms.OpenFileDialog
 End Class
