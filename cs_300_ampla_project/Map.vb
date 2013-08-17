@@ -12,7 +12,9 @@
         list_of_cells = New List(Of Cell)
         Dim i As Integer
         Dim j As Integer
+        i = 0
         While i < Cell_Map_X_dim
+            j = 0
             While j < Cell_Map_Y_dim
                 Cell_Array(i, j) = New Cell
                 Cell_Array(i, j).Set_cell_point(i, j)
