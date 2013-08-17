@@ -12,7 +12,6 @@ Public Class Planet_state
     Sub New(ByVal initial_planet_state As State, ByVal planet_size_x As Integer, ByVal planet_size_y As Integer)
         Me.initial_state = New Map(planet_size_x, planet_size_y, initial_planet_state)
         Me.current_state = New Map(planet_size_x, planet_size_y, initial_planet_state)
-        MessageBox.Show("Butts.")
     End Sub
 
     Sub update_state(ByRef new_state As State)
