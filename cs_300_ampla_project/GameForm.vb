@@ -19,6 +19,6 @@
     End Sub
 
     Private Sub MenuButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MenuButton.Click
-        MenuForm.ShowDialog()
+        Me.Close()
     End Sub
 End Class

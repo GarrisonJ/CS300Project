@@ -5,7 +5,8 @@
     Private Function GetBudgetVals() As Boolean
         Dim StringList() As String = {RedBudget.Text, BlueBudget.Text, OrangeBudget.Text, YellowBudget.Text, GreenBudget.Text}
 
-        'Checks if the input values are Integer, adds them to an Integer list
+        'Checks if the input values are Integer, adds them to the current budget list.
+        'Returns True on success or False if values are not integers.
         For I As Integer = LBound(StringList) To UBound(StringList)
             If String.IsNullOrEmpty(StringList(I)) Then
                 StringList(I) = "0"
@@ -20,7 +21,7 @@
         Return True
     End Function
 
-    'Only resets the current form's budgets
+    'Only resets the current form's budget
     Private Sub ResetButton_Click(sender As System.Object, e As System.EventArgs) Handles ResetButton.Click
         RedBudget.Text = "0"
         BlueBudget.Text = "0"
@@ -28,6 +29,7 @@
         YellowBudget.Text = "0"
         GreenBudget.Text = "0"
         RemainingBudget.Text = "100"
+        GetBudgetVals()
     End Sub
 
     'This event will check the text boxes for integer
@@ -35,7 +37,7 @@
         If Not GetBudgetVals() Then
             Exit Sub
         End If
-        'Check if the funds allocated is over or under max budget
+        'Check if the funds allocated is over max budget
         RemBudget = 100
         For Each Budget In BudgetList
             RemBudget -= Budget
@@ -50,6 +52,8 @@
         GameForm.SetBudget(BudgetList)
     End Sub
 
+    'When the exit button is clicked, this function will check if there are valid values, if player has any remaining budget,
+    'and if the player wants to save changes to their budget.
     Private Sub ExitBudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles ExitBudgetButton.Click
         Dim Res As Integer
         Dim SavedBudget() As Integer
@@ -79,7 +83,7 @@
                 End If
             End If
         Next I
-        'Close window otherwise
+        'Close window if all above satisfied
         Me.Close()
     End Sub
 End Class
