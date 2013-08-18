@@ -37,11 +37,12 @@ Partial Class BudgetForm
         Me.BudgetTitle = New System.Windows.Forms.Label()
         Me.RemainingBudget = New System.Windows.Forms.Label()
         Me.BuxLabel = New System.Windows.Forms.Label()
+        Me.ExitBudgetButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ResetButton
         '
-        Me.ResetButton.Location = New System.Drawing.Point(21, 217)
+        Me.ResetButton.Location = New System.Drawing.Point(12, 217)
         Me.ResetButton.Name = "ResetButton"
         Me.ResetButton.Size = New System.Drawing.Size(81, 23)
         Me.ResetButton.TabIndex = 0
@@ -130,7 +131,7 @@ Partial Class BudgetForm
         '
         'SaveBudgetButton
         '
-        Me.SaveBudgetButton.Location = New System.Drawing.Point(152, 217)
+        Me.SaveBudgetButton.Location = New System.Drawing.Point(99, 217)
         Me.SaveBudgetButton.Name = "SaveBudgetButton"
         Me.SaveBudgetButton.Size = New System.Drawing.Size(83, 23)
         Me.SaveBudgetButton.TabIndex = 11
@@ -164,11 +165,21 @@ Partial Class BudgetForm
         Me.BuxLabel.TabIndex = 14
         Me.BuxLabel.Text = "Buxs"
         '
+        'ExitBudgetButton
+        '
+        Me.ExitBudgetButton.Location = New System.Drawing.Point(188, 217)
+        Me.ExitBudgetButton.Name = "ExitBudgetButton"
+        Me.ExitBudgetButton.Size = New System.Drawing.Size(75, 23)
+        Me.ExitBudgetButton.TabIndex = 15
+        Me.ExitBudgetButton.Text = "Exit"
+        Me.ExitBudgetButton.UseVisualStyleBackColor = True
+        '
         'BudgetForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.Controls.Add(Me.ExitBudgetButton)
         Me.Controls.Add(Me.BuxLabel)
         Me.Controls.Add(Me.RemainingBudget)
         Me.Controls.Add(Me.BudgetTitle)
@@ -205,4 +216,5 @@ Partial Class BudgetForm
     Friend WithEvents BudgetTitle As System.Windows.Forms.Label
     Friend WithEvents RemainingBudget As System.Windows.Forms.Label
     Friend WithEvents BuxLabel As System.Windows.Forms.Label
+    Friend WithEvents ExitBudgetButton As System.Windows.Forms.Button
 End Class
