@@ -19,7 +19,6 @@
     'Show the budget form
     Private Sub BudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles Budget.Click
         BudgetForm.ShowDialog()
-        BudgetForm.Dispose()
     End Sub
 
     'Go back to the main menu

@@ -2,7 +2,7 @@
     Dim RemBudget As Integer = 100
     Dim BudgetList() As Integer = {0, 0, 0, 0, 0}
 
-    Private Function GetBudgetVals() As Boolean
+    Private Function GetBudgetVals(ByRef List() As Integer) As Boolean
         Dim StringList() As String = {RedBudget.Text, BlueBudget.Text, OrangeBudget.Text, YellowBudget.Text, GreenBudget.Text}
 
         'Checks if the input values are Integer, adds them to the current budget list.
@@ -11,11 +11,12 @@
             If String.IsNullOrEmpty(StringList(I)) Then
                 StringList(I) = "0"
             End If
-            If IsNumeric(StringList(I)) Then
-                BudgetList(I) = CInt(StringList(I))
-            Else
+            If Not IsNumeric(StringList(I)) Then
                 Return False
             End If
+        Next I
+        For I As Integer = LBound(StringList) To UBound(StringList)
+            List(I) = CInt(StringList(I))
         Next I
         Return True
     End Function
@@ -28,12 +29,12 @@
         YellowBudget.Text = "0"
         GreenBudget.Text = "0"
         RemainingBudget.Text = "100"
-        GetBudgetVals()
+        GetBudgetVals(BudgetList)
     End Sub
 
     'This event will check the text boxes for integer, check if enough funds, set Budget.
     Private Sub SaveBudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles SaveBudgetButton.Click
-        If Not GetBudgetVals() Then
+        If Not GetBudgetVals(BudgetList) Then
             MsgBox("The values you entered are invalid. Please try again.", MsgBoxStyle.OkOnly)
             Exit Sub
         End If
@@ -58,9 +59,10 @@
         Dim Res As Integer
         Dim Resp As Integer
         Dim SavedBudget() As Integer
+        Dim TempList() As Integer = {0, 0, 0, 0, 0}
 
         'Grab current budget values, exit if invalid values
-        If Not GetBudgetVals() Then
+        If Not GetBudgetVals(TempList) Then
             Exit Sub
         End If
         'Check if there is any remaining budget left
@@ -72,12 +74,12 @@
         End If
         'Check if the current values are different from the last saved budget
         SavedBudget = GameForm.GetBudget()
-        GetBudgetVals()
+        GetBudgetVals(TempList)
         For I As Integer = LBound(SavedBudget) To UBound(SavedBudget)
-            If SavedBudget(I) <> BudgetList(I) Then
+            If SavedBudget(I) <> TempList(I) Then
                 Resp = MsgBox("You have unsaved budget changes, do you want to save first? (Unsaved changes will be lost).", MsgBoxStyle.YesNo)
                 If Resp = MsgBoxResult.Yes Then
-                    GameForm.SetBudget(BudgetList)
+                    GameForm.SetBudget(TempList)
                     Me.Close()
                 Else
                     Me.Close()
@@ -88,27 +90,12 @@
         Me.Close()
     End Sub
 
-    'Sets the values of the budget when the window laods and calculates the remaining budget.
     Private Sub BudgetForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        Dim SavedBudget() As Integer
-
-        'Populate local copy from GameForm's Budget list
-        SavedBudget = GameForm.GetBudget()
-        For I As Integer = LBound(SavedBudget) To UBound(SavedBudget)
-            BudgetList(I) = SavedBudget(I)
-        Next I
-
         RedBudget.Text = BudgetList(0)
         BlueBudget.Text = BudgetList(1)
         OrangeBudget.Text = BudgetList(2)
         YellowBudget.Text = BudgetList(3)
         GreenBudget.Text = BudgetList(4)
-        GetBudgetVals()
-
-        RemBudget = 100
-        For Each Budget In BudgetList
-            RemBudget -= Budget
-        Next Budget
-        RemainingBudget.Text = Str(RemBudget)
+        GetBudgetVals(BudgetList)
     End Sub
 End Class

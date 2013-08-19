@@ -25,6 +25,7 @@
         'Get associative array from Model
         'Loop to format
         'Save(File)
+        GameSaved = True
         Return True
     End Function
 
