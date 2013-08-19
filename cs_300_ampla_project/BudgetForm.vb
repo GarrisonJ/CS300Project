@@ -14,7 +14,6 @@
             If IsNumeric(StringList(I)) Then
                 BudgetList(I) = CInt(StringList(I))
             Else
-                MsgBox("The values you entered are invalid. Please try again.", MsgBoxStyle.OkOnly)
                 Return False
             End If
         Next I
@@ -32,9 +31,10 @@
         GetBudgetVals()
     End Sub
 
-    'This event will check the text boxes for integer
+    'This event will check the text boxes for integer, check if enough funds, set Budget.
     Private Sub SaveBudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles SaveBudgetButton.Click
         If Not GetBudgetVals() Then
+            MsgBox("The values you entered are invalid. Please try again.", MsgBoxStyle.OkOnly)
             Exit Sub
         End If
         'Check if the funds allocated is over max budget
@@ -56,13 +56,13 @@
     'and if the player wants to save changes to their budget.
     Private Sub ExitBudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles ExitBudgetButton.Click
         Dim Res As Integer
+        Dim Resp As Integer
         Dim SavedBudget() As Integer
 
         'Grab current budget values, exit if invalid values
         If Not GetBudgetVals() Then
             Exit Sub
         End If
-
         'Check if there is any remaining budget left
         If RemBudget > 0 Then
             Res = MsgBox("You still have some Budget to allocate, do you want to continue exiting?", MsgBoxStyle.YesNo)
@@ -72,10 +72,11 @@
         End If
         'Check if the current values are different from the last saved budget
         SavedBudget = GameForm.GetBudget()
+        GetBudgetVals()
         For I As Integer = LBound(SavedBudget) To UBound(SavedBudget)
             If SavedBudget(I) <> BudgetList(I) Then
-                MsgBox("You have unsaved budget changes, do you want to save? (Unsaved changes will be lost).", MsgBoxStyle.YesNo)
-                If Res = MsgBoxResult.Yes Then
+                Resp = MsgBox("You have unsaved budget changes, do you want to save first? (Unsaved changes will be lost).", MsgBoxStyle.YesNo)
+                If Resp = MsgBoxResult.Yes Then
                     GameForm.SetBudget(BudgetList)
                     Me.Close()
                 Else
@@ -85,5 +86,29 @@
         Next I
         'Close window if all above satisfied
         Me.Close()
+    End Sub
+
+    'Sets the values of the budget when the window laods and calculates the remaining budget.
+    Private Sub BudgetForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Dim SavedBudget() As Integer
+
+        'Populate local copy from GameForm's Budget list
+        SavedBudget = GameForm.GetBudget()
+        For I As Integer = LBound(SavedBudget) To UBound(SavedBudget)
+            BudgetList(I) = SavedBudget(I)
+        Next I
+
+        RedBudget.Text = BudgetList(0)
+        BlueBudget.Text = BudgetList(1)
+        OrangeBudget.Text = BudgetList(2)
+        YellowBudget.Text = BudgetList(3)
+        GreenBudget.Text = BudgetList(4)
+        GetBudgetVals()
+
+        RemBudget = 100
+        For Each Budget In BudgetList
+            RemBudget -= Budget
+        Next Budget
+        RemainingBudget.Text = Str(RemBudget)
     End Sub
 End Class

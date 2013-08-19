@@ -28,6 +28,7 @@ Partial Class MenuForm
         Me.SaveButton = New System.Windows.Forms.Button()
         Me.LoadButton = New System.Windows.Forms.Button()
         Me.LoadDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.SuspendLayout()
         '
         'NewGameButton
@@ -77,7 +78,11 @@ Partial Class MenuForm
         '
         'LoadDialog
         '
-        Me.LoadDialog.FileName = "LoadDialog"
+        Me.LoadDialog.FileName = "AmplaSave"
+        '
+        'SaveDialog
+        '
+        Me.SaveDialog.FileName = "AmplaSave"
         '
         'MenuForm
         '
@@ -100,4 +105,5 @@ Partial Class MenuForm
     Friend WithEvents SaveButton As System.Windows.Forms.Button
     Friend WithEvents LoadButton As System.Windows.Forms.Button
     Friend WithEvents LoadDialog As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents SaveDialog As System.Windows.Forms.SaveFileDialog
 End Class
