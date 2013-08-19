@@ -73,8 +73,7 @@
     'When the continue button is clicked, the Main Menu is hidden and the Game form is reloaded
     Private Sub ContinueButton_Click(sender As System.Object, e As System.EventArgs) Handles ContinueButton.Click
         Me.Hide()
-        GameForm.ShowDialog()
-        Me.Show()
+        GameForm.Show()
     End Sub
 
     'functions to run when the game first starts.

@@ -80,16 +80,23 @@
                 Resp = MsgBox("You have unsaved budget changes, do you want to save first? (Unsaved changes will be lost).", MsgBoxStyle.YesNo)
                 If Resp = MsgBoxResult.Yes Then
                     GameForm.SetBudget(TempList)
-                    Me.Close()
+                    Me.Hide()
+                    GameForm.Show()
+                    GameForm.Activate()
                 Else
-                    Me.Close()
+                    Me.Hide()
+                    GameForm.Show()
+                    GameForm.Activate()
                 End If
             End If
         Next I
         'Close window if all above satisfied
-        Me.Close()
+        Me.Hide()
+        GameForm.Show()
+        GameForm.Activate()
     End Sub
 
+    'Initialize values for the budget form based on most recently saved values. Calculate Remaining Budget
     Private Sub BudgetForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         RedBudget.Text = BudgetList(0)
         BlueBudget.Text = BudgetList(1)

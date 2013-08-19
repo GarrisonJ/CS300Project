@@ -22,24 +22,14 @@ Partial Class GameForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ExitButton = New System.Windows.Forms.Button()
         Me.MenuButton = New System.Windows.Forms.Button()
         Me.Budget = New System.Windows.Forms.Button()
         Me.StartButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'ExitButton
-        '
-        Me.ExitButton.Location = New System.Drawing.Point(523, 377)
-        Me.ExitButton.Name = "ExitButton"
-        Me.ExitButton.Size = New System.Drawing.Size(75, 23)
-        Me.ExitButton.TabIndex = 0
-        Me.ExitButton.Text = "Exit"
-        Me.ExitButton.UseVisualStyleBackColor = True
-        '
         'MenuButton
         '
-        Me.MenuButton.Location = New System.Drawing.Point(523, 336)
+        Me.MenuButton.Location = New System.Drawing.Point(523, 386)
         Me.MenuButton.Name = "MenuButton"
         Me.MenuButton.Size = New System.Drawing.Size(75, 23)
         Me.MenuButton.TabIndex = 1
@@ -72,13 +62,11 @@ Partial Class GameForm
         Me.Controls.Add(Me.StartButton)
         Me.Controls.Add(Me.Budget)
         Me.Controls.Add(Me.MenuButton)
-        Me.Controls.Add(Me.ExitButton)
         Me.Name = "GameForm"
         Me.Text = "Ampla"
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents ExitButton As System.Windows.Forms.Button
     Friend WithEvents MenuButton As System.Windows.Forms.Button
     Friend WithEvents Budget As System.Windows.Forms.Button
     Friend WithEvents StartButton As System.Windows.Forms.Button
