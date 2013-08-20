@@ -1,6 +1,7 @@
 ﻿Public Class Mine
-    Dim Toxicity As Integer
+    Inherits Cell
 
+    Dim Toxicity As Integer
 
     Sub set_toxicity(ByVal toxicity_level As Integer)
         Me.Toxicity = toxicity_level
