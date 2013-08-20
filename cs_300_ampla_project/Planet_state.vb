@@ -41,7 +41,7 @@ Public Class Planet_state
 
     ' Decrement the number of mines on current map by 1
     Sub decrement_number_of_mines()
-
+        current_state.decrement_number_of_mines()
     End Sub
 
 End Class
