@@ -33,6 +33,16 @@
         Map_state = new_map_state
     End Sub
 
+    Sub add_mine_to_map(ByRef location_of_new_mine As Point, ByRef toxicity_level As Integer)
+        Dim new_mine As New Mine
+        new_mine.set_toxicity(toxicity_level)
+        new_mine.Set_cell_point(location_of_new_mine.X, location_of_new_mine.Y)
+        If IsNothing(list_of_mines) Then
+            list_of_mines = New List(Of Mine)
+        End If
+        list_of_mines.Add(new_mine)
+    End Sub
+
 
     Sub Update_map()
         For Each c In list_of_cells
