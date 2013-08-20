@@ -46,6 +46,16 @@
         list_of_mines.Add(new_mine)
     End Sub
 
+    ' Decrement the number of mines on map
+    ' Will remove the last mine that was added
+    ' If no mines exist, then this function does nothing
+    Sub decrement_number_of_mines()
+        If Not IsNothing(list_of_mines) Then
+            list_of_mines.RemoveAt(list_of_mines.Count)
+        End If
+    End Sub
+
+
 
     Sub Update_map()
         For Each c In list_of_cells
