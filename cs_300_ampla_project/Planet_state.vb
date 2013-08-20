@@ -8,10 +8,14 @@ End Structure
 Public Class Planet_state
     Dim initial_state As Map
     Dim current_state As Map
+    Dim planet_size_x As Integer
+    Dim planet_size_y As Integer
 
-    Sub New(ByVal initial_planet_state As State, ByVal planet_size_x As Integer, ByVal planet_size_y As Integer)
-        Me.initial_state = New Map(planet_size_x, planet_size_y, initial_planet_state)
-        Me.current_state = New Map(planet_size_x, planet_size_y, initial_planet_state)
+    Sub New(ByVal initial_planet_state As State, ByVal planet_pixel_size_x As Integer, ByVal planet_pixel_size_y As Integer)
+        Me.initial_state = New Map(planet_pixel_size_x, planet_pixel_size_y, initial_planet_state)
+        Me.current_state = New Map(planet_pixel_size_x, planet_pixel_size_y, initial_planet_state)
+        planet_size_x = planet_pixel_size_x
+        planet_size_y = planet_pixel_size_y
     End Sub
 
     Sub update_state(ByRef new_state As State)
@@ -27,5 +31,17 @@ Public Class Planet_state
         initial_state.Draw_map(graphic_to_display_graph, rectange_window)
     End Sub
 
+    ' Increment the number of mines on current map by 1
+    Sub increment_number_of_mines()
+        Dim ran As New Random
+        Dim RanXLoc As Integer = ran.Next Mod planet_size_x
+        Dim RanYLoc As Integer = ran.Next Mod planet_size_y
+        current_state.add_mine_to_map(New Point(RanXLoc, RanYLoc))
+    End Sub
+
+    ' Decrement the number of mines on current map by 1
+    Sub decrement_number_of_mines()
+        current_state.decrement_number_of_mines()
+    End Sub
 
 End Class

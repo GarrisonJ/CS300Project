@@ -1,6 +1,14 @@
 ﻿Public Class Mine
-    Dim Name As String ' Name of mine
-    Dim Location As Point
-    Dim Size As Integer
-    Dim Toxicity As Integer
+    Inherits Cell
+
+    Dim Toxicity As Double
+
+    Sub set_toxicity(ByVal toxicity_level As Double)
+        Me.Toxicity = toxicity_level
+    End Sub
+
+    Function get_toxicity() As Integer
+        Return Me.Toxicity
+    End Function
+
 End Class
