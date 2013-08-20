@@ -4,6 +4,7 @@
     Dim Graph_Rectangle As Rectangle
     Dim Map_state As State
     Dim list_of_cells As List(Of Cell)
+    Dim list_of_mines As List(Of Mine)
     Dim num_of_cells As Integer
 
     Sub New(ByRef Cell_Map_X_dim As Integer, ByRef Cell_Map_Y_dim As Integer, ByRef initial_state As State)
