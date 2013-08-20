@@ -36,7 +36,7 @@ Public Class Planet_state
         Dim ran As New Random
         Dim RanXLoc As Integer = ran.Next Mod planet_size_x
         Dim RanYLoc As Integer = ran.Next Mod planet_size_y
-        current_state.add_mine_to_map(New Point(RanXLoc, RanYLoc), 0)
+        current_state.add_mine_to_map(New Point(RanXLoc, RanYLoc))
     End Sub
 
     ' Decrement the number of mines on current map by 1
