@@ -8,6 +8,10 @@
         SideLength = new_side_length
     End Sub
 
+    Function get_location() As Point
+        Return Me.Location
+    End Function
+
     Sub Set_cell_color(ByRef new_cell_color As Color)
         Cell_color = new_cell_color
         If IsNothing(Cell_pen) Then
