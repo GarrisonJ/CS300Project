@@ -31,6 +31,9 @@
 
     Sub New_map_state(ByRef new_map_state As State)
         Map_state = new_map_state
+        For Each m In list_of_mines
+            m.set_toxicity(new_map_state.Env)
+        Next
     End Sub
 
     Sub add_mine_to_map(ByRef location_of_new_mine As Point, ByRef toxicity_level As Integer)
