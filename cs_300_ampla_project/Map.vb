@@ -40,7 +40,7 @@
 
     Sub add_mine_to_map(ByRef location_of_new_mine As Point)
         Dim new_mine As New Mine
-        new_mine.set_toxicity(0)
+        new_mine.set_toxicity(Map_state.Env)
         new_mine.Set_cell_point(location_of_new_mine.X, location_of_new_mine.Y)
         If IsNothing(list_of_mines) Then
             list_of_mines = New List(Of Mine)
@@ -62,10 +62,13 @@
             Dim total_toxicity_level As Double = 0
             If Not IsNothing(list_of_mines) Then
                 For Each m In list_of_mines
-                    total_toxicity_level += m.get_toxicity * Math.Pow(0.2, Distance(m.get_location, c.get_location))
+                    total_toxicity_level += m.get_toxicity * Math.Pow(0.9, Distance(m.get_location, c.get_location))
                 Next
             End If
-            c.Set_cell_color(Color.FromArgb(total_toxicity_level Mod 255, Map_state.Food Mod 255, Map_state.Pop Mod 244))
+            If total_toxicity_level > 255 Then
+                total_toxicity_level = 255
+            End If
+            c.Set_cell_color(Color.FromArgb(total_toxicity_level, Map_state.Food Mod 255, Map_state.Pop Mod 244))
         Next
     End Sub
 

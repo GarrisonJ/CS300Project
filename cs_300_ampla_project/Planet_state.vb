@@ -1,4 +1,5 @@
-﻿Public Structure State
+﻿Imports System.Threading
+Public Structure State
     Dim Food As Double
     Dim Inc As Double
     Dim Pop As Double
@@ -33,9 +34,10 @@ Public Class Planet_state
 
     ' Increment the number of mines on current map by 1
     Sub increment_number_of_mines()
-        Dim ran As New Random
-        Dim RanXLoc As Integer = ran.Next Mod planet_size_x
-        Dim RanYLoc As Integer = ran.Next Mod planet_size_y
+        Thread.Sleep(20) ' To get a new random number, the time seed must be significanty different 
+        Dim rand As New Random(CInt(Date.Now.Ticks And &HFFFF))
+        Dim RanXLoc As Integer = rand.Next Mod planet_size_x
+        Dim RanYLoc As Integer = rand.Next Mod planet_size_y
         current_state.add_mine_to_map(New Point(RanXLoc, RanYLoc))
     End Sub
 
