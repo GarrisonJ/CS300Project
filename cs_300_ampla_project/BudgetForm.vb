@@ -93,7 +93,6 @@
         'Close window if all above satisfied
         Me.Hide()
         GameForm.Show()
-        GameForm.Activate()
     End Sub
 
     'Initialize values for the budget form based on most recently saved values. Calculate Remaining Budget

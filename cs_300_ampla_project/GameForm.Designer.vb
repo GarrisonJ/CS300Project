@@ -29,7 +29,7 @@ Partial Class GameForm
         '
         'MenuButton
         '
-        Me.MenuButton.Location = New System.Drawing.Point(523, 386)
+        Me.MenuButton.Location = New System.Drawing.Point(523, 378)
         Me.MenuButton.Name = "MenuButton"
         Me.MenuButton.Size = New System.Drawing.Size(75, 23)
         Me.MenuButton.TabIndex = 1
@@ -58,7 +58,7 @@ Partial Class GameForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(630, 436)
+        Me.ClientSize = New System.Drawing.Size(630, 425)
         Me.Controls.Add(Me.StartButton)
         Me.Controls.Add(Me.Budget)
         Me.Controls.Add(Me.MenuButton)

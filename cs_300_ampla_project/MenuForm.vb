@@ -74,6 +74,7 @@
     Private Sub ContinueButton_Click(sender As System.Object, e As System.EventArgs) Handles ContinueButton.Click
         Me.Hide()
         GameForm.Show()
+        GameForm.Activate()
     End Sub
 
     'functions to run when the game first starts.
@@ -95,8 +96,10 @@
         Me.Hide()
         GameForm.Dispose()
         BudgetForm.Dispose()
-        GameForm.ShowDialog()
-        Me.Show()
+        GameForm.Show()
+        Me.Hide()
+        GameSaved = False
+        GameForm.Activate()
     End Sub
 
     'Runs these functions when a form becomes the active form.

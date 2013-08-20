@@ -3,6 +3,9 @@
 Public Class GameForm
     Dim Budgets() As Integer = {0, 0, 0, 0, 0}
     Dim PState As State
+    Dim PlanetMap As Planet_state
+    Dim Graph As Graphics
+    Dim Rect As Rectangle
 
     'Functions
     'function takes in an array of integers and copies to the local budget
@@ -21,7 +24,7 @@ Public Class GameForm
     'Events
     'Show the budget form
     Private Sub BudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles Budget.Click
-        BudgetForm.ShowDialog()
+        BudgetForm.Show()
     End Sub
 
     'Go back to the main menu
@@ -36,5 +39,13 @@ Public Class GameForm
         PState.Food = 100
         PState.Inc = 100
         PState.Pop = 100
+
+        PlanetMap = New Planet_state(PState, 500, 400)
+        Graph = Me.CreateGraphics
+        Rect = New Rectangle(24, 24, 500, 400)
+    End Sub
+
+    Private Sub GameForm_Paint(sender As System.Object, e As System.EventArgs) Handles MyBase.Paint
+        PlanetMap.Display_current_state(Graph, Rect)
     End Sub
 End Class
