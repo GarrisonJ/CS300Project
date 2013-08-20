@@ -59,4 +59,13 @@
         Next
     End Sub
 
+    Private Function Distance(ByRef a As Point, ByRef b As Point) As Double
+        Dim x, y As Double
+
+        x = Math.Abs(a.X - b.X)
+        y = Math.Abs(a.Y - b.Y)
+
+        Distance = Math.Sqrt((x * x) + (y * y))
+    End Function
+
 End Class
