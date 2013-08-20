@@ -7,7 +7,7 @@
         Me.Toxicity = toxicity_level
     End Sub
 
-    Function set_toxicity() As Integer
+    Function get_toxicity() As Integer
         Return Me.Toxicity
     End Function
 
