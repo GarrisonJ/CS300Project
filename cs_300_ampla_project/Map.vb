@@ -60,9 +60,11 @@
     Sub Update_map()
         For Each c In list_of_cells
             Dim total_toxicity_level As Double = 0
-            For Each m In list_of_mines
-                total_toxicity_level += m.get_toxicity * Math.Pow(0.2, Distance(m.get_location, c.get_location))
-            Next
+            If Not IsNothing(list_of_mines) Then
+                For Each m In list_of_mines
+                    total_toxicity_level += m.get_toxicity * Math.Pow(0.2, Distance(m.get_location, c.get_location))
+                Next
+            End If
             c.Set_cell_color(Color.FromArgb(total_toxicity_level Mod 255, Map_state.Food Mod 255, Map_state.Pop Mod 244))
         Next
     End Sub
