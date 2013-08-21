@@ -45,8 +45,4 @@ Public Class GameForm
         Graph = Me.CreateGraphics
         Rect = New Rectangle(24, 24, 500, 400)
     End Sub
-
-    Private Sub GameForm_Paint(sender As System.Object, e As System.EventArgs) Handles MyBase.Paint
-        'PlanetMap.Display_current_state(Graph, Rect)
-    End Sub
 End Class
