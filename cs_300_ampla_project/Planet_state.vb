@@ -17,6 +17,7 @@ Public Class Planet_state
         Me.current_state = New Map(planet_pixel_size_x, planet_pixel_size_y, initial_planet_state)
         planet_size_x = planet_pixel_size_x
         planet_size_y = planet_pixel_size_y
+        current_state.Update_map()
     End Sub
 
     Sub update_state(ByRef new_state As State)
