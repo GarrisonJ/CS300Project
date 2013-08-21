@@ -80,14 +80,9 @@
                 Resp = MsgBox("You have unsaved budget changes, do you want to save first? (Unsaved changes will be lost).", MsgBoxStyle.YesNo)
                 If Resp = MsgBoxResult.Yes Then
                     GameForm.SetBudget(TempList)
-                    Me.Hide()
-                    GameForm.Show()
-                    GameForm.Activate()
-                Else
-                    Me.Hide()
-                    GameForm.Show()
-                    GameForm.Activate()
                 End If
+                Me.Hide()
+                GameForm.Show()
             End If
         Next I
         'Close window if all above satisfied
