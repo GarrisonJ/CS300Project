@@ -36,7 +36,6 @@
                 m.set_toxicity(new_map_state.Env)
             Next
         End If
-        Me.Update_map()
     End Sub
 
     Sub add_mine_to_map(ByRef location_of_new_mine As Point)
