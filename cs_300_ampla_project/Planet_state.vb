@@ -1,13 +1,6 @@
 ﻿' Copyright (c) 2013 Garrison Jensen <garrison.jensen@gmail.com>
 Imports System.Threading
 
-Public Structure State
-    Dim Food As Double
-    Dim Inc As Double
-    Dim Pop As Double
-    Dim Env As Double
-End Structure
-
 Public Class Planet_state
     Dim initial_state As Map        ' Initial state of the map. 
     Dim current_state As Map        ' Current state of the map.
