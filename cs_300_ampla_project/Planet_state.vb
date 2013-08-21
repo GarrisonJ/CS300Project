@@ -10,7 +10,7 @@ Public Class Planet_state
     ' INPUT:
     '   initial_planet_state - Initial state of the map.
     '   planet_pixel_size_x  - In pixels, width of the map.
-    '   planet_pixel_size_y  - In pixels, length of the map
+    '   planet_pixel_size_y  - In pixels, hight of the map
     Sub New(ByVal initial_planet_state As State, ByVal planet_pixel_size_x As Integer, ByVal planet_pixel_size_y As Integer)
         Me.initial_state = New Map(planet_pixel_size_x, planet_pixel_size_y, initial_planet_state)
         Me.current_state = New Map(planet_pixel_size_x, planet_pixel_size_y, initial_planet_state)

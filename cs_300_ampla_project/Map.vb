@@ -1,9 +1,14 @@
-﻿Public Class Map
-    Dim Cell_Array(,) As Cell
-    Dim Map_state As State
-    Dim list_of_cells As List(Of Cell)
-    Dim list_of_mines As List(Of Mine)
+﻿' Copyright (c) 2013 Garrison Jensen <garrison.jensen@gmail.com>
+Public Class Map
+    Dim Cell_Array(,) As Cell           ' Array of cells in map
+    Dim Map_state As State              ' Current state of map
+    Dim list_of_cells As List(Of Cell)  ' List of cells in map
+    Dim list_of_mines As List(Of Mine)  ' List of mines in map
 
+    ' INPUT:
+    '   Cell_Map_X_dim - In pixels, width of the map.
+    '   Cell_Map_Y_dim - In pixels, hight of the map.
+    '   initial_state  - Initial state of map.
     Sub New(ByRef Cell_Map_X_dim As Integer, ByRef Cell_Map_Y_dim As Integer, ByRef initial_state As State)
         Dim Cell_Array(Cell_Map_X_dim, Cell_Map_Y_dim) As Cell
         list_of_cells = New List(Of Cell)
@@ -25,6 +30,9 @@
         Map_state = initial_state
     End Sub
 
+    ' Updaate the state of the map.
+    ' INPUT:
+    '   new_map_state - New state of map.
     Sub New_map_state(ByRef new_map_state As State)
         Map_state = new_map_state
         If Not IsNothing(list_of_mines) Then
@@ -34,6 +42,9 @@
         End If
     End Sub
 
+    ' Add a new mine to the map
+    ' INPUT:
+    '   location_of_new_mine - Location to place mine on map.
     Sub add_mine_to_map(ByRef location_of_new_mine As Point)
         Dim new_mine As New Mine
         new_mine.set_toxicity(Map_state.Env)
@@ -44,15 +55,16 @@
         list_of_mines.Add(new_mine)
     End Sub
 
-    ' Decrement the number of mines on map
-    ' Will remove the last mine that was added
-    ' If no mines exist, then this function does nothing
+    ' Decrement the number of mines on map.
+    ' Will remove the last mine that was added.
+    ' If no mines exist, then this function does nothing.
     Sub decrement_number_of_mines()
         If Not IsNothing(list_of_mines) Then
             list_of_mines.RemoveAt(list_of_mines.Count)
         End If
     End Sub
 
+    ' Recalculates cell colors based on current state and mine locations.
     Sub Update_map()
         For Each c In list_of_cells
             Dim total_toxicity_level As Double = 0
@@ -68,7 +80,10 @@
         Next
     End Sub
 
-
+    ' Draw map
+    ' INPUT:
+    '   graphic_to_display_graph - Graphics contex for map to display
+    '   rectange_window          - This rectange defines where the map will be drawn.
     Sub Draw_map(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
         graphic_to_display_graph.SetClip(rectange_window)
         For Each c In list_of_cells
@@ -76,6 +91,10 @@
         Next
     End Sub
 
+    ' Private: Calculate the distance between two points
+    ' INPUT: 
+    '   a - Point a
+    '   b - Point b
     Private Function Distance(ByRef a As Point, ByRef b As Point) As Double
         Dim x, y As Double
 
