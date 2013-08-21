@@ -16,7 +16,7 @@ Public Class Mine
     ' Get toxicity level.
     ' OUTPUT:
     '   Double - Toxicity level
-    Function get_toxicity() As Integer
+    Function get_toxicity() As Double
         Return Me.Toxicity
     End Function
 
