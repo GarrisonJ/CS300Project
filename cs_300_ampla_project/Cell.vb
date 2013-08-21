@@ -48,4 +48,8 @@ Public Class Cell
             graphic_contex.DrawRectangle(Cell_pen, rec)
         End If
     End Sub
+
+    Public Function Clone() As Cell
+        Return DirectCast(Me.MemberwiseClone(), Cell)
+    End Function
 End Class

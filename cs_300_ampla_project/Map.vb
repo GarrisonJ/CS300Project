@@ -91,6 +91,17 @@ Public Class Map
         Next
     End Sub
 
+    ' Returns a copy of the list of mines.
+    Function return_list_of_mines() As List(Of Mine)
+        Dim list_of_mines_to_be_returned As New List(Of Mine)
+        If Not IsNothing(list_of_mines) Then
+            For Each m In list_of_mines
+                list_of_mines_to_be_returned.Add(m.Clone())
+            Next
+        End If
+        Return list_of_mines_to_be_returned
+    End Function
+
     ' Private: Calculate the distance between two points
     ' INPUT: 
     '   a - Point a

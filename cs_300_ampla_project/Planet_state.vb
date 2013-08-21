@@ -1,6 +1,6 @@
 ﻿' Copyright (c) 2013 Garrison Jensen <garrison.jensen@gmail.com>
 Imports System.Threading
-
+Imports System.String
 Public Class Planet_state
     Dim initial_state As Map        ' Initial state of the map. 
     Dim current_state As Map        ' Current state of the map.
@@ -56,5 +56,27 @@ Public Class Planet_state
     Sub decrement_number_of_mines()
         current_state.decrement_number_of_mines()
     End Sub
+
+    ' Returns location of mines as a string.
+    ' Example:
+    '   If there are three mines at the following locations: (34,1), (99,34), and (132, 54)
+    '   then the following string will be returned: '34,1,99,34,132,54,'
+    '   Will return a empty string if no mines exist
+    Function location_of_mines_as_a_string() As String
+
+        Dim list_of_mines As List(Of Mine) = current_state.return_list_of_mines()
+        Dim string_to_return As New String("")
+
+        If list_of_mines.Count <> 0 Then
+            For Each m In list_of_mines
+                string_to_return += CStr(m.get_location.X)
+                string_to_return += ","
+                string_to_return += CStr(m.get_location.Y)
+                string_to_return += ","
+            Next
+        End If
+
+        Return string_to_return
+    End Function
 
 End Class
