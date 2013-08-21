@@ -43,7 +43,9 @@ Public Class Cell
     ' INPUT:
     '   graphic_contex - Graphic contex for pixel to draw itself.
     Sub Draw_cell(ByRef graphic_contex As Graphics)
-        Dim rec As Rectangle = New Rectangle(Location.X, Location.Y, SideLength, SideLength)
-        graphic_contex.DrawRectangle(Cell_pen, rec)
+        If Not IsNothing(Location) And Not IsNothing(SideLength) And Not IsNothing(Cell_pen) Then
+            Dim rec As Rectangle = New Rectangle(Location.X, Location.Y, SideLength, SideLength)
+            graphic_contex.DrawRectangle(Cell_pen, rec)
+        End If
     End Sub
 End Class
