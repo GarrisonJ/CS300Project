@@ -1,15 +1,11 @@
 ﻿Public Class Map
     Dim Cell_Array(,) As Cell
-    Dim Graph_Window As Graphics
-    Dim Graph_Rectangle As Rectangle
     Dim Map_state As State
     Dim list_of_cells As List(Of Cell)
     Dim list_of_mines As List(Of Mine)
-    Dim num_of_cells As Integer
 
     Sub New(ByRef Cell_Map_X_dim As Integer, ByRef Cell_Map_Y_dim As Integer, ByRef initial_state As State)
         Dim Cell_Array(Cell_Map_X_dim, Cell_Map_Y_dim) As Cell
-        num_of_cells = Cell_Map_X_dim * Cell_Map_Y_dim
         list_of_cells = New List(Of Cell)
         Dim i As Integer
         Dim j As Integer
@@ -74,8 +70,7 @@
 
 
     Sub Draw_map(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
-        Graph_Window = graphic_to_display_graph
-        Graph_Window.SetClip(rectange_window)
+        graphic_to_display_graph.SetClip(rectange_window)
         For Each c In list_of_cells
             c.Draw_cell(graphic_to_display_graph)
         Next
