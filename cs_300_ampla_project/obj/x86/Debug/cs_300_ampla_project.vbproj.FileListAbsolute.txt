@@ -62,3 +62,6 @@ C:\Users\Jonathan\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Deb
 \\khensu\Home01\joh\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.read.1.tlog
 \\khensu\Home01\joh\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.write.1.tlog
 \\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.DifficultyForm.resources
+C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444273a93ac29_0001.0000_1a2741530fd93294\khensu\Home01\yapi\My Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
+C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444273a93ac29_0001.0000_1a2741530fd93294\khensu\Home01\yapi\My Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
+C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444273a93ac29_0001.0000_1a2741530fd93294\khensu\Home01\yapi\My Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
