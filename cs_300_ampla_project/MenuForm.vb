@@ -63,9 +63,10 @@ Public Class MenuForm
         Fp = SaveDialog.FileName
         Fn = Path.GetFileName(Fp)
         Pth = Fp.Replace("\" + Fn, "")
+
         'Save the file to the given text file
         FileContents = GameWindow.GetSave()
-        My.Computer.FileSystem.WriteAllText(Pth, FileContents, False)
+        My.Computer.FileSystem.WriteAllText(Fp, FileContents, False)
         GameSaved = True
         Return True
     End Function
