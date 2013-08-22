@@ -44,5 +44,10 @@ Public Class GameForm
     Private Sub GameForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Graph = Me.CreateGraphics
         Rect = New Rectangle(24, 24, 500, 400)
+
+        EnvNum.Text = PState.Env
+        FoodNum.Text = PState.Food
+        IncNum.Text = PState.Inc
+        PopNum.Text = PState.Pop
     End Sub
 End Class

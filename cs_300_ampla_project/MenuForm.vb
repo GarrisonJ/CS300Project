@@ -99,6 +99,7 @@
         DifficultyForm.ShowDialog()
         DifficultyForm.Dispose()
         GameForm.ShowDialog()
+        Me.Show()
         GameSaved = False
         GameForm.Activate()
     End Sub
