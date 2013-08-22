@@ -7,6 +7,8 @@ Public Class Planet_state
     Dim planet_size_x As Integer    ' Number of pixels x axis
     Dim planet_size_y As Integer    ' Number of pixels y axis
 
+    ' Constructor
+    ' Default cell size is 1.
     ' INPUT:
     '   initial_planet_state - Initial state of the map.
     '   planet_pixel_size_x  - In pixels, width of the map.
@@ -14,6 +16,19 @@ Public Class Planet_state
     Sub New(ByVal initial_planet_state As State, ByVal planet_pixel_size_x As Integer, ByVal planet_pixel_size_y As Integer)
         Me.initial_state = New Map(planet_pixel_size_x, planet_pixel_size_y, initial_planet_state)
         Me.current_state = New Map(planet_pixel_size_x, planet_pixel_size_y, initial_planet_state)
+        planet_size_x = planet_pixel_size_x
+        planet_size_y = planet_pixel_size_y
+        current_state.Update_map()
+    End Sub
+
+    ' INPUT:
+    '   initial_planet_state - Initial state of the map.
+    '   planet_pixel_size_x  - In pixels, width of the map.
+    '   planet_pixel_size_y  - In pixels, hight of the map.
+    '   cell_size            - Side length of cells in pixels.
+    Sub New(ByVal initial_planet_state As State, ByVal planet_pixel_size_x As Integer, ByVal planet_pixel_size_y As Integer, ByRef cell_size As Integer)
+        Me.initial_state = New Map(planet_pixel_size_x, planet_pixel_size_y, initial_planet_state, cell_size)
+        Me.current_state = New Map(planet_pixel_size_x, planet_pixel_size_y, initial_planet_state, cell_size)
         planet_size_x = planet_pixel_size_x
         planet_size_y = planet_pixel_size_y
         current_state.Update_map()
@@ -65,6 +80,13 @@ Public Class Planet_state
     Sub decrement_number_of_mines()
         current_state.decrement_number_of_mines()
     End Sub
+
+
+    Sub Set_cell_size(ByRef cell_side_length_in_pixels As Integer)
+        current_state.Change_cell_size(cell_side_length_in_pixels)
+        initial_state.Change_cell_size(cell_side_length_in_pixels)
+    End Sub
+
 
     ' Returns location of mines as a string.
     ' Example:
