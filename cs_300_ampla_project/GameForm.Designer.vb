@@ -66,7 +66,7 @@ Partial Class GameForm
         'EnvLabel
         '
         Me.EnvLabel.AutoSize = True
-        Me.EnvLabel.Location = New System.Drawing.Point(12, 400)
+        Me.EnvLabel.Location = New System.Drawing.Point(12, 410)
         Me.EnvLabel.Name = "EnvLabel"
         Me.EnvLabel.Size = New System.Drawing.Size(69, 13)
         Me.EnvLabel.TabIndex = 4
@@ -75,7 +75,7 @@ Partial Class GameForm
         'EnvNum
         '
         Me.EnvNum.AutoSize = True
-        Me.EnvNum.Location = New System.Drawing.Point(87, 410)
+        Me.EnvNum.Location = New System.Drawing.Point(87, 425)
         Me.EnvNum.Name = "EnvNum"
         Me.EnvNum.Size = New System.Drawing.Size(25, 13)
         Me.EnvNum.TabIndex = 5
@@ -84,7 +84,7 @@ Partial Class GameForm
         'FoodLabel
         '
         Me.FoodLabel.AutoSize = True
-        Me.FoodLabel.Location = New System.Drawing.Point(118, 400)
+        Me.FoodLabel.Location = New System.Drawing.Point(118, 410)
         Me.FoodLabel.Name = "FoodLabel"
         Me.FoodLabel.Size = New System.Drawing.Size(34, 13)
         Me.FoodLabel.TabIndex = 6
@@ -93,7 +93,7 @@ Partial Class GameForm
         'FoodNum
         '
         Me.FoodNum.AutoSize = True
-        Me.FoodNum.Location = New System.Drawing.Point(158, 410)
+        Me.FoodNum.Location = New System.Drawing.Point(158, 425)
         Me.FoodNum.Name = "FoodNum"
         Me.FoodNum.Size = New System.Drawing.Size(25, 13)
         Me.FoodNum.TabIndex = 7
@@ -102,7 +102,7 @@ Partial Class GameForm
         'IncLabel
         '
         Me.IncLabel.AutoSize = True
-        Me.IncLabel.Location = New System.Drawing.Point(189, 400)
+        Me.IncLabel.Location = New System.Drawing.Point(189, 410)
         Me.IncLabel.Name = "IncLabel"
         Me.IncLabel.Size = New System.Drawing.Size(45, 13)
         Me.IncLabel.TabIndex = 8
@@ -111,7 +111,7 @@ Partial Class GameForm
         'IncNum
         '
         Me.IncNum.AutoSize = True
-        Me.IncNum.Location = New System.Drawing.Point(240, 410)
+        Me.IncNum.Location = New System.Drawing.Point(240, 425)
         Me.IncNum.Name = "IncNum"
         Me.IncNum.Size = New System.Drawing.Size(25, 13)
         Me.IncNum.TabIndex = 9
@@ -120,7 +120,7 @@ Partial Class GameForm
         'PopLabel
         '
         Me.PopLabel.AutoSize = True
-        Me.PopLabel.Location = New System.Drawing.Point(271, 400)
+        Me.PopLabel.Location = New System.Drawing.Point(271, 410)
         Me.PopLabel.Name = "PopLabel"
         Me.PopLabel.Size = New System.Drawing.Size(60, 13)
         Me.PopLabel.TabIndex = 10
@@ -129,7 +129,7 @@ Partial Class GameForm
         'PopNum
         '
         Me.PopNum.AutoSize = True
-        Me.PopNum.Location = New System.Drawing.Point(337, 410)
+        Me.PopNum.Location = New System.Drawing.Point(337, 425)
         Me.PopNum.Name = "PopNum"
         Me.PopNum.Size = New System.Drawing.Size(25, 13)
         Me.PopNum.TabIndex = 11
