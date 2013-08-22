@@ -30,7 +30,42 @@ Public Class Map
         Map_state = initial_state
     End Sub
 
-    ' Updaate the state of the map.
+    ' INPUT:
+    '   Cell_Map_X_dim - In pixels, width of the map.
+    '   Cell_Map_Y_dim - In pixels, hight of the map.
+    '   initial_state  - Initial state of map.
+    '   cell_size      - Side length of cells in pixels.
+    Sub New(ByRef Cell_Map_X_dim As Integer, ByRef Cell_Map_Y_dim As Integer, ByRef initial_state As State, ByRef cell_size As Integer)
+        Dim Cell_Array(Cell_Map_X_dim, Cell_Map_Y_dim) As Cell
+        list_of_cells = New List(Of Cell)
+        Dim i As Integer
+        Dim j As Integer
+        i = 0
+        While i < Cell_Map_X_dim
+            j = 0
+            While j < Cell_Map_Y_dim
+                Cell_Array(i, j) = New Cell
+                Cell_Array(i, j).Set_cell_point(i, j)
+                Cell_Array(i, j).set_side_length(cell_size)
+                Cell_Array(i, j).Set_cell_color(Color.Black)
+                list_of_cells.Add(Cell_Array(i, j))
+                j = j + 1
+            End While
+            i = i + 1
+        End While
+        Map_state = initial_state
+    End Sub
+
+    ' Change the size of the cell in map.
+    ' Input:
+    '   new_cell_size - New size of cell in pixels.
+    Sub Change_cell_size(ByRef new_cell_size As Integer)
+        For Each c In list_of_cells
+            c.set_side_length(new_cell_size)
+        Next
+    End Sub
+
+    ' Update the state of the map.
     ' INPUT:
     '   new_map_state - New state of map.
     Sub New_map_state(ByRef new_map_state As State)
