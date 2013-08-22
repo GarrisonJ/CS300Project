@@ -54,19 +54,19 @@ Public Class Model
 
     Private Sub Evaluate(ByRef Cur As State, ByVal Last As State, ByVal C As Dictionary(Of String, Connected), ByVal B As Allocations)
         With Cur
-            .environment = StateVal(Last.environment, C("Environment"), B)
+            .Env = StateVal(Last.Env, C("Environment"), B)
             .Food = StateVal(Last.Food, C("Food"), B)
-            .Income = StateVal(Last.Income, C("Income"), B)
-            .Population = StateVal(Last.Population, C("Population"), B)
+            .Inc = StateVal(Last.Inc, C("Income"), B)
+            .Pop = StateVal(Last.Pop, C("Population"), B)
         End With
     End Sub
 
     Public Sub Update()
         With Last
-            .Env = Values.environment
+            .Env = Values.Env
             .Food = Values.Food
-            .Inc = Values.Income
-            .Pop = Values.Population
+            .Inc = Values.Inc
+            .Pop = Values.Pop
         End With
     End Sub
 
