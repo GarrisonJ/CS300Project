@@ -4,6 +4,7 @@ Public Class GameForm
     Dim Budgets() As Integer = {0, 0, 0, 0, 0}
     Dim PState As State
     Dim PlanetMap As Planet_state
+    Dim GameModel As Model
     Dim Graph As Graphics
     Dim Rect As Rectangle
     Dim Difficulty As Integer
@@ -44,10 +45,18 @@ Public Class GameForm
     Private Sub GameForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Graph = Me.CreateGraphics
         Rect = New Rectangle(24, 24, 500, 400)
+        GameModel = New Model()
+
+        GameModel.Values.Env = PState.Env
+        GameModel.Values.Food = PState.Food
+        GameModel.Values.Inc = PState.Inc
+        GameModel.Values.Pop = PState.Pop
 
         EnvNum.Text = PState.Env
         FoodNum.Text = PState.Food
         IncNum.Text = PState.Inc
         PopNum.Text = PState.Pop
+
+        PlanetMap = New Planet_state(PState, 500, 400)
     End Sub
 End Class
