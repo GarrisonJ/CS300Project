@@ -73,11 +73,11 @@ Public Class Model
 
     Public Sub Iterate(ByVal B As Budget)
         With Alloc
-            .cultivation = B.Env_Allocations
-            .system = B.Public_Ed_Allocations
-            .Industrial = B.Industrial_Allocations
-            .Education = B.Pollution_Control_Allocations
-            .Pollution = B.Science_Allocations
+            .cultivation = B.Agriculture
+            .system = B.Education
+            .Industrial = B.Industry
+            .Education = B.Pollution
+            .Pollution = B.Science
         End With
         Evaluate(Values, Last, Coeffs, Alloc)
 
