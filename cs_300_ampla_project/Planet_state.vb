@@ -52,6 +52,15 @@ Public Class Planet_state
         current_state.add_mine_to_map(New Point(RanXLoc, RanYLoc))
     End Sub
 
+    ' Increment the number of mines on current map by 1.
+    ' The mine will be added at the given point.
+    ' INPUT:
+    '   add_mine_at_this_point - The point were the mine will be added.
+    Sub increment_number_of_mines(ByRef add_mine_at_this_point As Point)
+        current_state.add_mine_to_map(add_mine_at_this_point)
+    End Sub
+
+
     ' Decrement the number of mines on current map by 1
     Sub decrement_number_of_mines()
         current_state.decrement_number_of_mines()
