@@ -71,7 +71,7 @@ Public Class Model
         End With
     End Sub
 
-    Public Sub Iterate(ByVal B As Budget)
+    Public Function Iterate(ByVal B As Budget)
         With Alloc
             .cultivation = B.Agriculture
             .system = B.Education
@@ -79,9 +79,9 @@ Public Class Model
             .Education = B.Pollution
             .Pollution = B.Science
         End With
-        Evaluate(Values, Last, Coeffs, Alloc)
+        Return Evaluate(Values, Last, Coeffs, Alloc)
 
-    End Sub
+    End Function
 
 
 
