@@ -2,7 +2,7 @@
 Public Class Model
 
 
-
+    Dim Alloc As Allocations
 
     Dim Last As State
 
@@ -52,14 +52,15 @@ Public Class Model
         Return StateVal
     End Function
 
-    Private Sub Evaluate(ByRef Cur As State, ByVal Last As State, ByVal C As Dictionary(Of String, Connected), ByVal B As Allocations)
+    Private Function Evaluate(ByRef Cur As State, ByVal Last As State, ByVal C As Dictionary(Of String, Connected), ByVal B As Allocations)
         With Cur
             .Env = StateVal(Last.Env, C("Environment"), B)
             .Food = StateVal(Last.Food, C("Food"), B)
             .Inc = StateVal(Last.Inc, C("Income"), B)
             .Pop = StateVal(Last.Pop, C("Population"), B)
         End With
-    End Sub
+        Return Cur
+    End Function
 
     Public Sub Update()
         With Last
@@ -70,16 +71,17 @@ Public Class Model
         End With
     End Sub
 
-    '   Public Sub Iterate(ByVal B As Budget)
-    '      With Alloc
-    '         .Agr = B.Agriculture_Allocation
-    '        .Edu = B.Public_Ed_Allocation
-    '       .Ind = B.Industrial_Allocation
-    '      .Pol = B.Pollution_Control_Allocation
-    '      .Sci = B.Science_Allocation
-    '  End With
-    '  Evaluate(Values, Last_Values, Coeffs, Alloc)
-    'End Sub
+    Public Sub Iterate(ByVal B As Budget)
+        With Alloc
+            .cultivation = B.Env_Allocations
+            .system = B.Public_Ed_Allocations
+            .Industrial = B.Industrial_Allocations
+            .Education = B.Pollution_Control_Allocations
+            .Pollution = B.Science_Allocations
+        End With
+        Evaluate(Values, Last, Coeffs, Alloc)
+
+    End Sub
 
 
 
