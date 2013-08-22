@@ -8,6 +8,10 @@ Public Class GameForm
     Dim Rect As Rectangle
     Dim Difficulty As Integer
 
+    Public Sub SetState(ByVal newState As State)
+        PState = newState
+    End Sub
+
     'Functions
     'function takes in an array of integers and copies to the local budget
     Public Function SetBudget(ByRef Values() As Integer) As Integer
@@ -24,7 +28,7 @@ Public Class GameForm
 
     'Events
     'Show the budget form
-    Private Sub BudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles Budget.Click
+    Private Sub BudgetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Budget.Click
         BudgetForm.ShowDialog()
     End Sub
 
@@ -36,7 +40,7 @@ Public Class GameForm
     End Sub
 
     'initialize variables while the form loads
-    Private Sub GameForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub GameForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         PState.Env = 100
         PState.Food = 100
         PState.Inc = 100
