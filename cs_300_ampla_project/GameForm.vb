@@ -8,6 +8,7 @@ Public Class GameForm
     Dim Rect As Rectangle
     Dim Difficulty As Integer
 
+    'Given a state structure, the old state will be overwritten
     Public Sub SetState(ByVal newState As State)
         PState = newState
     End Sub
@@ -41,12 +42,6 @@ Public Class GameForm
 
     'initialize variables while the form loads
     Private Sub GameForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        PState.Env = 100
-        PState.Food = 100
-        PState.Inc = 100
-        PState.Pop = 100
-
-        PlanetMap = New Planet_state(PState, 500, 400)
         Graph = Me.CreateGraphics
         Rect = New Rectangle(24, 24, 500, 400)
     End Sub
