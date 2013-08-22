@@ -1,7 +1,7 @@
 ﻿Imports System.Drawing
 
 Public Class GameForm
-    Dim Budgets() As Integer = {0, 0, 0, 0, 0}
+    Dim Budgets As Budget
     Dim PState As State
     Dim PlanetMap As Planet_state
     Dim GameModel As Model
@@ -16,16 +16,18 @@ Public Class GameForm
 
     'Functions
     'function takes in an array of integers and copies to the local budget
-    Public Function SetBudget(ByRef Values() As Integer) As Integer
-        For I = LBound(Values) To UBound(Values)
-            Budgets(I) = Values(I)
-        Next I
-        Return 0
-    End Function
+    Public Sub SetBudget(ByRef Values() As Integer)
+        Budgets.Agriculture = Values(0)
+        Budgets.Education = Values(1)
+        Budgets.Industry = Values(2)
+        Budgets.Pollution = Values(3)
+        Budgets.Science = Values(4)
+    End Sub
 
     'get function for getting the currently set budget
     Public Function GetBudget() As Array
-        Return Budgets
+        Dim Temp() As Integer = {Budgets.Agriculture, Budgets.Education, Budgets.Industry, Budgets.Pollution, Budgets.Science}
+        Return Temp
     End Function
 
     'Events
@@ -51,6 +53,7 @@ Public Class GameForm
         GameModel.Values.Food = PState.Food
         GameModel.Values.Inc = PState.Inc
         GameModel.Values.Pop = PState.Pop
+        GameModel.Update()
 
         EnvNum.Text = PState.Env
         FoodNum.Text = PState.Food
@@ -58,5 +61,9 @@ Public Class GameForm
         PopNum.Text = PState.Pop
 
         PlanetMap = New Planet_state(PState, 500, 400)
+    End Sub
+
+    Private Sub StartButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartButton.Click
+        'GameModel.Iterate(Budgets)
     End Sub
 End Class

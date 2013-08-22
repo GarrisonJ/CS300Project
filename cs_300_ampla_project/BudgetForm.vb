@@ -2,6 +2,7 @@
     Dim RemBudget As Integer = 100
     Dim BudgetList() As Integer = {0, 0, 0, 0, 0}
 
+    'This function gets the budget values from 
     Private Function GetBudgetVals(ByRef List() As Integer) As Boolean
         Dim StringList() As String = {RedBudget.Text, BlueBudget.Text, OrangeBudget.Text, YellowBudget.Text, GreenBudget.Text}
 
