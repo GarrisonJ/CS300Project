@@ -86,6 +86,7 @@
     <Compile Include="DifficultyForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="m1.vb" />
     <Compile Include="Map.vb" />
     <Compile Include="MenuForm.Designer.vb">
       <DependentUpon>MenuForm.vb</DependentUpon>
