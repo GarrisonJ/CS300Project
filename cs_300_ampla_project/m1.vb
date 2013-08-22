@@ -83,7 +83,9 @@ Public Class Model
 
     End Function
 
-
+    Public Function newfunction()
+        Return Values
+    End Function
 
 
 
