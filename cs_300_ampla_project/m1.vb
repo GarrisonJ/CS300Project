@@ -63,10 +63,10 @@ Public Class Model
 
     Public Sub Update()
         With Last
-            .environment = Values.environment
+            .Env = Values.environment
             .Food = Values.Food
-            .Income = Values.Income
-            .Population = Values.Population
+            .Inc = Values.Income
+            .Pop = Values.Population
         End With
     End Sub
 
