@@ -3,6 +3,7 @@
     Dim Fn As String
     Dim InGame As Boolean = False
     Dim GameSaved As Boolean = True
+    Dim GameWindow As GameForm
 
     'save the game using the open file dialog
     Private Function SaveGame() As Boolean
@@ -68,6 +69,9 @@
         'Open File
         'Organize into associative array (Dictionary)
         'Give to Model
+        If Not InGame Then
+            GameWindow = New GameForm()
+        End If
     End Sub
 
     'When the continue button is clicked, the Main Menu is hidden and the Game form is reloaded
@@ -96,6 +100,7 @@
         Me.Hide()
         GameForm.Dispose()
         BudgetForm.Dispose()
+        GameWindow = New GameForm()
         DifficultyForm.ShowDialog()
         DifficultyForm.Dispose()
         GameForm.ShowDialog()

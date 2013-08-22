@@ -43,12 +43,20 @@ Public Class GameForm
         MenuForm.Activate()
     End Sub
 
-    'initialize variables while the form loads
-    Private Sub GameForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    'What is the point of New when the Form already exists?
+    Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
         Graph = Me.CreateGraphics
         Rect = New Rectangle(24, 24, 500, 400)
         GameModel = New Model()
+        PlanetMap = New Planet_state(PState, 500, 400)
+    End Sub
 
+    'initialize variables while the form loads
+    Private Sub GameForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         GameModel.Values.Env = PState.Env
         GameModel.Values.Food = PState.Food
         GameModel.Values.Inc = PState.Inc
@@ -59,11 +67,15 @@ Public Class GameForm
         FoodNum.Text = PState.Food
         IncNum.Text = PState.Inc
         PopNum.Text = PState.Pop
-
-        PlanetMap = New Planet_state(PState, 500, 400)
     End Sub
 
     Private Sub StartButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartButton.Click
         'GameModel.Iterate(Budgets)
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        PlanetMap.increment_number_of_mines()
+        PlanetMap.update_state(PState)
+        PlanetMap.Display_current_state(Graph, Rect)
     End Sub
 End Class
