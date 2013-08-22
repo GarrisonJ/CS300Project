@@ -6,6 +6,7 @@ Public Class GameForm
     Dim PlanetMap As Planet_state
     Dim Graph As Graphics
     Dim Rect As Rectangle
+    Dim Difficulty As Integer
 
     'Functions
     'function takes in an array of integers and copies to the local budget

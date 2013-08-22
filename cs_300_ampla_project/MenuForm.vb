@@ -96,6 +96,8 @@
         Me.Hide()
         GameForm.Dispose()
         BudgetForm.Dispose()
+        DifficultyForm.ShowDialog()
+        DifficultyForm.Dispose()
         GameForm.ShowDialog()
         GameSaved = False
         GameForm.Activate()

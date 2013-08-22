@@ -79,6 +79,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cell.vb" />
+    <Compile Include="CommonDataStructures.vb" />
     <Compile Include="DifficultyForm.Designer.vb">
       <DependentUpon>DifficultyForm.vb</DependentUpon>
     </Compile>
