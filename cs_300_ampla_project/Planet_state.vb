@@ -22,7 +22,7 @@ Public Class Planet_state
     ' Will update the state of the map.
     ' INPUT:
     '   new_state - New state for the map.
-    Sub update_state(ByRef new_state As State)
+    Sub update_state(ByVal new_state As State)
         current_state.New_map_state(new_state)
         current_state.Update_map()
     End Sub
