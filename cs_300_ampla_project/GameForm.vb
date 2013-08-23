@@ -9,6 +9,14 @@ Public Class GameForm
     Dim Rect As Rectangle
     Dim Difficulty As Integer
 
+    'Gets the initial state, current state, budget, and mine locations and formats into string
+    Public Function GetSave() As String
+        Dim Temp As String = ""
+        Temp += PlanetMap.location_of_mines_as_a_string()
+        Temp += CStr(PState.Env) + "," + CStr(PState.Food) + "," + CStr(PState.Inc) + "," + CStr(PState.Pop)
+        Return Temp
+    End Function
+
     'Given a state structure, the old state will be overwritten
     Public Sub SetState(ByVal newState As State)
         PState = newState
@@ -70,7 +78,7 @@ Public Class GameForm
     End Sub
 
     Private Sub StartButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartButton.Click
-        'GameModel.Iterate(Budgets)
+        GameModel.Iterate(Budgets)
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
