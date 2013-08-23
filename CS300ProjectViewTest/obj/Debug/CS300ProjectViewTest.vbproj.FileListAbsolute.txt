@@ -1,0 +1,12 @@
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\CS300ProjectViewTest.dll
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\CS300ProjectViewTest.pdb
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\CS300ProjectViewTest.xml
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project.exe
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project.pdb
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project.xml
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project_Accessor.exe
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project_Accessor.pdb
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\ResolveAssemblyReference.cache
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.dll
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.xml
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.pdb

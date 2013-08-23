@@ -9,19 +9,6 @@ C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_amp
 C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
 C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
 C:\Users\j\Documents\Visual Studio 2010\Projects\cs_300_ampla_project\cs_300_ampla_project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.exe
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.pdb
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.xml
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\ResolveAssemblyReference.cache
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.BudgetForm.resources
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.GameForm.resources
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.MenuForm.resources
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.Resources.resources
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.read.1.tlog
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.write.1.tlog
 C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
 C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
 C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
@@ -61,7 +48,6 @@ C:\Users\Jonathan\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Deb
 \\khensu\Home01\joh\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.Resources.resources
 \\khensu\Home01\joh\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.read.1.tlog
 \\khensu\Home01\joh\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.write.1.tlog
-\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.DifficultyForm.resources
 C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444273a93ac29_0001.0000_1a2741530fd93294\khensu\Home01\yapi\My Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
 C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444273a93ac29_0001.0000_1a2741530fd93294\khensu\Home01\yapi\My Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
 C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444273a93ac29_0001.0000_1a2741530fd93294\khensu\Home01\yapi\My Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
@@ -76,3 +62,17 @@ C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444
 C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444273a93ac29_0001.0000_1a2741530fd93294\khensu\Home01\yapi\My Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.Resources.resources
 C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444273a93ac29_0001.0000_1a2741530fd93294\khensu\Home01\yapi\My Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Users\yapi\AppData\Local\Apps\2.0\TPHV8YJ7.4NP\QARE7GX7.DJK\gith..tion_317444273a93ac29_0001.0000_1a2741530fd93294\khensu\Home01\yapi\My Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.write.1.tlog
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.exe
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.pdb
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.xml
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\ResolveAssemblyReference.cache
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.BudgetForm.resources
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.DifficultyForm.resources
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.GameForm.resources
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.MenuForm.resources
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.Resources.resources
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.read.1.tlog
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\GenerateResource.write.1.tlog
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
+\\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
