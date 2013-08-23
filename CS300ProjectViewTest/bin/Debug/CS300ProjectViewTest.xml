@@ -6,7 +6,43 @@ CS300ProjectViewTest
 </name>
 </assembly>
 <members>
-<member name="P:CS300ProjectViewTest.CellTest.TestContext">
+<member name="P:CS300ProjectViewTest.MapTest.TestContext">
+	<summary>
+Gets or sets the test context which provides
+information about and functionality for the current test run.
+</summary>
+</member><member name="M:CS300ProjectViewTest.MapTest.MapConstructorTest">
+	<summary>
+A test for Map Constructor
+</summary>
+</member><member name="M:CS300ProjectViewTest.MapTest.add_mine_to_mapTest">
+	<summary>
+A test for add_mine_to_map and return_list_of_mines and decrement_number_of_mines
+</summary>
+</member><member name="T:CS300ProjectViewTest.MapTest">
+	<summary>
+This is a test class for MapTest and is intended
+to contain all MapTest Unit Tests
+</summary>
+</member><member name="P:CS300ProjectViewTest.MineTest.TestContext">
+	<summary>
+Gets or sets the test context which provides
+information about and functionality for the current test run.
+</summary>
+</member><member name="M:CS300ProjectViewTest.MineTest.MineConstructorTest">
+	<summary>
+A test for Mine Constructor
+</summary>
+</member><member name="M:CS300ProjectViewTest.MineTest.get_set_toxicityTest">
+	<summary>
+A test for get_toxicity and set_toxicity
+</summary>
+</member><member name="T:CS300ProjectViewTest.MineTest">
+	<summary>
+This is a test class for MineTest and is intended
+to contain all MineTest Unit Tests
+</summary>
+</member><member name="P:CS300ProjectViewTest.CellTest.TestContext">
 	<summary>
 Gets or sets the test context which provides
 information about and functionality for the current test run.
@@ -19,25 +55,9 @@ A test for Cell Constructor
 	<summary>
 A test for Clone
 </summary>
-</member><member name="M:CS300ProjectViewTest.CellTest.Draw_cellTest">
-	<summary>
-A test for Draw_cell
-</summary>
-</member><member name="M:CS300ProjectViewTest.CellTest.Set_cell_colorTest">
-	<summary>
-A test for Set_cell_color
-</summary>
 </member><member name="M:CS300ProjectViewTest.CellTest.Set_cell_pointTest">
 	<summary>
-A test for Set_cell_point
-</summary>
-</member><member name="M:CS300ProjectViewTest.CellTest.get_locationTest">
-	<summary>
-A test for get_location
-</summary>
-</member><member name="M:CS300ProjectViewTest.CellTest.set_side_lengthTest">
-	<summary>
-A test for set_side_length
+A test for Set_cell_point and get_location
 </summary>
 </member><member name="T:CS300ProjectViewTest.CellTest">
 	<summary>
@@ -53,102 +73,14 @@ information about and functionality for the current test run.
 	<summary>
 A test for Planet_state Constructor
 </summary>
-</member><member name="M:CS300ProjectViewTest.Planet_stateTest.Display_current_stateTest">
+</member><member name="M:CS300ProjectViewTest.Planet_stateTest.Planet_state_minesTest">
 	<summary>
-A test for Display_current_state
-</summary>
-</member><member name="M:CS300ProjectViewTest.Planet_stateTest.Display_initial_stateTest">
-	<summary>
-A test for Display_initial_state
-</summary>
-</member><member name="M:CS300ProjectViewTest.Planet_stateTest.decrement_number_of_minesTest">
-	<summary>
-A test for decrement_number_of_mines
-</summary>
-</member><member name="M:CS300ProjectViewTest.Planet_stateTest.increment_number_of_minesTest">
-	<summary>
-A test for increment_number_of_mines
-</summary>
-</member><member name="M:CS300ProjectViewTest.Planet_stateTest.increment_number_of_minesTest1">
-	<summary>
-A test for increment_number_of_mines
-</summary>
-</member><member name="M:CS300ProjectViewTest.Planet_stateTest.location_of_mines_as_a_stringTest">
-	<summary>
-A test for location_of_mines_as_a_string
-</summary>
-</member><member name="M:CS300ProjectViewTest.Planet_stateTest.update_stateTest">
-	<summary>
-A test for update_state
+A test for increment_number_of_mines, decrement_number_of_mines, and location_of_mines_as_a_string
 </summary>
 </member><member name="T:CS300ProjectViewTest.Planet_stateTest">
 	<summary>
 This is a test class for Planet_stateTest and is intended
 to contain all Planet_stateTest Unit Tests
-</summary>
-</member><member name="P:CS300ProjectViewTest.MineTest.TestContext">
-	<summary>
-Gets or sets the test context which provides
-information about and functionality for the current test run.
-</summary>
-</member><member name="M:CS300ProjectViewTest.MineTest.MineConstructorTest">
-	<summary>
-A test for Mine Constructor
-</summary>
-</member><member name="M:CS300ProjectViewTest.MineTest.get_toxicityTest">
-	<summary>
-A test for get_toxicity
-</summary>
-</member><member name="M:CS300ProjectViewTest.MineTest.set_toxicityTest">
-	<summary>
-A test for set_toxicity
-</summary>
-</member><member name="T:CS300ProjectViewTest.MineTest">
-	<summary>
-This is a test class for MineTest and is intended
-to contain all MineTest Unit Tests
-</summary>
-</member><member name="P:CS300ProjectViewTest.MapTest.TestContext">
-	<summary>
-Gets or sets the test context which provides
-information about and functionality for the current test run.
-</summary>
-</member><member name="M:CS300ProjectViewTest.MapTest.MapConstructorTest">
-	<summary>
-A test for Map Constructor
-</summary>
-</member><member name="M:CS300ProjectViewTest.MapTest.DistanceTest">
-	<summary>
-A test for Distance
-</summary>
-</member><member name="M:CS300ProjectViewTest.MapTest.Draw_mapTest">
-	<summary>
-A test for Draw_map
-</summary>
-</member><member name="M:CS300ProjectViewTest.MapTest.New_map_stateTest">
-	<summary>
-A test for New_map_state
-</summary>
-</member><member name="M:CS300ProjectViewTest.MapTest.Update_mapTest">
-	<summary>
-A test for Update_map
-</summary>
-</member><member name="M:CS300ProjectViewTest.MapTest.add_mine_to_mapTest">
-	<summary>
-A test for add_mine_to_map
-</summary>
-</member><member name="M:CS300ProjectViewTest.MapTest.decrement_number_of_minesTest">
-	<summary>
-A test for decrement_number_of_mines
-</summary>
-</member><member name="M:CS300ProjectViewTest.MapTest.return_list_of_minesTest">
-	<summary>
-A test for return_list_of_mines
-</summary>
-</member><member name="T:CS300ProjectViewTest.MapTest">
-	<summary>
-This is a test class for MapTest and is intended
-to contain all MapTest Unit Tests
 </summary>
 </member>
 </members>

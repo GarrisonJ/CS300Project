@@ -95,7 +95,7 @@ Public Class Map
     ' If no mines exist, then this function does nothing.
     Sub decrement_number_of_mines()
         If Not IsNothing(list_of_mines) Then
-            list_of_mines.RemoveAt(list_of_mines.Count)
+            list_of_mines.RemoveAt(list_of_mines.Count - 1)
         End If
     End Sub
 

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="0143a707-cba1-45db-b420-82593be07b9c" name="garrison@G-WINDOWS 2013-08-22 20:16:00" runUser="G-WINDOWS\garrison" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="f6851c21-966a-48c1-af06-15e67995672b">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="garrison_G-WINDOWS 2013-08-22 20_16_00">
+      <DeploymentItem filename="C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-08-22T20:16:00.4048431-07:00" queuing="2013-08-22T20:16:02.1392803-07:00" start="2013-08-22T20:16:02.2486592-07:00" finish="2013-08-22T20:16:37.8161218-07:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="G-WINDOWS" outcome="Warning" timestamp="2013-08-22T20:16:00.4204683-07:00">
+        <Text>Deployment is currently disabled. The deployment item 'cs_300_ampla_project.exe' on test 'CS300ProjectViewTest.MapTest.DistanceTest' was not deployed.</Text>
+      </RunInfo>
+      <RunInfo computerName="G-WINDOWS" outcome="Error" timestamp="2013-08-22T20:16:37.8161218-07:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="DistanceTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="498c450a-fa06-e47d-2476-af6138aa5213">
+      <DeploymentItems>
+        <DeploymentItem filename="cs_300_ampla_project.exe" />
+      </DeploymentItems>
+      <Execution id="e01d4807-6ddc-4fc8-8d3c-9fa76034a530" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.MapTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="DistanceTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="498c450a-fa06-e47d-2476-af6138aa5213" executionId="e01d4807-6ddc-4fc8-8d3c-9fa76034a530" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="e01d4807-6ddc-4fc8-8d3c-9fa76034a530" testId="498c450a-fa06-e47d-2476-af6138aa5213" testName="DistanceTest" computerName="G-WINDOWS" duration="00:00:35.4424449" startTime="2013-08-22T20:16:02.3736769-07:00" endTime="2013-08-22T20:16:37.8161218-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e01d4807-6ddc-4fc8-8d3c-9fa76034a530">
+    </UnitTestResult>
+  </Results>
+</TestRun>

@@ -25,7 +25,7 @@ Public Class Planet_stateTest
             Return testContextInstance
         End Get
         Set(ByVal value As TestContext)
-            testContextInstance = Value
+            testContextInstance = value
         End Set
     End Property
 
@@ -65,116 +65,34 @@ Public Class Planet_stateTest
         Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
         Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
         Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y)
-        Assert.Inconclusive("TODO: Implement code to verify target")
+        Assert.IsNotNull(target)
     End Sub
 
     '''<summary>
-    '''A test for Display_current_state
+    '''A test for increment_number_of_mines, decrement_number_of_mines, and location_of_mines_as_a_string
     '''</summary>
     <TestMethod()> _
-    Public Sub Display_current_stateTest()
-        Dim initial_planet_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y) ' TODO: Initialize to an appropriate value
-        Dim graphic_to_display_graph As Graphics = Nothing ' TODO: Initialize to an appropriate value
-        Dim graphic_to_display_graphExpected As Graphics = Nothing ' TODO: Initialize to an appropriate value
-        Dim rectange_window As Rectangle = New Rectangle() ' TODO: Initialize to an appropriate value
-        Dim rectange_windowExpected As Rectangle = New Rectangle() ' TODO: Initialize to an appropriate value
-        target.Display_current_state(graphic_to_display_graph, rectange_window)
-        Assert.AreEqual(graphic_to_display_graphExpected, graphic_to_display_graph)
-        Assert.AreEqual(rectange_windowExpected, rectange_window)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
-    End Sub
+    Public Sub Planet_state_minesTest()
+        Dim initial_planet_state As State = New State()
+        Dim planet_pixel_size_x As Integer = 100
+        Dim planet_pixel_size_y As Integer = 100
+        Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y)
+        Dim add_mine_at_this_point As Point = New Point(20, 20)
+        Dim Expected_string As String = New String("20,20,")
 
-    '''<summary>
-    '''A test for Display_initial_state
-    '''</summary>
-    <TestMethod()> _
-    Public Sub Display_initial_stateTest()
-        Dim initial_planet_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y) ' TODO: Initialize to an appropriate value
-        Dim graphic_to_display_graph As Graphics = Nothing ' TODO: Initialize to an appropriate value
-        Dim graphic_to_display_graphExpected As Graphics = Nothing ' TODO: Initialize to an appropriate value
-        Dim rectange_window As Rectangle = New Rectangle() ' TODO: Initialize to an appropriate value
-        Dim rectange_windowExpected As Rectangle = New Rectangle() ' TODO: Initialize to an appropriate value
-        target.Display_initial_state(graphic_to_display_graph, rectange_window)
-        Assert.AreEqual(graphic_to_display_graphExpected, graphic_to_display_graph)
-        Assert.AreEqual(rectange_windowExpected, rectange_window)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
-    End Sub
+        target.increment_number_of_mines(add_mine_at_this_point)                ' Add mine at point.
 
-    '''<summary>
-    '''A test for decrement_number_of_mines
-    '''</summary>
-    <TestMethod()> _
-    Public Sub decrement_number_of_minesTest()
-        Dim initial_planet_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y) ' TODO: Initialize to an appropriate value
+        Assert.AreEqual(Expected_string, target.location_of_mines_as_a_string)  ' Assert mine exist in list, and is represented as a string properly.
+
+        target.decrement_number_of_mines()                                      ' Decrement number of mines.
+
+        Assert.AreEqual("", target.location_of_mines_as_a_string)               ' Assert string is empty.
+
+        target.increment_number_of_mines()                                      ' Create random mine.
+
         target.decrement_number_of_mines()
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
-    End Sub
 
-    '''<summary>
-    '''A test for increment_number_of_mines
-    '''</summary>
-    <TestMethod()> _
-    Public Sub increment_number_of_minesTest()
-        Dim initial_planet_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y) ' TODO: Initialize to an appropriate value
-        Dim add_mine_at_this_point As Point = New Point() ' TODO: Initialize to an appropriate value
-        Dim add_mine_at_this_pointExpected As Point = New Point() ' TODO: Initialize to an appropriate value
-        target.increment_number_of_mines(add_mine_at_this_point)
-        Assert.AreEqual(add_mine_at_this_pointExpected, add_mine_at_this_point)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
-    End Sub
+        Assert.AreEqual("", target.location_of_mines_as_a_string)               ' Assert string is empty.
 
-    '''<summary>
-    '''A test for increment_number_of_mines
-    '''</summary>
-    <TestMethod()> _
-    Public Sub increment_number_of_minesTest1()
-        Dim initial_planet_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y) ' TODO: Initialize to an appropriate value
-        target.increment_number_of_mines()
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
-    End Sub
-
-    '''<summary>
-    '''A test for location_of_mines_as_a_string
-    '''</summary>
-    <TestMethod()> _
-    Public Sub location_of_mines_as_a_stringTest()
-        Dim initial_planet_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y) ' TODO: Initialize to an appropriate value
-        Dim expected As String = String.Empty ' TODO: Initialize to an appropriate value
-        Dim actual As String
-        actual = target.location_of_mines_as_a_string
-        Assert.AreEqual(expected, actual)
-        Assert.Inconclusive("Verify the correctness of this test method.")
-    End Sub
-
-    '''<summary>
-    '''A test for update_state
-    '''</summary>
-    <TestMethod()> _
-    Public Sub update_stateTest()
-        Dim initial_planet_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y) ' TODO: Initialize to an appropriate value
-        Dim new_state As State = New State() ' TODO: Initialize to an appropriate value
-        target.update_state(new_state)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
     End Sub
 End Class

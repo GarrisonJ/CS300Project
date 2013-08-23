@@ -10,3 +10,15 @@
 \\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.dll
 \\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.xml
 \\khensu\Home03\gajensen\Desktop\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.pdb
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\CS300ProjectViewTest.dll
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\CS300ProjectViewTest.pdb
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project.exe
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project_Accessor.exe
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project_Accessor.pdb
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project.pdb
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\cs_300_ampla_project.xml
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.vbprojResolveAssemblyReference.cache
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.dll
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.xml
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\obj\Debug\CS300ProjectViewTest.pdb
+C:\Users\garrison\Documents\GitHub\CS300Project\CS300ProjectViewTest\bin\Debug\CS300ProjectViewTest.xml

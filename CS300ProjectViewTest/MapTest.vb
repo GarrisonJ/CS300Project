@@ -63,166 +63,37 @@ Public Class MapTest
     '''</summary>
     <TestMethod()> _
     Public Sub MapConstructorTest()
-        Dim Cell_Map_X_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_X_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim initial_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim initial_stateExpected As State = New State() ' TODO: Initialize to an appropriate value
+        Dim Cell_Map_X_dim As Integer = 0
+        Dim Cell_Map_Y_dim As Integer = 0
+        Dim initial_state As State = New State()
         Dim target As Map = New Map(Cell_Map_X_dim, Cell_Map_Y_dim, initial_state)
-        Assert.AreEqual(Cell_Map_X_dimExpected, Cell_Map_X_dim)
-        Assert.AreEqual(Cell_Map_Y_dimExpected, Cell_Map_Y_dim)
-        Assert.AreEqual(initial_stateExpected, initial_state)
-        Assert.Inconclusive("TODO: Implement code to verify target")
+        Assert.IsNotNull(target)
     End Sub
 
-    '''<summary>
-    '''A test for Distance
-    '''</summary>
-    <TestMethod(), _
-     DeploymentItem("cs_300_ampla_project.exe")> _
-    Public Sub DistanceTest()
-        Dim param0 As PrivateObject = Nothing ' TODO: Initialize to an appropriate value
-        Dim target As Map_Accessor = New Map_Accessor(param0) ' TODO: Initialize to an appropriate value
-        Dim a As Point = New Point() ' TODO: Initialize to an appropriate value
-        Dim aExpected As Point = New Point() ' TODO: Initialize to an appropriate value
-        Dim b As Point = New Point() ' TODO: Initialize to an appropriate value
-        Dim bExpected As Point = New Point() ' TODO: Initialize to an appropriate value
-        Dim expected As Double = 0.0! ' TODO: Initialize to an appropriate value
-        Dim actual As Double
-        actual = target.Distance(a, b)
-        Assert.AreEqual(aExpected, a)
-        Assert.AreEqual(bExpected, b)
-        Assert.AreEqual(expected, actual)
-        Assert.Inconclusive("Verify the correctness of this test method.")
-    End Sub
 
     '''<summary>
-    '''A test for Draw_map
-    '''</summary>
-    <TestMethod()> _
-    Public Sub Draw_mapTest()
-        Dim Cell_Map_X_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_X_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim initial_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim initial_stateExpected As State = New State() ' TODO: Initialize to an appropriate value
-        Dim target As Map = New Map(Cell_Map_X_dim, Cell_Map_Y_dim, initial_state) ' TODO: Initialize to an appropriate value
-        Dim graphic_to_display_graph As Graphics = Nothing ' TODO: Initialize to an appropriate value
-        Dim graphic_to_display_graphExpected As Graphics = Nothing ' TODO: Initialize to an appropriate value
-        Dim rectange_window As Rectangle = New Rectangle() ' TODO: Initialize to an appropriate value
-        Dim rectange_windowExpected As Rectangle = New Rectangle() ' TODO: Initialize to an appropriate value
-        target.Draw_map(graphic_to_display_graph, rectange_window)
-        Assert.AreEqual(Cell_Map_X_dimExpected, Cell_Map_X_dim)
-        Assert.AreEqual(Cell_Map_Y_dimExpected, Cell_Map_Y_dim)
-        Assert.AreEqual(initial_stateExpected, initial_state)
-        Assert.AreEqual(graphic_to_display_graphExpected, graphic_to_display_graph)
-        Assert.AreEqual(rectange_windowExpected, rectange_window)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
-    End Sub
-
-    '''<summary>
-    '''A test for New_map_state
-    '''</summary>
-    <TestMethod()> _
-    Public Sub New_map_stateTest()
-        Dim Cell_Map_X_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_X_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim initial_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim initial_stateExpected As State = New State() ' TODO: Initialize to an appropriate value
-        Dim target As Map = New Map(Cell_Map_X_dim, Cell_Map_Y_dim, initial_state) ' TODO: Initialize to an appropriate value
-        Dim new_map_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim new_map_stateExpected As State = New State() ' TODO: Initialize to an appropriate value
-        target.New_map_state(new_map_state)
-        Assert.AreEqual(Cell_Map_X_dimExpected, Cell_Map_X_dim)
-        Assert.AreEqual(Cell_Map_Y_dimExpected, Cell_Map_Y_dim)
-        Assert.AreEqual(initial_stateExpected, initial_state)
-        Assert.AreEqual(new_map_stateExpected, new_map_state)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
-    End Sub
-
-    '''<summary>
-    '''A test for Update_map
-    '''</summary>
-    <TestMethod()> _
-    Public Sub Update_mapTest()
-        Dim Cell_Map_X_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_X_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim initial_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim initial_stateExpected As State = New State() ' TODO: Initialize to an appropriate value
-        Dim target As Map = New Map(Cell_Map_X_dim, Cell_Map_Y_dim, initial_state) ' TODO: Initialize to an appropriate value
-        target.Update_map()
-        Assert.AreEqual(Cell_Map_X_dimExpected, Cell_Map_X_dim)
-        Assert.AreEqual(Cell_Map_Y_dimExpected, Cell_Map_Y_dim)
-        Assert.AreEqual(initial_stateExpected, initial_state)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
-    End Sub
-
-    '''<summary>
-    '''A test for add_mine_to_map
+    '''A test for add_mine_to_map and return_list_of_mines and decrement_number_of_mines
     '''</summary>
     <TestMethod()> _
     Public Sub add_mine_to_mapTest()
-        Dim Cell_Map_X_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_X_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim initial_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim initial_stateExpected As State = New State() ' TODO: Initialize to an appropriate value
-        Dim target As Map = New Map(Cell_Map_X_dim, Cell_Map_Y_dim, initial_state) ' TODO: Initialize to an appropriate value
-        Dim location_of_new_mine As Point = New Point() ' TODO: Initialize to an appropriate value
-        Dim location_of_new_mineExpected As Point = New Point() ' TODO: Initialize to an appropriate value
-        target.add_mine_to_map(location_of_new_mine)
-        Assert.AreEqual(Cell_Map_X_dimExpected, Cell_Map_X_dim)
-        Assert.AreEqual(Cell_Map_Y_dimExpected, Cell_Map_Y_dim)
-        Assert.AreEqual(initial_stateExpected, initial_state)
-        Assert.AreEqual(location_of_new_mineExpected, location_of_new_mine)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
+        Dim Cell_Map_X_dim As Integer = 20
+        Dim Cell_Map_Y_dim As Integer = 20
+        Dim initial_state As State = New State()
+        Dim target As Map = New Map(Cell_Map_X_dim, Cell_Map_Y_dim, initial_state)
+        Dim Expected_mine_location As New Point(5, 5)
+        Dim location_of_new_mine As Point = New Point(5, 5)
+
+        target.add_mine_to_map(location_of_new_mine)                                          ' Add mine at possible location
+
+        Assert.AreEqual(Expected_mine_location, target.return_list_of_mines.First.get_location()) ' Assert that it was added to the list of mines
+
+        target.decrement_number_of_mines()                                                    ' Decrement the number of mines
+
+        Assert.AreEqual(target.return_list_of_mines.Count, 0)                                   ' Assert that list is empty
+
+        target.add_mine_to_map(New Point(500, 500))                                           ' Try to add mine at impossible location
+        Assert.AreEqual(target.return_list_of_mines.Count, 1)                                   ' Assert list is still empty
+
     End Sub
 
-    '''<summary>
-    '''A test for decrement_number_of_mines
-    '''</summary>
-    <TestMethod()> _
-    Public Sub decrement_number_of_minesTest()
-        Dim Cell_Map_X_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_X_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim initial_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim initial_stateExpected As State = New State() ' TODO: Initialize to an appropriate value
-        Dim target As Map = New Map(Cell_Map_X_dim, Cell_Map_Y_dim, initial_state) ' TODO: Initialize to an appropriate value
-        target.decrement_number_of_mines()
-        Assert.AreEqual(Cell_Map_X_dimExpected, Cell_Map_X_dim)
-        Assert.AreEqual(Cell_Map_Y_dimExpected, Cell_Map_Y_dim)
-        Assert.AreEqual(initial_stateExpected, initial_state)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
-    End Sub
-
-    '''<summary>
-    '''A test for return_list_of_mines
-    '''</summary>
-    <TestMethod()> _
-    Public Sub return_list_of_minesTest()
-        Dim Cell_Map_X_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_X_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dim As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim Cell_Map_Y_dimExpected As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim initial_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim initial_stateExpected As State = New State() ' TODO: Initialize to an appropriate value
-        Dim target As Map = New Map(Cell_Map_X_dim, Cell_Map_Y_dim, initial_state) ' TODO: Initialize to an appropriate value
-        Dim expected As List(Of Mine) = Nothing ' TODO: Initialize to an appropriate value
-        Dim actual As List(Of Mine)
-        actual = target.return_list_of_mines
-        Assert.AreEqual(Cell_Map_X_dimExpected, Cell_Map_X_dim)
-        Assert.AreEqual(Cell_Map_Y_dimExpected, Cell_Map_Y_dim)
-        Assert.AreEqual(initial_stateExpected, initial_state)
-        Assert.AreEqual(expected, actual)
-        Assert.Inconclusive("Verify the correctness of this test method.")
-    End Sub
 End Class

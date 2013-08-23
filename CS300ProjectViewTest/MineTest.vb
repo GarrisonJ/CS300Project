@@ -60,30 +60,21 @@ Public Class MineTest
     <TestMethod()> _
     Public Sub MineConstructorTest()
         Dim target As Mine = New Mine()
-        Assert.Inconclusive("TODO: Implement code to verify target")
+        Assert.IsNotNull(target)
     End Sub
 
     '''<summary>
-    '''A test for get_toxicity
+    '''A test for get_toxicity and set_toxicity
     '''</summary>
     <TestMethod()> _
-    Public Sub get_toxicityTest()
-        Dim target As Mine = New Mine() ' TODO: Initialize to an appropriate value
-        Dim expected As Double = 0.0! ' TODO: Initialize to an appropriate value
+    Public Sub get_set_toxicityTest()
+        Dim target As Mine = New Mine()
+        Dim expected As Double = 0.0
         Dim actual As Double
-        actual = target.get_toxicity
-        Assert.AreEqual(expected, actual)
-        Assert.Inconclusive("Verify the correctness of this test method.")
-    End Sub
 
-    '''<summary>
-    '''A test for set_toxicity
-    '''</summary>
-    <TestMethod()> _
-    Public Sub set_toxicityTest()
-        Dim target As Mine = New Mine() ' TODO: Initialize to an appropriate value
-        Dim toxicity_level As Double = 0.0! ' TODO: Initialize to an appropriate value
-        target.set_toxicity(toxicity_level)
-        Assert.Inconclusive("A method that does not return a value cannot be verified.")
+        target.set_toxicity(expected) ' Set toxicity
+        actual = target.get_toxicity  ' Get toxicity
+
+        Assert.AreEqual(expected, actual)
     End Sub
 End Class
