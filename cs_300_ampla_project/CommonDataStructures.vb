@@ -27,9 +27,9 @@ Public Structure State
 End Structure
 
 Public Structure Budget
-    Dim Agriculture As Integer
-    Dim Science As Integer
-    Dim Industry As Integer
-    Dim Education As Integer
-    Dim Pollution As Integer
+    Dim Agriculture As Double
+    Dim Education As Double
+    Dim Industry As Double
+    Dim Pollution As Double
+    Dim Science As Double
 End Structure

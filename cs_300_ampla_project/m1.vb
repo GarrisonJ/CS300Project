@@ -10,6 +10,7 @@ Public Class Model
 
     Dim Coeffs As Dictionary(Of String, Connected)
 
+
     Private Sub SetCoeff(ByVal Indicator As String, ByVal Agr As Double, ByVal Sci As Double, ByVal Ind As Double, ByVal Edu As Double, ByVal Pol As Double)
         Dim C As Connected
         With C
@@ -31,9 +32,9 @@ Public Class Model
         '  Population   0.0003,   0.0001,    0.0,       -0.00012,    0.0
         ' Environment  -0.0001,   0.0,      -0.0002,     0.0001,     0.0001
         '
-        SetCoeff("Food", 0.0001, 0.0001, 0.0, 0.0, 0.0)             'indicator for food
-        SetCoeff("Income", 0.0, 0.0001, 0.0001, 0.0001, 0.0)        'indicator for income
-        SetCoeff("Population", 0.0003, 0.0001, 0.0, -0.00012, 0.0)    'indicator for population
+        SetCoeff("Food", 0.0001, 0.0001, 0.0, 0.0, 0.0)                'indicator for food
+        SetCoeff("Income", 0.0, 0.0001, 0.0001, 0.0001, 0.0)           'indicator for income
+        SetCoeff("Population", 0.0003, 0.0001, 0.0, -0.00012, 0.0)     'indicator for population
         SetCoeff("Environment", -0.0001, 0.0, -0.0002, 0.0001, 0.0001) 'indicator for environment
     End Sub
 
@@ -64,6 +65,15 @@ Public Class Model
 
     Public Sub Update()
         With Last
+            .Env = Values.Env
+            .Food = Values.Food
+            .Inc = Values.Inc
+            .Pop = Values.Pop
+        End With
+    End Sub
+
+    Public Sub StartRound(ByRef Cur As State)
+        With Cur
             .Env = Values.Env
             .Food = Values.Food
             .Inc = Values.Inc
