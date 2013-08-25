@@ -83,16 +83,16 @@ Public Class MapTest
         Dim Expected_mine_location As New Point(5, 5)
         Dim location_of_new_mine As Point = New Point(5, 5)
 
-        target.add_mine_to_map(location_of_new_mine)                                          ' Add mine at possible location
+        target.add_mine_to_map(location_of_new_mine)                                              ' Add mine at possible location
 
         Assert.AreEqual(Expected_mine_location, target.return_list_of_mines.First.get_location()) ' Assert that it was added to the list of mines
 
-        target.decrement_number_of_mines()                                                    ' Decrement the number of mines
+        target.decrement_number_of_mines()                                                        ' Decrement the number of mines
 
-        Assert.AreEqual(target.return_list_of_mines.Count, 0)                                   ' Assert that list is empty
+        Assert.AreEqual(target.return_list_of_mines.Count, 0)                                     ' Assert that list is empty
 
-        target.add_mine_to_map(New Point(500, 500))                                           ' Try to add mine at impossible location
-        Assert.AreEqual(target.return_list_of_mines.Count, 1)                                   ' Assert list is still empty
+        target.add_mine_to_map(New Point(500, 500))                                               ' Try to add mine at impossible location
+        Assert.AreEqual(target.return_list_of_mines.Count, 1)                                     ' Assert list has one mine
 
     End Sub
 
