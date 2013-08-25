@@ -151,10 +151,17 @@ Public Class GameForm
         FoodNum.Text = PState.Food
         IncNum.Text = PState.Inc
         PopNum.Text = PState.Pop
+
+        RoundLabel.Text = RoundNum
     End Sub
 
     Private Sub StartButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartButton.Click
         GameModel.Iterate(Budgets)
+        RoundNum += 1
+        RoundLabel.Text = RoundNum
+        If RoundNum = 5 Then
+
+        End If
     End Sub
 
     'Kept the draw button since could not figure out how to make the map load when the form loaded.
