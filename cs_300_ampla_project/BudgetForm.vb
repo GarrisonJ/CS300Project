@@ -13,9 +13,8 @@
     End Sub
 
     'This function gets the budget values from 
-    Private Function GetBudgetVals(ByRef List() As Integer) As Boolean
+    Private Function SetBudgetVals(ByRef List() As Integer) As Boolean
         Dim StringList() As String = {RedBudget.Text, BlueBudget.Text, OrangeBudget.Text, YellowBudget.Text, GreenBudget.Text}
-
         'Checks if the input values are Integer, adds them to the current budget list.
         'Returns True on success or False if values are not integers.
         For I As Integer = LBound(StringList) To UBound(StringList)
@@ -28,7 +27,7 @@
         Next I
         For I As Integer = LBound(StringList) To UBound(StringList)
             List(I) = CInt(StringList(I))
-        Next I
+        Next
         Return True
     End Function
 
@@ -40,20 +39,25 @@
         YellowBudget.Text = "0"
         GreenBudget.Text = "0"
         RemainingBudget.Text = "100"
-        GetBudgetVals(BudgetList)
+        SetBudgetVals(BudgetList)
     End Sub
 
-    'This event will check the text boxes for integer, check if enough funds, set Budget.
-    Private Sub SaveBudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles SaveBudgetButton.Click
-        If Not GetBudgetVals(BudgetList) Then
-            MsgBox("The values you entered are invalid. Please try again.", MsgBoxStyle.OkOnly)
-            Exit Sub
-        End If
-        'Check if the funds allocated is over max budget
+    Private Function CalcRem() As Integer
         RemBudget = 100
         For Each Budget In BudgetList
             RemBudget -= Budget
         Next Budget
+        Return RemBudget
+    End Function
+
+    'This event will check the text boxes for integer, check if enough funds, set Budget.
+    Private Sub SaveBudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles SaveBudgetButton.Click
+        If Not SetBudgetVals(BudgetList) Then
+            MsgBox("The values you entered are invalid. Please try again.", MsgBoxStyle.OkOnly)
+            Exit Sub
+        End If
+        'Check if the funds allocated is over max budget
+        RemBudget = CalcRem()
 
         If RemBudget < 0 Then
             MsgBox("The values you entered are greater than the allowed budget. Please try again.", MsgBoxStyle.OkOnly)
@@ -73,7 +77,7 @@
         Dim TempList() As Integer = {0, 0, 0, 0, 0}
 
         'Grab current budget values, exit if invalid values
-        If Not GetBudgetVals(TempList) Then
+        If Not SetBudgetVals(TempList) Then
             Exit Sub
         End If
         'Check if there is any remaining budget left
@@ -85,7 +89,7 @@
         End If
         'Check if the current values are different from the last saved budget
         SavedBudget = GameWindow.GetBudget()
-        GetBudgetVals(TempList)
+        SetBudgetVals(TempList)
         For I As Integer = LBound(SavedBudget) To UBound(SavedBudget)
             If SavedBudget(I) <> TempList(I) Then
                 Resp = MsgBox("You have unsaved budget changes, do you want to save first? (Unsaved changes will be lost).", MsgBoxStyle.YesNo)
@@ -110,6 +114,14 @@
         OrangeBudget.Text = BudgetList(2)
         YellowBudget.Text = BudgetList(3)
         GreenBudget.Text = BudgetList(4)
-        GetBudgetVals(BudgetList)
+        SetBudgetVals(Temp)
+        RemBudget = CalcRem()
+
+        If RemBudget < 0 Then
+            MsgBox("The values you entered are greater than the allowed budget. Please try again.", MsgBoxStyle.OkOnly)
+            Exit Sub
+        End If
+
+        RemainingBudget.Text = Str(RemBudget)
     End Sub
 End Class

@@ -49,9 +49,7 @@ Public Class MenuForm
         If Resp = DialogResult.Cancel Then
             Exit Sub
         End If
-        If IsNothing(GameWindow) Then
-            GameWindow = New GameForm()
-        End If
+        GameWindow = New GameForm()
         'Parse the text file with semi-colon delimiter
         Fp = LoadDialog.FileName
         Fn = Path.GetFileName(Fp)
@@ -72,6 +70,7 @@ Public Class MenuForm
         End If
         Me.Hide()
         GameWindow.ShowDialog()
+        GameSaved = False
         Me.Show()
     End Sub
 
