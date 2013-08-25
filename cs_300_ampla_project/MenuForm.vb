@@ -14,28 +14,57 @@ Public Class MenuForm
     Private Sub LoadButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadButton.Click
         Dim MyReader As Microsoft.VisualBasic.FileIO.TextFieldParser
         Dim Resp As Integer
+        Dim CurrGroup As String()
+
+        'If game is not saved, prompt to save.
+        If Not GameSaved Then
+            Resp = MsgBox("Do you want to save your game first?", MsgBoxStyle.YesNo)
+        End If
+        If Resp = MsgBoxResult.Yes Then
+            If Not SaveGame() Then
+                Exit Sub
+            End If
+        End If
 
         'initialize load dialog params
         If Not (IsNothing(Pth)) Then
             LoadDialog.InitialDirectory = Pth
+        Else
+            LoadDialog.InitialDirectory = System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)
         End If
         If Not (IsNothing(Fn)) Then
             LoadDialog.FileName = Fn
         End If
-        LoadDialog.InitialDirectory = ""
         LoadDialog.Filter = "txt files (*.txt)|*.txt"
         LoadDialog.RestoreDirectory = True
 
         Resp = LoadDialog.ShowDialog()
+        'If they cancel the load, don't do anything
         If Resp = DialogResult.Cancel Then
             Exit Sub
         End If
+        If IsNothing(GameWindow) Then
+            GameWindow = New GameForm()
+        End If
         'Parse the text file with comma delimiter
-        Fp = SaveDialog.FileName
+        Fp = LoadDialog.FileName
         Fn = Path.GetFileName(Fp)
-        Pth = Fp.Replace("\" + Fn, "")
-        MyReader = New TextFieldParser(Pth)
-        MyReader.SetDelimiters(",")
+        Pth = Fp.Replace(Fn, "")
+        MyReader = New TextFieldParser(Fp)
+        MyReader.SetDelimiters(";")
+        'group 0 is coordinates, group 1 is state, group 2 is budget
+        While Not MyReader.EndOfData
+            CurrGroup = MyReader.ReadFields()
+            Dim CurrField As String
+            Dim Count As Integer = 0
+            For Each CurrField In CurrGroup
+                Dim Nums As String()
+                Nums = Split(CurrField, ",")
+                'loop through each number depending on the group, inumerate the group number
+                Next
+        End While
+        GameWindow.ShowDialog()
+        Me.Show()
     End Sub
 
     'save the game using the open file dialog
