@@ -8,6 +8,7 @@ Public Class MenuForm
     Dim InGame As Boolean = False
     Dim GameSaved As Boolean = True
     Dim GameWindow As GameForm
+    Dim DiffWindow As DifficultyForm
 
     'Loads the game and goes to the game menu
     Private Sub LoadButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadButton.Click
@@ -35,10 +36,6 @@ Public Class MenuForm
         Pth = Fp.Replace("\" + Fn, "")
         MyReader = New TextFieldParser(Pth)
         MyReader.SetDelimiters(",")
-
-        If Not InGame Then
-            GameWindow = New GameForm()
-        End If
     End Sub
 
     'save the game using the open file dialog
@@ -91,7 +88,7 @@ Public Class MenuForm
     'When the continue button is clicked, the Main Menu is hidden and the Game form is reloaded
     Private Sub ContinueButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ContinueButton.Click
         Me.Hide()
-        GameForm.ShowDialog()
+        GameWindow.ShowDialog()
         Me.Show()
     End Sub
 
@@ -112,19 +109,19 @@ Public Class MenuForm
         End If
         InGame = True
         Me.Hide()
-        GameForm.Dispose()
-        BudgetForm.Dispose()
+        If Not IsNothing(GameWindow) Then
+            GameWindow.Dispose()
+        End If
         GameWindow = New GameForm()
-        DifficultyForm.ShowDialog()
-        DifficultyForm.Dispose()
-        GameForm.ShowDialog()
+        DiffWindow = New DifficultyForm(GameWindow)
+        DiffWindow.ShowDialog()
+        GameWindow.ShowDialog()
         Me.Show()
         GameSaved = False
     End Sub
 
-    'Runs these functions when a form becomes the active form.
-    Private Sub MenuForm_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles MyBase.Activated
-        ShowContinue()
+    Private Sub MenuForm_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
+        Me.ShowContinue()
     End Sub
 
     'Asks if the player wants to save before quitting, then quit.
@@ -136,7 +133,7 @@ Public Class MenuForm
         If Resp = MsgBoxResult.Yes Then
             SaveGame()
         End If
-        GameForm.Dispose()
+        GameWindow.Dispose()
         BudgetForm.Dispose()
         Me.Close()
     End Sub

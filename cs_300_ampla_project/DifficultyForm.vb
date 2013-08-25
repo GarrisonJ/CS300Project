@@ -1,5 +1,15 @@
 ﻿Public Class DifficultyForm
     Dim DiffState As State
+    Dim GameWindow As GameForm
+
+    Sub New(ByRef temp As GameForm)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        GameWindow = temp
+    End Sub
 
     Private Sub BackButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BackButton.Click
         Me.Close()
@@ -10,7 +20,7 @@
         DiffState.Food = 150
         DiffState.Inc = 150
         DiffState.Pop = 150
-        GameForm.SetState(DiffState)
+        GameWindow.SetState(DiffState)
         Me.Close()
     End Sub
 
@@ -19,7 +29,7 @@
         DiffState.Food = 100
         DiffState.Inc = 100
         DiffState.Pop = 100
-        GameForm.SetState(DiffState)
+        GameWindow.SetState(DiffState)
         Me.Close()
     End Sub
 
@@ -28,7 +38,7 @@
         DiffState.Food = 50
         DiffState.Inc = 50
         DiffState.Pop = 50
-        GameForm.SetState(DiffState)
+        GameWindow.SetState(DiffState)
         Me.Close()
     End Sub
 End Class
