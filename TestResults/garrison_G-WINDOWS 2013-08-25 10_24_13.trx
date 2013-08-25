@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="6023db77-dbf3-428a-83ee-ac4659ac0ee0" name="garrison@G-WINDOWS 2013-08-25 10:24:13" runUser="G-WINDOWS\garrison" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="f6851c21-966a-48c1-af06-15e67995672b">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment enabled="false" runDeploymentRoot="garrison_G-WINDOWS 2013-08-25 10_24_13">
+      <DeploymentItem filename="C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-08-25T10:24:13.8394218-07:00" queuing="2013-08-25T10:24:13.9632775-07:00" start="2013-08-25T10:24:13.9789027-07:00" finish="2013-08-25T10:24:14.2914140-07:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="add_mine_to_mapTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="a3d35237-8855-2cd2-2fb3-360b4dfeaba6">
+      <Execution id="f1f0cedb-bb28-459c-8b34-09b7ac9bf0a9" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.MapTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="add_mine_to_mapTest" />
+    </UnitTest>
+    <UnitTest name="Planet_state_minesTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="7687dcac-562c-6824-d040-9262743521cf">
+      <Execution id="0c410293-2ce8-4c35-a25b-e64f4d103bac" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.Planet_stateTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Planet_state_minesTest" />
+    </UnitTest>
+    <UnitTest name="Planet_stateConstructorTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="38133432-b7db-ce3d-417f-dec7cc82fedc">
+      <Execution id="2d887f28-c705-4ed0-84c9-23a8012e6a2c" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.Planet_stateTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Planet_stateConstructorTest" />
+    </UnitTest>
+    <UnitTest name="get_set_toxicityTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="3581dcbe-8baa-8c87-c3e4-15191cb358c5">
+      <Execution id="c1ae2aec-ee67-47e5-b8e0-2c5916c9a5a0" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.MineTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="get_set_toxicityTest" />
+    </UnitTest>
+    <UnitTest name="CloneTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="9725064f-6793-375f-1fac-9cd3a772314f">
+      <Execution id="02bd693c-ebf8-42c5-9ac5-6a150907030d" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.CellTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CloneTest" />
+    </UnitTest>
+    <UnitTest name="MineConstructorTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="f157125a-b68a-d4a0-77f0-fbf3d8cadfbd">
+      <Execution id="ff801f0a-d61a-4f3b-a647-fccda89f7832" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.MineTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MineConstructorTest" />
+    </UnitTest>
+    <UnitTest name="MapConstructorTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="d7dc7fa7-adf9-d9cf-5dbe-94d03b788882">
+      <Execution id="5838ff4e-e113-4356-a64b-02a9eaa7f52c" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.MapTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="MapConstructorTest" />
+    </UnitTest>
+    <UnitTest name="Set_cell_pointTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="19bdc42e-3a54-e41c-bd46-d9915a1fe80b">
+      <Execution id="c7e78d2c-cfb1-428a-a0fe-35110f8640b5" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.CellTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Set_cell_pointTest" />
+    </UnitTest>
+    <UnitTest name="CellConstructorTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="fc25ed40-d4ee-570c-ca39-a0a08e9d1571">
+      <Execution id="73dbd23c-b394-4956-8c22-239f79f2685f" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.CellTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CellConstructorTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="19bdc42e-3a54-e41c-bd46-d9915a1fe80b" executionId="c7e78d2c-cfb1-428a-a0fe-35110f8640b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3581dcbe-8baa-8c87-c3e4-15191cb358c5" executionId="c1ae2aec-ee67-47e5-b8e0-2c5916c9a5a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="38133432-b7db-ce3d-417f-dec7cc82fedc" executionId="2d887f28-c705-4ed0-84c9-23a8012e6a2c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7687dcac-562c-6824-d040-9262743521cf" executionId="0c410293-2ce8-4c35-a25b-e64f4d103bac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9725064f-6793-375f-1fac-9cd3a772314f" executionId="02bd693c-ebf8-42c5-9ac5-6a150907030d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a3d35237-8855-2cd2-2fb3-360b4dfeaba6" executionId="f1f0cedb-bb28-459c-8b34-09b7ac9bf0a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d7dc7fa7-adf9-d9cf-5dbe-94d03b788882" executionId="5838ff4e-e113-4356-a64b-02a9eaa7f52c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f157125a-b68a-d4a0-77f0-fbf3d8cadfbd" executionId="ff801f0a-d61a-4f3b-a647-fccda89f7832" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fc25ed40-d4ee-570c-ca39-a0a08e9d1571" executionId="73dbd23c-b394-4956-8c22-239f79f2685f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="c7e78d2c-cfb1-428a-a0fe-35110f8640b5" testId="19bdc42e-3a54-e41c-bd46-d9915a1fe80b" testName="Set_cell_pointTest" computerName="G-WINDOWS" duration="00:00:00.0127794" startTime="2013-08-25T10:24:13.9945286-07:00" endTime="2013-08-25T10:24:14.1820371-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c7e78d2c-cfb1-428a-a0fe-35110f8640b5">
+    </UnitTestResult>
+    <UnitTestResult executionId="c1ae2aec-ee67-47e5-b8e0-2c5916c9a5a0" testId="3581dcbe-8baa-8c87-c3e4-15191cb358c5" testName="get_set_toxicityTest" computerName="G-WINDOWS" duration="00:00:00.0009576" startTime="2013-08-25T10:24:14.1820371-07:00" endTime="2013-08-25T10:24:14.1820371-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c1ae2aec-ee67-47e5-b8e0-2c5916c9a5a0">
+    </UnitTestResult>
+    <UnitTestResult executionId="2d887f28-c705-4ed0-84c9-23a8012e6a2c" testId="38133432-b7db-ce3d-417f-dec7cc82fedc" testName="Planet_stateConstructorTest" computerName="G-WINDOWS" duration="00:00:00.0016254" startTime="2013-08-25T10:24:14.1820371-07:00" endTime="2013-08-25T10:24:14.1976645-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d887f28-c705-4ed0-84c9-23a8012e6a2c">
+    </UnitTestResult>
+    <UnitTestResult executionId="0c410293-2ce8-4c35-a25b-e64f4d103bac" testId="7687dcac-562c-6824-d040-9262743521cf" testName="Planet_state_minesTest" computerName="G-WINDOWS" duration="00:00:00.0414835" startTime="2013-08-25T10:24:14.1976645-07:00" endTime="2013-08-25T10:24:14.2445522-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c410293-2ce8-4c35-a25b-e64f4d103bac">
+    </UnitTestResult>
+    <UnitTestResult executionId="02bd693c-ebf8-42c5-9ac5-6a150907030d" testId="9725064f-6793-375f-1fac-9cd3a772314f" testName="CloneTest" computerName="G-WINDOWS" duration="00:00:00.0004763" startTime="2013-08-25T10:24:14.2445522-07:00" endTime="2013-08-25T10:24:14.2445522-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="02bd693c-ebf8-42c5-9ac5-6a150907030d">
+    </UnitTestResult>
+    <UnitTestResult executionId="f1f0cedb-bb28-459c-8b34-09b7ac9bf0a9" testId="a3d35237-8855-2cd2-2fb3-360b4dfeaba6" testName="add_mine_to_mapTest" computerName="G-WINDOWS" duration="00:00:00.0014306" startTime="2013-08-25T10:24:14.2445522-07:00" endTime="2013-08-25T10:24:14.2445522-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f1f0cedb-bb28-459c-8b34-09b7ac9bf0a9">
+    </UnitTestResult>
+    <UnitTestResult executionId="5838ff4e-e113-4356-a64b-02a9eaa7f52c" testId="d7dc7fa7-adf9-d9cf-5dbe-94d03b788882" testName="MapConstructorTest" computerName="G-WINDOWS" duration="00:00:00.0001754" startTime="2013-08-25T10:24:14.2445522-07:00" endTime="2013-08-25T10:24:14.2601629-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5838ff4e-e113-4356-a64b-02a9eaa7f52c">
+    </UnitTestResult>
+    <UnitTestResult executionId="ff801f0a-d61a-4f3b-a647-fccda89f7832" testId="f157125a-b68a-d4a0-77f0-fbf3d8cadfbd" testName="MineConstructorTest" computerName="G-WINDOWS" duration="00:00:00.0001453" startTime="2013-08-25T10:24:14.2601629-07:00" endTime="2013-08-25T10:24:14.2601629-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ff801f0a-d61a-4f3b-a647-fccda89f7832">
+    </UnitTestResult>
+    <UnitTestResult executionId="73dbd23c-b394-4956-8c22-239f79f2685f" testId="fc25ed40-d4ee-570c-ca39-a0a08e9d1571" testName="CellConstructorTest" computerName="G-WINDOWS" duration="00:00:00.0001438" startTime="2013-08-25T10:24:14.2601629-07:00" endTime="2013-08-25T10:24:14.2601629-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="73dbd23c-b394-4956-8c22-239f79f2685f">
+    </UnitTestResult>
+  </Results>
+</TestRun>

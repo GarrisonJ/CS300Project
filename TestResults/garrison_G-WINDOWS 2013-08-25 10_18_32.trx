@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="0b37a874-0773-4afe-b6c8-924fbd17cfd7" name="garrison@G-WINDOWS 2013-08-25 10:18:32" runUser="G-WINDOWS\garrison" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="f6851c21-966a-48c1-af06-15e67995672b">
+    <Description>These are default test settings for a local test run.</Description>
+    <Deployment userDeploymentRoot="C:\Users\garrison\Documents\GitHub\CS300Project\TestResults" useDefaultDeploymentRoot="false" enabled="false" runDeploymentRoot="garrison_G-WINDOWS 2013-08-25 10_18_32">
+      <DeploymentItem filename="C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\bin\Debug\cs_300_ampla_project.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-08-25T10:18:32.1341537-07:00" queuing="2013-08-25T10:18:32.7279214-07:00" start="2013-08-25T10:18:32.7591725-07:00" finish="2013-08-25T10:18:48.4580241-07:00" />
+  <ResultSummary outcome="Error">
+    <Counters total="1" executed="1" error="0" failed="0" timeout="0" aborted="1" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="G-WINDOWS" outcome="Error" timestamp="2013-08-25T10:18:48.4424008-07:00">
+        <Text>Test host process exited unexpectedly.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="CloneTest" storage="c:\users\garrison\documents\github\cs300project\cs300projectviewtest\bin\debug\cs300projectviewtest.dll" id="9725064f-6793-375f-1fac-9cd3a772314f">
+      <Execution id="bca70f56-6e2f-42fb-80d3-70f3519f90eb" />
+      <TestMethod codeBase="C:/Users/garrison/Documents/GitHub/CS300Project/CS300ProjectViewTest/bin/Debug/CS300ProjectViewTest.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="CS300ProjectViewTest.CellTest, CS300ProjectViewTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="CloneTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="9725064f-6793-375f-1fac-9cd3a772314f" executionId="bca70f56-6e2f-42fb-80d3-70f3519f90eb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="bca70f56-6e2f-42fb-80d3-70f3519f90eb" testId="9725064f-6793-375f-1fac-9cd3a772314f" testName="CloneTest" computerName="G-WINDOWS" duration="00:00:15.6676013" startTime="2013-08-25T10:18:32.7904228-07:00" endTime="2013-08-25T10:18:48.4580241-07:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Aborted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bca70f56-6e2f-42fb-80d3-70f3519f90eb">
+    </UnitTestResult>
+  </Results>
+</TestRun>

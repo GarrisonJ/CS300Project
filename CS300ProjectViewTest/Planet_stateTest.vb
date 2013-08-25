@@ -61,9 +61,9 @@ Public Class Planet_stateTest
     '''</summary>
     <TestMethod()> _
     Public Sub Planet_stateConstructorTest()
-        Dim initial_planet_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
+        Dim initial_planet_state As State = New State()
+        Dim planet_pixel_size_x As Integer = 0
+        Dim planet_pixel_size_y As Integer = 0
         Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y)
         Assert.IsNotNull(target)
     End Sub
@@ -90,7 +90,7 @@ Public Class Planet_stateTest
 
         target.increment_number_of_mines()                                      ' Create random mine.
 
-        target.decrement_number_of_mines()
+        target.decrement_number_of_mines()                                      ' Decrement number of mines.
 
         Assert.AreEqual("", target.location_of_mines_as_a_string)               ' Assert string is empty.
 
