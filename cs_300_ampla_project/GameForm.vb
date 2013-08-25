@@ -10,6 +10,72 @@ Public Class GameForm
     Dim Rect As Rectangle
     Dim Difficulty As Integer
 
+
+
+    Public Function LoadGame(ByRef ViewData As String(), ByRef ModelData As String(), ByRef ControllerData As String()) As Boolean
+        'Check if valid number of entries
+        If ViewData.GetLength(0) Mod 2 <> 0 Then
+            MsgBox("You have an invalid number of coordinates. Please try again.")
+            Return False
+        ElseIf ModelData.GetLength(0) <> 4 Then
+            MsgBox("You Have an invalid number of states. Please try again.")
+            Return False
+        ElseIf ControllerData.GetLength(0) <> 5 Then
+            MsgBox("You have an invalid number of budgets. Please try again.")
+            Return False
+        End If
+
+        'Loop through each coordinate
+        For I As Integer = ViewData.GetLowerBound(0) To ViewData.GetUpperBound(0) Step 2
+            Dim XValStr As String = ViewData(I)
+            Dim YValStr As String = ViewData(I + 1)
+            If Not IsNumeric(XValStr) And IsNumeric(YValStr) Then
+                MsgBox("The file you loaded as invalid values. Please try again.")
+                Return False
+            End If
+            If CDbl(XValStr) < 0 Or CDbl(YValStr) < 0 Then
+                MsgBox("The file you loaded as invalid values. Please try again.")
+                Return False
+            End If
+            Dim Temp = New Point(CDbl(XValStr), CDbl(YValStr))
+            PlanetMap.increment_number_of_mines(Temp)
+        Next
+
+        'check each state value
+        For I As Integer = 0 To 3
+            If Not IsNumeric(ModelData(I)) Then
+                MsgBox("You have invalid state values. Please try again.")
+                Return False
+            End If
+            If CDbl(ModelData(I)) < 0 Then
+                MsgBox("You have invalid state values. Please try again.")
+                Return False
+            End If
+        Next
+        PState.Env = CDbl(ModelData(0))
+        PState.Food = CDbl(ModelData(1))
+        PState.Inc = CDbl(ModelData(2))
+        PState.Pop = CDbl(ModelData(3))
+
+        'check each budget value
+        For I As Integer = 0 To 4
+            If Not IsNumeric(ControllerData(I)) Then
+                MsgBox("You have invalid budget values. Please try again")
+                Return False
+            End If
+            If CDbl(ControllerData(I)) < 0 Then
+                MsgBox("You have invalid budget values. Please try again")
+                Return False
+            End If
+        Next
+        Budgets.Agriculture = CDbl(ControllerData(0))
+        Budgets.Education = CDbl(ControllerData(1))
+        Budgets.Industry = CDbl(ControllerData(2))
+        Budgets.Pollution = CDbl(ControllerData(3))
+        Budgets.Science = CDbl(ControllerData(4))
+        Return True
+    End Function
+
     'Gets the initial state, current state, budget, and mine locations and formats into string
     Public Function GetSave() As String
         Dim Temp As String = ""

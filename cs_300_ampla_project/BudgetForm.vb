@@ -101,6 +101,10 @@
 
     'Initialize values for the budget form based on most recently saved values. Calculate Remaining Budget
     Private Sub BudgetForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        Dim Temp() As Integer = GameWindow.GetBudget()
+        For I As Integer = 0 To 4
+            BudgetList(I) = Temp(I)
+        Next
         RedBudget.Text = BudgetList(0)
         BlueBudget.Text = BudgetList(1)
         OrangeBudget.Text = BudgetList(2)

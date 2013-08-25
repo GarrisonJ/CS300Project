@@ -14,7 +14,10 @@ Public Class MenuForm
     Private Sub LoadButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadButton.Click
         Dim MyReader As Microsoft.VisualBasic.FileIO.TextFieldParser
         Dim Resp As Integer
-        Dim CurrGroup As String()
+        Dim LoadString As String()
+        Dim VData As String()
+        Dim MData As String()
+        Dim CData As String()
 
         'If game is not saved, prompt to save.
         If Not GameSaved Then
@@ -24,6 +27,9 @@ Public Class MenuForm
             If Not SaveGame() Then
                 Exit Sub
             End If
+        End If
+        If Not IsNothing(GameWindow) Then
+            GameWindow.Dispose()
         End If
 
         'initialize load dialog params
@@ -46,23 +52,25 @@ Public Class MenuForm
         If IsNothing(GameWindow) Then
             GameWindow = New GameForm()
         End If
-        'Parse the text file with comma delimiter
+        'Parse the text file with semi-colon delimiter
         Fp = LoadDialog.FileName
         Fn = Path.GetFileName(Fp)
         Pth = Fp.Replace(Fn, "")
         MyReader = New TextFieldParser(Fp)
         MyReader.SetDelimiters(";")
         'group 0 is coordinates, group 1 is state, group 2 is budget
-        While Not MyReader.EndOfData
-            CurrGroup = MyReader.ReadFields()
-            Dim CurrField As String
-            Dim Count As Integer = 0
-            For Each CurrField In CurrGroup
-                Dim Nums As String()
-                Nums = Split(CurrField, ",")
-                'loop through each number depending on the group, inumerate the group number
-                Next
-        End While
+        LoadString = MyReader.ReadFields()
+        If LoadString.GetLength(0) <> 3 Then
+            MsgBox("The file you are trying to load is invalid. Please try again.")
+            Exit Sub
+        End If
+        VData = Split(LoadString(0).Substring(0, LoadString(0).Length - 1), ",")
+        MData = Split(LoadString(1), ",")
+        CData = Split(LoadString(2), ",")
+        If Not GameWindow.LoadGame(VData, MData, CData) Then
+            Exit Sub
+        End If
+        Me.Hide()
         GameWindow.ShowDialog()
         Me.Show()
     End Sub
@@ -133,8 +141,9 @@ Public Class MenuForm
             Resp = MsgBox("Do you want to save your game first?", MsgBoxStyle.YesNo)
         End If
         If Resp = MsgBoxResult.Yes Then
-            SaveGame()
-            Exit Sub
+            If Not SaveGame() Then
+                Exit Sub
+            End If
         End If
         InGame = True
         Me.Hide()
@@ -161,10 +170,14 @@ Public Class MenuForm
             Resp = MsgBox("Do you want to save your game first?", MsgBoxStyle.YesNo)
         End If
         If Resp = MsgBoxResult.Yes Then
-            SaveGame()
+            If Not SaveGame() Then
+                Exit Sub
+            End If
         End If
         GameWindow.Dispose()
-        DiffWindow.Dispose()
+        If Not IsNothing(DiffWindow) Then
+            DiffWindow.Dispose()
+        End If
         Me.Close()
     End Sub
 End Class
