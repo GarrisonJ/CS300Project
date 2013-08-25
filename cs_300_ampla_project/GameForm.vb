@@ -8,10 +8,30 @@ Public Class GameForm
     Dim GameModel As Model
     Dim Graph As Graphics
     Dim Rect As Rectangle
-    Dim Difficulty As Integer
+    Dim RoundNum As Integer
 
+    'Constructor for when the form is created, initialize values.
+    Sub New()
+        ' This call is required by the designer.
+        InitializeComponent()
 
+        ' Add any initialization after the InitializeComponent() call.
+        Graph = Me.CreateGraphics
+        Rect = New Rectangle(24, 24, 500, 400)
+        GameModel = New Model()
+        PlanetMap = New Planet_state(PState, 500, 400)
+        BudgWindow = New BudgetForm(Me)
+        RoundNum = 1
+    End Sub
 
+    'Sets the number of mines to draw
+    Public Sub SetMines(ByRef NumMines As Integer)
+        For I As Integer = 1 To NumMines
+            PlanetMap.increment_number_of_mines()
+        Next
+    End Sub
+
+    'Checks the 3 data sets given for valid data, then sets each Class's values.
     Public Function LoadGame(ByRef ViewData As String(), ByRef ModelData As String(), ByRef ControllerData As String()) As Boolean
         'Check if valid number of entries
         If ViewData.GetLength(0) Mod 2 <> 0 Then
@@ -119,19 +139,6 @@ Public Class GameForm
         MenuForm.Activate()
     End Sub
 
-    'What is the point of New when the Form already exists?
-    Sub New()
-        ' This call is required by the designer.
-        InitializeComponent()
-
-        ' Add any initialization after the InitializeComponent() call.
-        Graph = Me.CreateGraphics
-        Rect = New Rectangle(24, 24, 500, 400)
-        GameModel = New Model()
-        PlanetMap = New Planet_state(PState, 500, 400)
-        BudgWindow = New BudgetForm(Me)
-    End Sub
-
     'initialize variables while the form loads
     Private Sub GameForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         GameModel.Values.Env = PState.Env
@@ -150,8 +157,8 @@ Public Class GameForm
         GameModel.Iterate(Budgets)
     End Sub
 
+    'Kept the draw button since could not figure out how to make the map load when the form loaded.
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        PlanetMap.increment_number_of_mines()
         PlanetMap.update_state(PState)
         PlanetMap.Display_current_state(Graph, Rect)
     End Sub
