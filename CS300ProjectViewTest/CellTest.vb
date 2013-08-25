@@ -75,7 +75,12 @@ Public Class CellTest
         target.Set_cell_color(Color.Red)
         Dim expected As Cell = Nothing
         expected = target.Clone()
-        Assert.AreEqual(expected, expected)
+        Dim ta As PrivateObject = New PrivateObject(target)
+        Dim ex As PrivateObject = New PrivateObject(expected)
+        Assert.AreEqual(ta.GetField("Cell_color"), ex.GetField("Cell_color"))
+        Assert.AreEqual(ta.GetField("Cell_Brush"), ex.GetField("Cell_Brush"))
+        Assert.AreEqual(ta.GetField("SideLength"), ex.GetField("SideLength"))
+        Assert.AreEqual(ta.GetField("Location"), ex.GetField("Location"))
     End Sub
 
     '''<summary>
