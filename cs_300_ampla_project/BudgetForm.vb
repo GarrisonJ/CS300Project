@@ -1,6 +1,16 @@
 ﻿Public Class BudgetForm
     Dim RemBudget As Integer = 100
     Dim BudgetList() As Integer = {0, 0, 0, 0, 0}
+    Dim GameWindow As GameForm
+
+    Sub New(ByRef GW As GameForm)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        GameWindow = GW
+    End Sub
 
     'This function gets the budget values from 
     Private Function GetBudgetVals(ByRef List() As Integer) As Boolean
@@ -51,7 +61,7 @@
         End If
 
         RemainingBudget.Text = Str(RemBudget)
-        GameForm.SetBudget(BudgetList)
+        GameWindow.SetBudget(BudgetList)
     End Sub
 
     'When the exit button is clicked, this function will check if there are valid values, if player has any remaining budget,
@@ -74,21 +84,19 @@
             End If
         End If
         'Check if the current values are different from the last saved budget
-        SavedBudget = GameForm.GetBudget()
+        SavedBudget = GameWindow.GetBudget()
         GetBudgetVals(TempList)
         For I As Integer = LBound(SavedBudget) To UBound(SavedBudget)
             If SavedBudget(I) <> TempList(I) Then
                 Resp = MsgBox("You have unsaved budget changes, do you want to save first? (Unsaved changes will be lost).", MsgBoxStyle.YesNo)
                 If Resp = MsgBoxResult.Yes Then
-                    GameForm.SetBudget(TempList)
+                    GameWindow.SetBudget(TempList)
                 End If
-                Me.Hide()
-                GameForm.Show()
+                Me.Close()
             End If
         Next I
         'Close window if all above satisfied
-        Me.Hide()
-        GameForm.Show()
+        Me.Close()
     End Sub
 
     'Initialize values for the budget form based on most recently saved values. Calculate Remaining Budget

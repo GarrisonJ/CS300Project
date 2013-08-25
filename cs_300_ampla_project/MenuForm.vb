@@ -120,6 +120,7 @@ Public Class MenuForm
         GameSaved = False
     End Sub
 
+    'This is getting activated many times for some reason.
     Private Sub MenuForm_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
         Me.ShowContinue()
     End Sub
@@ -134,7 +135,7 @@ Public Class MenuForm
             SaveGame()
         End If
         GameWindow.Dispose()
-        BudgetForm.Dispose()
+        DiffWindow.Dispose()
         Me.Close()
     End Sub
 End Class

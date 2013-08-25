@@ -1,6 +1,7 @@
 ﻿Imports System.Drawing
 
 Public Class GameForm
+    Dim BudgWindow As BudgetForm
     Dim Budgets As Budget
     Dim PState As State
     Dim PlanetMap As Planet_state
@@ -12,8 +13,9 @@ Public Class GameForm
     'Gets the initial state, current state, budget, and mine locations and formats into string
     Public Function GetSave() As String
         Dim Temp As String = ""
-        Temp += PlanetMap.location_of_mines_as_a_string()
-        Temp += CStr(PState.Env) + "," + CStr(PState.Food) + "," + CStr(PState.Inc) + "," + CStr(PState.Pop)
+        Temp += PlanetMap.location_of_mines_as_a_string() + ";"
+        Temp += CStr(PState.Env) + "," + CStr(PState.Food) + "," + CStr(PState.Inc) + "," + CStr(PState.Pop) + ";"
+        Temp += CStr(Budgets.Agriculture) + "," + CStr(Budgets.Education) + "," + CStr(Budgets.Industry) + "," + CStr(Budgets.Pollution) + "," + CStr(Budgets.Science)
         Return Temp
     End Function
 
@@ -41,7 +43,7 @@ Public Class GameForm
     'Events
     'Show the budget form
     Private Sub BudgetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Budget.Click
-        BudgetForm.ShowDialog()
+        BudgWindow.ShowDialog()
     End Sub
 
     'Go back to the main menu
@@ -61,6 +63,7 @@ Public Class GameForm
         Rect = New Rectangle(24, 24, 500, 400)
         GameModel = New Model()
         PlanetMap = New Planet_state(PState, 500, 400)
+        BudgWindow = New BudgetForm(Me)
     End Sub
 
     'initialize variables while the form loads
