@@ -61,9 +61,9 @@ Public Class Planet_stateTest
     '''</summary>
     <TestMethod()> _
     Public Sub Planet_stateConstructorTest()
-        Dim initial_planet_state As State = New State() ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_x As Integer = 0 ' TODO: Initialize to an appropriate value
-        Dim planet_pixel_size_y As Integer = 0 ' TODO: Initialize to an appropriate value
+        Dim initial_planet_state As State = New State()
+        Dim planet_pixel_size_x As Integer = 0
+        Dim planet_pixel_size_y As Integer = 0
         Dim target As Planet_state = New Planet_state(initial_planet_state, planet_pixel_size_x, planet_pixel_size_y)
         Assert.IsNotNull(target)
     End Sub
