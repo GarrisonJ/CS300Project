@@ -90,7 +90,7 @@ Public Class Planet_stateTest
 
         target.increment_number_of_mines()                                      ' Create random mine.
 
-        target.decrement_number_of_mines()
+        target.decrement_number_of_mines()                                      ' Decrement number of mines.
 
         Assert.AreEqual("", target.location_of_mines_as_a_string)               ' Assert string is empty.
 
