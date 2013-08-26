@@ -40,6 +40,8 @@ Partial Class ResultsForm
         Me.CFood = New System.Windows.Forms.Label()
         Me.CInc = New System.Windows.Forms.Label()
         Me.CPop = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'FinishButton
@@ -204,11 +206,31 @@ Partial Class ResultsForm
         Me.CPop.TabIndex = 17
         Me.CPop.Text = "0"
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(214, 9)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(59, 13)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "Initial State"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(720, 9)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(57, 13)
+        Me.Label10.TabIndex = 19
+        Me.Label10.Text = "Final State"
+        '
         'ResultsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1053, 508)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.CPop)
         Me.Controls.Add(Me.CInc)
         Me.Controls.Add(Me.CFood)
@@ -251,4 +273,6 @@ Partial Class ResultsForm
     Friend WithEvents CFood As System.Windows.Forms.Label
     Friend WithEvents CInc As System.Windows.Forms.Label
     Friend WithEvents CPop As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
 End Class
