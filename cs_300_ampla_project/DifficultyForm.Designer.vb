@@ -26,6 +26,7 @@ Partial Class DifficultyForm
         Me.MediumButton = New System.Windows.Forms.Button()
         Me.HardButton = New System.Windows.Forms.Button()
         Me.BackButton = New System.Windows.Forms.Button()
+        Me.CustomButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'EasyButton
@@ -57,18 +58,28 @@ Partial Class DifficultyForm
         '
         'BackButton
         '
-        Me.BackButton.Location = New System.Drawing.Point(172, 207)
+        Me.BackButton.Location = New System.Drawing.Point(187, 226)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(75, 23)
         Me.BackButton.TabIndex = 3
         Me.BackButton.Text = "Back"
         Me.BackButton.UseVisualStyleBackColor = True
         '
+        'CustomButton
+        '
+        Me.CustomButton.Location = New System.Drawing.Point(104, 178)
+        Me.CustomButton.Name = "CustomButton"
+        Me.CustomButton.Size = New System.Drawing.Size(75, 23)
+        Me.CustomButton.TabIndex = 4
+        Me.CustomButton.Text = "Custom"
+        Me.CustomButton.UseVisualStyleBackColor = True
+        '
         'DifficultyForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.Controls.Add(Me.CustomButton)
         Me.Controls.Add(Me.BackButton)
         Me.Controls.Add(Me.HardButton)
         Me.Controls.Add(Me.MediumButton)
@@ -82,4 +93,5 @@ Partial Class DifficultyForm
     Friend WithEvents MediumButton As System.Windows.Forms.Button
     Friend WithEvents HardButton As System.Windows.Forms.Button
     Friend WithEvents BackButton As System.Windows.Forms.Button
+    Friend WithEvents CustomButton As System.Windows.Forms.Button
 End Class

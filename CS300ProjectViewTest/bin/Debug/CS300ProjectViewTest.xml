@@ -24,23 +24,23 @@ A test for add_mine_to_map and return_list_of_mines and decrement_number_of_mine
 This is a test class for MapTest and is intended
 to contain all MapTest Unit Tests
 </summary>
-</member><member name="P:CS300ProjectViewTest.MineTest.TestContext">
+</member><member name="P:CS300ProjectViewTest.Planet_stateTest.TestContext">
 	<summary>
 Gets or sets the test context which provides
 information about and functionality for the current test run.
 </summary>
-</member><member name="M:CS300ProjectViewTest.MineTest.MineConstructorTest">
+</member><member name="M:CS300ProjectViewTest.Planet_stateTest.Planet_stateConstructorTest">
 	<summary>
-A test for Mine Constructor
+A test for Planet_state Constructor
 </summary>
-</member><member name="M:CS300ProjectViewTest.MineTest.get_set_toxicityTest">
+</member><member name="M:CS300ProjectViewTest.Planet_stateTest.Planet_state_minesTest">
 	<summary>
-A test for get_toxicity and set_toxicity
+A test for increment_number_of_mines, decrement_number_of_mines, and location_of_mines_as_a_string
 </summary>
-</member><member name="T:CS300ProjectViewTest.MineTest">
+</member><member name="T:CS300ProjectViewTest.Planet_stateTest">
 	<summary>
-This is a test class for MineTest and is intended
-to contain all MineTest Unit Tests
+This is a test class for Planet_stateTest and is intended
+to contain all Planet_stateTest Unit Tests
 </summary>
 </member><member name="P:CS300ProjectViewTest.CellTest.TestContext">
 	<summary>
@@ -64,23 +64,23 @@ A test for Set_cell_point and get_location
 This is a test class for CellTest and is intended
 to contain all CellTest Unit Tests
 </summary>
-</member><member name="P:CS300ProjectViewTest.Planet_stateTest.TestContext">
+</member><member name="P:CS300ProjectViewTest.MineTest.TestContext">
 	<summary>
 Gets or sets the test context which provides
 information about and functionality for the current test run.
 </summary>
-</member><member name="M:CS300ProjectViewTest.Planet_stateTest.Planet_stateConstructorTest">
+</member><member name="M:CS300ProjectViewTest.MineTest.MineConstructorTest">
 	<summary>
-A test for Planet_state Constructor
+A test for Mine Constructor
 </summary>
-</member><member name="M:CS300ProjectViewTest.Planet_stateTest.Planet_state_minesTest">
+</member><member name="M:CS300ProjectViewTest.MineTest.get_set_toxicityTest">
 	<summary>
-A test for increment_number_of_mines, decrement_number_of_mines, and location_of_mines_as_a_string
+A test for get_toxicity and set_toxicity
 </summary>
-</member><member name="T:CS300ProjectViewTest.Planet_stateTest">
+</member><member name="T:CS300ProjectViewTest.MineTest">
 	<summary>
-This is a test class for Planet_stateTest and is intended
-to contain all Planet_stateTest Unit Tests
+This is a test class for MineTest and is intended
+to contain all MineTest Unit Tests
 </summary>
 </member>
 </members>

@@ -76,3 +76,4 @@ C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Deb
 C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.exe
 C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.xml
 C:\Users\garrison\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\cs_300_ampla_project.pdb
+C:\Users\Jonathan\Documents\GitHub\CS300Project\cs_300_ampla_project\obj\x86\Debug\WindowsApplication1.CustomForm.resources

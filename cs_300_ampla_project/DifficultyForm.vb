@@ -1,6 +1,7 @@
 ﻿Public Class DifficultyForm
     Dim DiffState As State
     Dim GameWindow As GameForm
+    Dim CustomWin As CustomForm
 
     Sub New(ByRef temp As GameForm)
 
@@ -9,6 +10,7 @@
 
         ' Add any initialization after the InitializeComponent() call.
         GameWindow = temp
+        CustomWin = New CustomForm(GameWindow)
     End Sub
 
     Private Sub BackButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BackButton.Click
@@ -42,6 +44,11 @@
         DiffState.Pop = 50
         GameWindow.SetState(DiffState)
         GameWindow.SetMines(2)
+        Me.Close()
+    End Sub
+
+    Private Sub CustomButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CustomButton.Click
+        CustomWin.ShowDialog()
         Me.Close()
     End Sub
 End Class
