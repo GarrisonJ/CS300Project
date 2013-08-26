@@ -67,6 +67,7 @@ Public Class Planet_state
     '   add_mine_at_this_point - The point were the mine will be added.
     Sub increment_number_of_mines_on_both_maps(ByRef add_mine_at_this_point As Point)
         current_state.add_mine_to_map(add_mine_at_this_point)
+        initial_state.add_mine_to_map(add_mine_at_this_point)
     End Sub
 
     ' Increment the number of mines on both maps by 1.
