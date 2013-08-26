@@ -59,6 +59,28 @@ Public Class Planet_state
         initial_state.Draw_map(graphic_to_display_graph, rectange_window)
     End Sub
 
+
+    ' Increment the number of mines on both maps by 1.
+    ' Both mines will be placed at same locations.
+    ' The mine will be added at the given point.
+    ' INPUT:
+    '   add_mine_at_this_point - The point were the mine will be added.
+    Sub increment_number_of_mines_on_both_maps(ByRef add_mine_at_this_point As Point)
+        current_state.add_mine_to_map(add_mine_at_this_point)
+    End Sub
+
+    ' Increment the number of mines on both maps by 1.
+    ' Both mines will be placed at same locations.
+    Sub increment_number_of_mines_on_both_maps()
+        Thread.Sleep(20) ' To get a new random number, the time seed must be significanty different 
+        Dim rand As New Random(CInt(Date.Now.Ticks And &HFFFF))
+        Dim RanXLoc As Integer = rand.Next Mod planet_size_x
+        Dim RanYLoc As Integer = rand.Next Mod planet_size_y
+        initial_state.add_mine_to_map(New Point(RanXLoc, RanYLoc))
+        current_state.add_mine_to_map(New Point(RanXLoc, RanYLoc))
+    End Sub
+
+
     ' Increment the number of mines on initial map by 1
     Sub increment_number_of_mines_on_initial_map()
         Thread.Sleep(20) ' To get a new random number, the time seed must be significanty different 
