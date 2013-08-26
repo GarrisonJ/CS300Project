@@ -80,19 +80,19 @@ Public Class Planet_stateTest
         Dim add_mine_at_this_point As Point = New Point(20, 20)
         Dim Expected_string As String = New String("20,20,")
 
-        target.increment_number_of_mines(add_mine_at_this_point)                ' Add mine at point.
+        target.increment_number_of_mines_on_current_map(add_mine_at_this_point)                ' Add mine at point.
 
-        Assert.AreEqual(Expected_string, target.location_of_mines_as_a_string)  ' Assert mine exist in list, and is represented as a string properly.
-
-        target.decrement_number_of_mines()                                      ' Decrement number of mines.
-
-        Assert.AreEqual("", target.location_of_mines_as_a_string)               ' Assert string is empty.
-
-        target.increment_number_of_mines()                                      ' Create random mine.
+        Assert.AreEqual(Expected_string, target.location_of_current_mines_as_a_string)  ' Assert mine exist in list, and is represented as a string properly.
 
         target.decrement_number_of_mines()                                      ' Decrement number of mines.
 
-        Assert.AreEqual("", target.location_of_mines_as_a_string)               ' Assert string is empty.
+        Assert.AreEqual("", target.location_of_current_mines_as_a_string)               ' Assert string is empty.
+
+        target.increment_number_of_mines_on_current_map()                                      ' Create random mine.
+
+        target.decrement_number_of_mines()                                      ' Decrement number of mines.
+
+        Assert.AreEqual("", target.location_of_current_mines_as_a_string)               ' Assert string is empty.
 
     End Sub
 End Class
