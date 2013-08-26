@@ -70,7 +70,7 @@ Public Class Planet_state
 
 
     ' Increment the number of mines on current map by 1
-    Sub increment_number_of_mines()
+    Sub increment_number_of_mines_current_map()
         Thread.Sleep(20) ' To get a new random number, the time seed must be significanty different 
         Dim rand As New Random(CInt(Date.Now.Ticks And &HFFFF))
         Dim RanXLoc As Integer = rand.Next Mod planet_size_x
@@ -82,8 +82,16 @@ Public Class Planet_state
     ' The mine will be added at the given point.
     ' INPUT:
     '   add_mine_at_this_point - The point were the mine will be added.
-    Sub increment_number_of_mines(ByRef add_mine_at_this_point As Point)
+    Sub increment_number_of_mines_on_current_map(ByRef add_mine_at_this_point As Point)
         current_state.add_mine_to_map(add_mine_at_this_point)
+    End Sub
+
+    ' Increment the number of mines on initial map by 1.
+    ' The mine will be added at the given point.
+    ' INPUT:
+    '   add_mine_at_this_point - The point were the mine will be added.
+    Sub increment_number_of_mines_on_initial_map(ByRef add_mine_at_this_point As Point)
+        initial_state.add_mine_to_map(add_mine_at_this_point)
     End Sub
 
 
