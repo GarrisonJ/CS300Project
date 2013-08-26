@@ -17,6 +17,7 @@ Public Class DifficultyForm
 
     'exits the difficulty form and goes back to the menu form.
     Private Sub BackButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BackButton.Click
+        GameWindow.Dispose()
         Me.Close()
     End Sub
 

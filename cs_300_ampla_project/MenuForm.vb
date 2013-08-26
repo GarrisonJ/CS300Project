@@ -157,7 +157,6 @@ Public Class MenuForm
                 Exit Sub
             End If
         End If
-        InGame = True
         Me.Hide()
         If Not IsNothing(GameWindow) Then
             GameWindow.Dispose()
@@ -165,9 +164,12 @@ Public Class MenuForm
         GameWindow = New GameForm()
         DiffWindow = New DifficultyForm(GameWindow)
         DiffWindow.ShowDialog()
-        GameWindow.ShowDialog()
+        If Not GameWindow.IsDisposed() Or IsNothing(GameWindow) Then
+            GameWindow.ShowDialog()
+            GameSaved = False
+            InGame = True
+        End If
         Me.Show()
-        GameSaved = False
     End Sub
 
     'This is getting activated many times for some reason.
