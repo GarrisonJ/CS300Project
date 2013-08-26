@@ -5,6 +5,7 @@ Public Class GameForm
     Dim Budgets As Budget
     Dim PrevBudgets As Budget
     Dim PState As State
+    Dim IPState As State
     Dim PlanetMap As Planet_state
     Dim GameModel As Model
     Dim Graph As Graphics
@@ -130,6 +131,11 @@ Public Class GameForm
         PState = newState
     End Sub
 
+    'Given a state structure, the old state will be overwritten
+    Public Sub SetInitialState(ByVal newState As State)
+        IPState = newState
+    End Sub
+
     Public Sub SetPrevBudget(ByRef Values() As Integer)
         PrevBudgets.Agriculture = Values(0)
         PrevBudgets.Education = Values(1)
@@ -214,7 +220,7 @@ Public Class GameForm
         Budgets.Pollution = 0
         Budgets.Science = 0
         If RoundNum = 5 Then
-            Dim ResultsWindow As ResultsForm = New ResultsForm(PlanetMap)
+            Dim ResultsWindow As ResultsForm = New ResultsForm(PlanetMap, PState, IPState)
             ResultsWindow.ShowDialog()
             MenuForm.EndGame()
             Me.Close()

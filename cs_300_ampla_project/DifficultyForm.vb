@@ -23,6 +23,7 @@
         DiffState.Inc = 150
         DiffState.Pop = 150
         GameWindow.SetState(DiffState)
+        GameWindow.SetInitialState(DiffState)
         GameWindow.SetMines(8)
         Me.Close()
     End Sub
@@ -33,6 +34,7 @@
         DiffState.Inc = 100
         DiffState.Pop = 100
         GameWindow.SetState(DiffState)
+        GameWindow.SetInitialState(DiffState)
         GameWindow.SetMines(4)
         Me.Close()
     End Sub
@@ -43,6 +45,7 @@
         DiffState.Inc = 50
         DiffState.Pop = 50
         GameWindow.SetState(DiffState)
+        GameWindow.SetInitialState(DiffState)
         GameWindow.SetMines(2)
         Me.Close()
     End Sub
