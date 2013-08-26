@@ -34,7 +34,7 @@
 
         ' Add any initialization after the InitializeComponent() call.
         GameWindow = GW
-        StartBudget = 100 + OldFunds
+        StartBudget = OldFunds
         RemBudget = StartBudget
         PrevBudget = {OldBudget.Agriculture, OldBudget.Science, OldBudget.Industry, OldBudget.Education, OldBudget.Pollution}
     End Sub

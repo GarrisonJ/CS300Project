@@ -21,9 +21,12 @@ Public Class GameForm
         Graph = Me.CreateGraphics
         Rect = New Rectangle(24, 24, 500, 400)
         GameModel = New Model()
-        PlanetMap = New Planet_state(PState, 500, 400)
         BudgWindow = New BudgetForm(Me)
         RoundNum = 1
+    End Sub
+
+    Public Sub CreatePlanetMap()
+        PlanetMap = New Planet_state(IPState, 500, 400)
     End Sub
 
     'Sets the number of mines to draw
@@ -42,26 +45,25 @@ Public Class GameForm
         ElseIf ModelData.GetLength(0) <> 4 Then
             MsgBox("You Have an invalid number of states. Please try again.")
             Return False
-        ElseIf ControllerData.GetLength(0) <> 11 Then
+        ElseIf ControllerData.GetLength(0) <> 16 Then
             MsgBox("You have an invalid number of budgets. Please try again.")
             Return False
         End If
 
-        'Loop through each coordinate
-        For I As Integer = ViewData.GetLowerBound(0) To ViewData.GetUpperBound(0) Step 2
-            Dim XValStr As String = ViewData(I)
-            Dim YValStr As String = ViewData(I + 1)
-            If Not IsNumeric(XValStr) And IsNumeric(YValStr) Then
-                MsgBox("The file you loaded as invalid values. Please try again.")
+        For I As Integer = 0 To 3
+            If Not IsNumeric(ModelData(I)) Then
+                MsgBox("You have invalid istate values. Please try again.")
                 Return False
             End If
-            If CDbl(XValStr) < 0 Or CDbl(YValStr) < 0 Then
-                MsgBox("The file you loaded as invalid values. Please try again.")
+            If CDbl(ModelData(I)) < 0 Then
+                MsgBox("You have invalid istate values. Please try again.")
                 Return False
             End If
-            Dim Temp = New Point(CDbl(XValStr), CDbl(YValStr))
-            PlanetMap.increment_number_of_mines(Temp)
         Next
+        IPState.Env = CDbl(ControllerData(12))
+        IPState.Food = CDbl(ControllerData(13))
+        IPState.Inc = CDbl(ControllerData(14))
+        IPState.Pop = CDbl(ControllerData(15))
 
         'check each state value
         For I As Integer = 0 To 3
@@ -78,6 +80,23 @@ Public Class GameForm
         PState.Food = CDbl(ModelData(1))
         PState.Inc = CDbl(ModelData(2))
         PState.Pop = CDbl(ModelData(3))
+        CreatePlanetMap()
+
+        'Loop through each coordinate
+        For I As Integer = ViewData.GetLowerBound(0) To ViewData.GetUpperBound(0) Step 2
+            Dim XValStr As String = ViewData(I)
+            Dim YValStr As String = ViewData(I + 1)
+            If Not IsNumeric(XValStr) And IsNumeric(YValStr) Then
+                MsgBox("The file you loaded as invalid values. Please try again.")
+                Return False
+            End If
+            If CDbl(XValStr) < 0 Or CDbl(YValStr) < 0 Then
+                MsgBox("The file you loaded as invalid values. Please try again.")
+                Return False
+            End If
+            Dim Temp = New Point(CDbl(XValStr), CDbl(YValStr))
+            PlanetMap.increment_number_of_mines(Temp)
+        Next
 
         'check each budget value
         For I As Integer = 0 To 4
@@ -112,6 +131,17 @@ Public Class GameForm
         End If
         RoundLabel.Text = ControllerData(10)
         RoundNum = CInt(ControllerData(10))
+
+        If Not IsNumeric(ControllerData(11)) Then
+            MsgBox("You have invalid Funds number. Please try again.")
+            Return False
+        End If
+        If CInt(ControllerData(11)) < 0 Then
+            MsgBox("Funds cannot be negative. Please try again.")
+            Return False
+        End If
+        BudgWindow.Dispose()
+        BudgWindow = New BudgetForm(Me, CInt(ControllerData(11)), PrevBudgets)
         Return True
     End Function
 
@@ -123,6 +153,8 @@ Public Class GameForm
         Temp += CStr(Budgets.Agriculture) + "," + CStr(Budgets.Education) + "," + CStr(Budgets.Industry) + "," + CStr(Budgets.Pollution) + "," + CStr(Budgets.Science)
         Temp += "," + CStr(PrevBudgets.Agriculture) + "," + CStr(PrevBudgets.Education) + "," + CStr(PrevBudgets.Industry) + "," + CStr(PrevBudgets.Pollution) + "," + CStr(PrevBudgets.Science)
         Temp += "," + CStr(RoundNum)
+        Temp += "," + CStr(BudgWindow.GetPrevFunds())
+        Temp += "," + CStr(IPState.Env) + "," + CStr(IPState.Food) + "," + CStr(IPState.Inc) + "," + CStr(IPState.Pop)
         Return Temp
     End Function
 
@@ -213,7 +245,7 @@ Public Class GameForm
         PopNum.Text = PState.Pop
 
         BudgWindow.Dispose()
-        BudgWindow = New BudgetForm(Me, Temp, PrevBudgets)
+        BudgWindow = New BudgetForm(Me, Temp + 100, PrevBudgets)
         Budgets.Agriculture = 0
         Budgets.Education = 0
         Budgets.Industry = 0

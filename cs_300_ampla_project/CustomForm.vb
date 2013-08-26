@@ -34,6 +34,7 @@
         CustomState.Inc = CDbl(StringList(3))
         GameWindow.SetState(CustomState)
         GameWindow.SetInitialState(CustomState)
+        GameWindow.CreatePlanetMap()
         GameWindow.SetMines(CInt(StringList(4)))
         Me.Close()
     End Sub

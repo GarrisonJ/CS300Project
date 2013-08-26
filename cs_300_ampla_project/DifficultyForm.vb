@@ -24,6 +24,7 @@
         DiffState.Pop = 150
         GameWindow.SetState(DiffState)
         GameWindow.SetInitialState(DiffState)
+        GameWindow.CreatePlanetMap()
         GameWindow.SetMines(8)
         Me.Close()
     End Sub
@@ -35,6 +36,7 @@
         DiffState.Pop = 100
         GameWindow.SetState(DiffState)
         GameWindow.SetInitialState(DiffState)
+        GameWindow.CreatePlanetMap()
         GameWindow.SetMines(4)
         Me.Close()
     End Sub
@@ -46,6 +48,7 @@
         DiffState.Pop = 50
         GameWindow.SetState(DiffState)
         GameWindow.SetInitialState(DiffState)
+        GameWindow.CreatePlanetMap()
         GameWindow.SetMines(2)
         Me.Close()
     End Sub
