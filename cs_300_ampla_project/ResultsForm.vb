@@ -15,7 +15,7 @@
         Graph1 = Me.CreateGraphics
         Graph2 = Me.CreateGraphics
         Rect1 = New Rectangle(24, 24, 500, 400)
-        Rect2 = New Rectangle(490, 24, 500, 400)
+        Rect2 = New Rectangle(529, 24, 500, 400)
         IEnv.Text = InitState.Env
         IFood.Text = InitState.Food
         IInc.Text = InitState.Inc
