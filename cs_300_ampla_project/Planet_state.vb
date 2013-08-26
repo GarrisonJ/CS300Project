@@ -99,14 +99,36 @@ Public Class Planet_state
     End Sub
 
 
-    ' Returns location of mines as a string.
+    ' Returns location of mines on current map as a string.
     ' Example:
     '   If there are three mines at the following locations: (34,1), (99,34), and (132, 54)
     '   then the following string will be returned: '34,1,99,34,132,54,'
     '   Will return a empty string if no mines exist
-    Function location_of_mines_as_a_string() As String
+    Function location_of_current_mines_as_a_string() As String
 
         Dim list_of_mines As List(Of Mine) = current_state.return_list_of_mines()
+        Dim string_to_return As New String("")
+
+        If list_of_mines.Count <> 0 Then
+            For Each m In list_of_mines
+                string_to_return += CStr(m.get_location.X)
+                string_to_return += ","
+                string_to_return += CStr(m.get_location.Y)
+                string_to_return += ","
+            Next
+        End If
+
+        Return string_to_return
+    End Function
+
+    ' Returns location of mines on initial map as a string.
+    ' Example:
+    '   If there are three mines at the following locations: (34,1), (99,34), and (132, 54)
+    '   then the following string will be returned: '34,1,99,34,132,54,'
+    '   Will return a empty string if no mines exist
+    Function location_of_initial_mines_as_a_string() As String
+
+        Dim list_of_mines As List(Of Mine) = initial_state.return_list_of_mines()
         Dim string_to_return As New String("")
 
         If list_of_mines.Count <> 0 Then
