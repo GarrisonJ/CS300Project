@@ -38,11 +38,18 @@ Partial Class BudgetForm
         Me.RemainingBudget = New System.Windows.Forms.Label()
         Me.BuxLabel = New System.Windows.Forms.Label()
         Me.ExitBudgetButton = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.PrevAgri = New System.Windows.Forms.Label()
+        Me.PrevSci = New System.Windows.Forms.Label()
+        Me.PrevInd = New System.Windows.Forms.Label()
+        Me.PrevEdu = New System.Windows.Forms.Label()
+        Me.PrevPol = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'ResetButton
         '
-        Me.ResetButton.Location = New System.Drawing.Point(12, 217)
+        Me.ResetButton.Location = New System.Drawing.Point(12, 251)
         Me.ResetButton.Name = "ResetButton"
         Me.ResetButton.Size = New System.Drawing.Size(81, 23)
         Me.ResetButton.TabIndex = 0
@@ -51,15 +58,15 @@ Partial Class BudgetForm
         '
         'RedBudget
         '
-        Me.RedBudget.Location = New System.Drawing.Point(152, 12)
+        Me.RedBudget.Location = New System.Drawing.Point(188, 29)
         Me.RedBudget.Name = "RedBudget"
-        Me.RedBudget.Size = New System.Drawing.Size(100, 20)
+        Me.RedBudget.Size = New System.Drawing.Size(82, 20)
         Me.RedBudget.TabIndex = 1
         '
         'RedProjects
         '
         Me.RedProjects.AutoSize = True
-        Me.RedProjects.Location = New System.Drawing.Point(18, 12)
+        Me.RedProjects.Location = New System.Drawing.Point(18, 32)
         Me.RedProjects.Name = "RedProjects"
         Me.RedProjects.Size = New System.Drawing.Size(57, 13)
         Me.RedProjects.TabIndex = 2
@@ -67,15 +74,15 @@ Partial Class BudgetForm
         '
         'BlueBudget
         '
-        Me.BlueBudget.Location = New System.Drawing.Point(152, 42)
+        Me.BlueBudget.Location = New System.Drawing.Point(188, 66)
         Me.BlueBudget.Name = "BlueBudget"
-        Me.BlueBudget.Size = New System.Drawing.Size(100, 20)
+        Me.BlueBudget.Size = New System.Drawing.Size(82, 20)
         Me.BlueBudget.TabIndex = 3
         '
         'BlueProjects
         '
         Me.BlueProjects.AutoSize = True
-        Me.BlueProjects.Location = New System.Drawing.Point(18, 42)
+        Me.BlueProjects.Location = New System.Drawing.Point(18, 69)
         Me.BlueProjects.Name = "BlueProjects"
         Me.BlueProjects.Size = New System.Drawing.Size(46, 13)
         Me.BlueProjects.TabIndex = 4
@@ -84,7 +91,7 @@ Partial Class BudgetForm
         'OrangeProjects
         '
         Me.OrangeProjects.AutoSize = True
-        Me.OrangeProjects.Location = New System.Drawing.Point(18, 72)
+        Me.OrangeProjects.Location = New System.Drawing.Point(20, 105)
         Me.OrangeProjects.Name = "OrangeProjects"
         Me.OrangeProjects.Size = New System.Drawing.Size(44, 13)
         Me.OrangeProjects.TabIndex = 5
@@ -93,7 +100,7 @@ Partial Class BudgetForm
         'YellowProjects
         '
         Me.YellowProjects.AutoSize = True
-        Me.YellowProjects.Location = New System.Drawing.Point(18, 103)
+        Me.YellowProjects.Location = New System.Drawing.Point(20, 140)
         Me.YellowProjects.Name = "YellowProjects"
         Me.YellowProjects.Size = New System.Drawing.Size(55, 13)
         Me.YellowProjects.TabIndex = 6
@@ -102,7 +109,7 @@ Partial Class BudgetForm
         'GreenProjects
         '
         Me.GreenProjects.AutoSize = True
-        Me.GreenProjects.Location = New System.Drawing.Point(19, 134)
+        Me.GreenProjects.Location = New System.Drawing.Point(18, 176)
         Me.GreenProjects.Name = "GreenProjects"
         Me.GreenProjects.Size = New System.Drawing.Size(83, 13)
         Me.GreenProjects.TabIndex = 7
@@ -110,28 +117,28 @@ Partial Class BudgetForm
         '
         'OrangeBudget
         '
-        Me.OrangeBudget.Location = New System.Drawing.Point(152, 72)
+        Me.OrangeBudget.Location = New System.Drawing.Point(188, 102)
         Me.OrangeBudget.Name = "OrangeBudget"
-        Me.OrangeBudget.Size = New System.Drawing.Size(100, 20)
+        Me.OrangeBudget.Size = New System.Drawing.Size(82, 20)
         Me.OrangeBudget.TabIndex = 8
         '
         'YellowBudget
         '
-        Me.YellowBudget.Location = New System.Drawing.Point(152, 103)
+        Me.YellowBudget.Location = New System.Drawing.Point(188, 137)
         Me.YellowBudget.Name = "YellowBudget"
-        Me.YellowBudget.Size = New System.Drawing.Size(100, 20)
+        Me.YellowBudget.Size = New System.Drawing.Size(82, 20)
         Me.YellowBudget.TabIndex = 9
         '
         'GreenBudget
         '
-        Me.GreenBudget.Location = New System.Drawing.Point(152, 134)
+        Me.GreenBudget.Location = New System.Drawing.Point(188, 173)
         Me.GreenBudget.Name = "GreenBudget"
-        Me.GreenBudget.Size = New System.Drawing.Size(100, 20)
+        Me.GreenBudget.Size = New System.Drawing.Size(82, 20)
         Me.GreenBudget.TabIndex = 10
         '
         'SaveBudgetButton
         '
-        Me.SaveBudgetButton.Location = New System.Drawing.Point(99, 217)
+        Me.SaveBudgetButton.Location = New System.Drawing.Point(99, 251)
         Me.SaveBudgetButton.Name = "SaveBudgetButton"
         Me.SaveBudgetButton.Size = New System.Drawing.Size(83, 23)
         Me.SaveBudgetButton.TabIndex = 11
@@ -141,7 +148,7 @@ Partial Class BudgetForm
         'BudgetTitle
         '
         Me.BudgetTitle.AutoSize = True
-        Me.BudgetTitle.Location = New System.Drawing.Point(22, 175)
+        Me.BudgetTitle.Location = New System.Drawing.Point(33, 218)
         Me.BudgetTitle.Name = "BudgetTitle"
         Me.BudgetTitle.Size = New System.Drawing.Size(97, 13)
         Me.BudgetTitle.TabIndex = 12
@@ -150,7 +157,7 @@ Partial Class BudgetForm
         'RemainingBudget
         '
         Me.RemainingBudget.AutoSize = True
-        Me.RemainingBudget.Location = New System.Drawing.Point(167, 175)
+        Me.RemainingBudget.Location = New System.Drawing.Point(167, 218)
         Me.RemainingBudget.Name = "RemainingBudget"
         Me.RemainingBudget.Size = New System.Drawing.Size(25, 13)
         Me.RemainingBudget.TabIndex = 13
@@ -159,7 +166,7 @@ Partial Class BudgetForm
         'BuxLabel
         '
         Me.BuxLabel.AutoSize = True
-        Me.BuxLabel.Location = New System.Drawing.Point(198, 175)
+        Me.BuxLabel.Location = New System.Drawing.Point(201, 218)
         Me.BuxLabel.Name = "BuxLabel"
         Me.BuxLabel.Size = New System.Drawing.Size(30, 13)
         Me.BuxLabel.TabIndex = 14
@@ -167,18 +174,88 @@ Partial Class BudgetForm
         '
         'ExitBudgetButton
         '
-        Me.ExitBudgetButton.Location = New System.Drawing.Point(188, 217)
+        Me.ExitBudgetButton.Location = New System.Drawing.Point(188, 251)
         Me.ExitBudgetButton.Name = "ExitBudgetButton"
         Me.ExitBudgetButton.Size = New System.Drawing.Size(75, 23)
         Me.ExitBudgetButton.TabIndex = 15
         Me.ExitBudgetButton.Text = "Exit"
         Me.ExitBudgetButton.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(115, 9)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(48, 13)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "Previous"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(210, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 13)
+        Me.Label2.TabIndex = 17
+        Me.Label2.Text = "Current"
+        '
+        'PrevAgri
+        '
+        Me.PrevAgri.AutoSize = True
+        Me.PrevAgri.Location = New System.Drawing.Point(133, 32)
+        Me.PrevAgri.Name = "PrevAgri"
+        Me.PrevAgri.Size = New System.Drawing.Size(13, 13)
+        Me.PrevAgri.TabIndex = 18
+        Me.PrevAgri.Text = "0"
+        '
+        'PrevSci
+        '
+        Me.PrevSci.AutoSize = True
+        Me.PrevSci.Location = New System.Drawing.Point(133, 69)
+        Me.PrevSci.Name = "PrevSci"
+        Me.PrevSci.Size = New System.Drawing.Size(13, 13)
+        Me.PrevSci.TabIndex = 19
+        Me.PrevSci.Text = "0"
+        '
+        'PrevInd
+        '
+        Me.PrevInd.AutoSize = True
+        Me.PrevInd.Location = New System.Drawing.Point(133, 105)
+        Me.PrevInd.Name = "PrevInd"
+        Me.PrevInd.Size = New System.Drawing.Size(13, 13)
+        Me.PrevInd.TabIndex = 20
+        Me.PrevInd.Text = "0"
+        '
+        'PrevEdu
+        '
+        Me.PrevEdu.AutoSize = True
+        Me.PrevEdu.Location = New System.Drawing.Point(133, 140)
+        Me.PrevEdu.Name = "PrevEdu"
+        Me.PrevEdu.Size = New System.Drawing.Size(13, 13)
+        Me.PrevEdu.TabIndex = 21
+        Me.PrevEdu.Text = "0"
+        '
+        'PrevPol
+        '
+        Me.PrevPol.AutoSize = True
+        Me.PrevPol.Location = New System.Drawing.Point(133, 176)
+        Me.PrevPol.Name = "PrevPol"
+        Me.PrevPol.Size = New System.Drawing.Size(13, 13)
+        Me.PrevPol.TabIndex = 22
+        Me.PrevPol.Text = "0"
+        '
         'BudgetForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 262)
+        Me.ClientSize = New System.Drawing.Size(284, 286)
+        Me.Controls.Add(Me.PrevPol)
+        Me.Controls.Add(Me.PrevEdu)
+        Me.Controls.Add(Me.PrevInd)
+        Me.Controls.Add(Me.PrevSci)
+        Me.Controls.Add(Me.PrevAgri)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ExitBudgetButton)
         Me.Controls.Add(Me.BuxLabel)
         Me.Controls.Add(Me.RemainingBudget)
@@ -217,4 +294,11 @@ Partial Class BudgetForm
     Friend WithEvents RemainingBudget As System.Windows.Forms.Label
     Friend WithEvents BuxLabel As System.Windows.Forms.Label
     Friend WithEvents ExitBudgetButton As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents PrevAgri As System.Windows.Forms.Label
+    Friend WithEvents PrevSci As System.Windows.Forms.Label
+    Friend WithEvents PrevInd As System.Windows.Forms.Label
+    Friend WithEvents PrevEdu As System.Windows.Forms.Label
+    Friend WithEvents PrevPol As System.Windows.Forms.Label
 End Class

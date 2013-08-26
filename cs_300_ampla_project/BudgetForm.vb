@@ -1,8 +1,23 @@
 ﻿Public Class BudgetForm
+    Dim StartBudget As Integer = 100
     Dim RemBudget As Integer = 100
     Dim BudgetList() As Integer = {0, 0, 0, 0, 0}
+    Dim PrevBudget() As Integer = {0, 0, 0, 0, 0}
     Dim GameWindow As GameForm
 
+    Public Sub SetPrevBudget(ByVal Outside As Budget)
+        PrevBudget(0) = Outside.Agriculture
+        PrevBudget(1) = Outside.Science
+        PrevBudget(2) = Outside.Industry
+        PrevBudget(3) = Outside.Education
+        PrevBudget(4) = Outside.Pollution
+    End Sub
+
+    Public Function GetPrevBudget() As Array
+        Return BudgetList
+    End Function
+
+    'Initialize a new BudgetForm
     Sub New(ByRef GW As GameForm)
 
         ' This call is required by the designer.
@@ -12,7 +27,23 @@
         GameWindow = GW
     End Sub
 
-    'This function gets the budget values from 
+    Sub New(ByRef GW As GameForm, ByVal OldFunds As Integer, ByVal OldBudget As Budget)
+
+        ' This call is required by the designer.
+        InitializeComponent()
+
+        ' Add any initialization after the InitializeComponent() call.
+        GameWindow = GW
+        StartBudget = 100 + OldFunds
+        RemBudget = StartBudget
+        PrevBudget = {OldBudget.Agriculture, OldBudget.Science, OldBudget.Industry, OldBudget.Education, OldBudget.Pollution}
+    End Sub
+
+    Public Function GetPrevFunds() As Integer
+        Return RemBudget
+    End Function
+
+    'This function takes an integer array and overwrites it with the current values in the text boxes
     Private Function SetBudgetVals(ByRef List() As Integer) As Boolean
         Dim StringList() As String = {RedBudget.Text, BlueBudget.Text, OrangeBudget.Text, YellowBudget.Text, GreenBudget.Text}
         'Checks if the input values are Integer, adds them to the current budget list.
@@ -32,32 +63,37 @@
     End Function
 
     'Only resets the current form's budget
-    Private Sub ResetButton_Click(sender As System.Object, e As System.EventArgs) Handles ResetButton.Click
+    Private Sub ResetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ResetButton.Click
         RedBudget.Text = "0"
         BlueBudget.Text = "0"
         OrangeBudget.Text = "0"
         YellowBudget.Text = "0"
         GreenBudget.Text = "0"
-        RemainingBudget.Text = "100"
+        RemainingBudget.Text = StartBudget
         SetBudgetVals(BudgetList)
     End Sub
 
-    Private Function CalcRem() As Integer
-        RemBudget = 100
-        For Each Budget In BudgetList
+    Public Sub CurrToPrev()
+        PrevBudget = BudgetList
+    End Sub
+
+    'calculates the reamining budget
+    Private Function CalcRem(ByRef List() As Integer) As Integer
+        RemBudget = StartBudget
+        For Each Budget In List
             RemBudget -= Budget
         Next Budget
         Return RemBudget
     End Function
 
     'This event will check the text boxes for integer, check if enough funds, set Budget.
-    Private Sub SaveBudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles SaveBudgetButton.Click
+    Private Sub SaveBudgetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles SaveBudgetButton.Click
         If Not SetBudgetVals(BudgetList) Then
             MsgBox("The values you entered are invalid. Please try again.", MsgBoxStyle.OkOnly)
             Exit Sub
         End If
         'Check if the funds allocated is over max budget
-        RemBudget = CalcRem()
+        CalcRem(BudgetList)
 
         If RemBudget < 0 Then
             MsgBox("The values you entered are greater than the allowed budget. Please try again.", MsgBoxStyle.OkOnly)
@@ -70,7 +106,7 @@
 
     'When the exit button is clicked, this function will check if there are valid values, if player has any remaining budget,
     'and if the player wants to save changes to their budget.
-    Private Sub ExitBudgetButton_Click(sender As System.Object, e As System.EventArgs) Handles ExitBudgetButton.Click
+    Private Sub ExitBudgetButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ExitBudgetButton.Click
         Dim Res As Integer
         Dim Resp As Integer
         Dim SavedBudget() As Integer
@@ -81,6 +117,7 @@
             Exit Sub
         End If
         'Check if there is any remaining budget left
+        RemBudget = CalcRem(TempList)
         If RemBudget > 0 Then
             Res = MsgBox("You still have some Budget to allocate, do you want to continue exiting?", MsgBoxStyle.YesNo)
             If Res <> MsgBoxResult.Yes Then
@@ -89,14 +126,13 @@
         End If
         'Check if the current values are different from the last saved budget
         SavedBudget = GameWindow.GetBudget()
-        SetBudgetVals(TempList)
         For I As Integer = LBound(SavedBudget) To UBound(SavedBudget)
             If SavedBudget(I) <> TempList(I) Then
                 Resp = MsgBox("You have unsaved budget changes, do you want to save first? (Unsaved changes will be lost).", MsgBoxStyle.YesNo)
                 If Resp = MsgBoxResult.Yes Then
                     GameWindow.SetBudget(TempList)
                 End If
-                Me.Close()
+                Exit For
             End If
         Next I
         'Close window if all above satisfied
@@ -104,7 +140,7 @@
     End Sub
 
     'Initialize values for the budget form based on most recently saved values. Calculate Remaining Budget
-    Private Sub BudgetForm_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub BudgetForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Dim Temp() As Integer = GameWindow.GetBudget()
         For I As Integer = 0 To 4
             BudgetList(I) = Temp(I)
@@ -114,8 +150,14 @@
         OrangeBudget.Text = BudgetList(2)
         YellowBudget.Text = BudgetList(3)
         GreenBudget.Text = BudgetList(4)
-        SetBudgetVals(Temp)
-        RemBudget = CalcRem()
+        SetBudgetVals(BudgetList)
+        RemBudget = CalcRem(BudgetList)
+
+        PrevAgri.Text = PrevBudget(0)
+        PrevSci.Text = PrevBudget(1)
+        PrevInd.Text = PrevBudget(2)
+        PrevEdu.Text = PrevBudget(3)
+        PrevPol.Text = PrevBudget(4)
 
         If RemBudget < 0 Then
             MsgBox("The values you entered are greater than the allowed budget. Please try again.", MsgBoxStyle.OkOnly)

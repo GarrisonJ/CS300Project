@@ -3,6 +3,7 @@
 Public Class GameForm
     Dim BudgWindow As BudgetForm
     Dim Budgets As Budget
+    Dim PrevBudgets As Budget
     Dim PState As State
     Dim PlanetMap As Planet_state
     Dim GameModel As Model
@@ -40,7 +41,7 @@ Public Class GameForm
         ElseIf ModelData.GetLength(0) <> 4 Then
             MsgBox("You Have an invalid number of states. Please try again.")
             Return False
-        ElseIf ControllerData.GetLength(0) <> 5 Then
+        ElseIf ControllerData.GetLength(0) <> 11 Then
             MsgBox("You have an invalid number of budgets. Please try again.")
             Return False
         End If
@@ -79,11 +80,11 @@ Public Class GameForm
 
         'check each budget value
         For I As Integer = 0 To 4
-            If Not IsNumeric(ControllerData(I)) Then
+            If Not IsNumeric(ControllerData(I)) And IsNumeric(ControllerData(I + 5)) Then
                 MsgBox("You have invalid budget values. Please try again")
                 Return False
             End If
-            If CDbl(ControllerData(I)) < 0 Then
+            If CDbl(ControllerData(I)) < 0 And CDbl(ControllerData(I + 5)) < 0 Then
                 MsgBox("You have invalid budget values. Please try again")
                 Return False
             End If
@@ -93,6 +94,19 @@ Public Class GameForm
         Budgets.Industry = CDbl(ControllerData(2))
         Budgets.Pollution = CDbl(ControllerData(3))
         Budgets.Science = CDbl(ControllerData(4))
+        PrevBudgets.Agriculture = CDbl(ControllerData(5))
+        PrevBudgets.Education = CDbl(ControllerData(6))
+        PrevBudgets.Industry = CDbl(ControllerData(7))
+        PrevBudgets.Pollution = CDbl(ControllerData(8))
+        PrevBudgets.Science = CDbl(ControllerData(9))
+        BudgWindow.SetPrevBudget(PrevBudgets)
+
+        If Not IsNumeric(ControllerData(10)) Then
+            MsgBox("You have invalid Round number. Please try again.")
+            Return False
+        End If
+        RoundLabel.Text = ControllerData(10)
+        RoundNum = CInt(ControllerData(10))
         Return True
     End Function
 
@@ -102,6 +116,8 @@ Public Class GameForm
         Temp += PlanetMap.location_of_mines_as_a_string() + ";"
         Temp += CStr(PState.Env) + "," + CStr(PState.Food) + "," + CStr(PState.Inc) + "," + CStr(PState.Pop) + ";"
         Temp += CStr(Budgets.Agriculture) + "," + CStr(Budgets.Education) + "," + CStr(Budgets.Industry) + "," + CStr(Budgets.Pollution) + "," + CStr(Budgets.Science)
+        Temp += "," + CStr(PrevBudgets.Agriculture) + "," + CStr(PrevBudgets.Education) + "," + CStr(PrevBudgets.Industry) + "," + CStr(PrevBudgets.Pollution) + "," + CStr(PrevBudgets.Science)
+        Temp += "," + CStr(RoundNum)
         Return Temp
     End Function
 
@@ -110,14 +126,21 @@ Public Class GameForm
         PState = newState
     End Sub
 
-    'Functions
+    Public Sub SetPrevBudget(ByRef Values() As Integer)
+        PrevBudgets.Agriculture = Values(0)
+        PrevBudgets.Education = Values(1)
+        PrevBudgets.Industry = Values(2)
+        PrevBudgets.Pollution = Values(3)
+        PrevBudgets.Science = Values(4)
+    End Sub
+
     'function takes in an array of integers and copies to the local budget
     Public Sub SetBudget(ByRef Values() As Integer)
         Budgets.Agriculture = Values(0)
-        Budgets.Education = Values(1)
+        Budgets.Education = Values(3)
         Budgets.Industry = Values(2)
-        Budgets.Pollution = Values(3)
-        Budgets.Science = Values(4)
+        Budgets.Pollution = Values(4)
+        Budgets.Science = Values(1)
     End Sub
 
     'get function for getting the currently set budget
@@ -155,10 +178,37 @@ Public Class GameForm
         RoundLabel.Text = RoundNum
     End Sub
 
+    'Runs the simulation with the given budget and Planet State, sets the new values
     Private Sub StartButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles StartButton.Click
+        Dim Temp As Integer = BudgWindow.GetPrevFunds()
+        Dim TempArr() As Integer = BudgWindow.GetPrevBudget()
+        PrevBudgets.Agriculture = TempArr(0)
+        PrevBudgets.Education = TempArr(1)
+        PrevBudgets.Industry = TempArr(2)
+        PrevBudgets.Pollution = TempArr(3)
+        PrevBudgets.Science = TempArr(4)
+
         GameModel.Iterate(Budgets)
+        GameModel.Update()
         RoundNum += 1
         RoundLabel.Text = RoundNum
+        PState.Env = GameModel.Values.Env
+        PState.Food = GameModel.Values.Food
+        PState.Inc = GameModel.Values.Inc
+        PState.Pop = GameModel.Values.Pop
+
+        EnvNum.Text = PState.Env
+        FoodNum.Text = PState.Food
+        IncNum.Text = PState.Inc
+        PopNum.Text = PState.Pop
+
+        BudgWindow.Dispose()
+        BudgWindow = New BudgetForm(Me, Temp, PrevBudgets)
+        Budgets.Agriculture = 0
+        Budgets.Education = 0
+        Budgets.Industry = 0
+        Budgets.Pollution = 0
+        Budgets.Science = 0
         If RoundNum = 5 Then
 
         End If
