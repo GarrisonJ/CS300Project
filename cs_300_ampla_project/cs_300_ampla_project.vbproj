@@ -92,6 +92,12 @@
     <Compile Include="CustomForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ResultsForm.Designer.vb">
+      <DependentUpon>ResultsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ResultsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="m1.vb" />
     <Compile Include="Map.vb" />
     <Compile Include="MenuForm.Designer.vb">
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomForm.resx">
       <DependentUpon>CustomForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResultsForm.resx">
+      <DependentUpon>ResultsForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.vb</DependentUpon>

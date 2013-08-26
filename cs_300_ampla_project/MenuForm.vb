@@ -9,6 +9,11 @@ Public Class MenuForm
     Dim GameSaved As Boolean = True
     Dim GameWindow As GameForm
     Dim DiffWindow As DifficultyForm
+    Dim GameOver As Boolean = False
+
+    Public Sub EndGame()
+        GameOver = True
+    End Sub
 
     'Loads the game and goes to the game menu
     Private Sub LoadButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LoadButton.Click
@@ -159,6 +164,9 @@ Public Class MenuForm
 
     'This is getting activated many times for some reason.
     Private Sub MenuForm_Activated(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Activated
+        If GameOver Then
+            InGame = False
+        End If
         Me.ShowContinue()
     End Sub
 

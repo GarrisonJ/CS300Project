@@ -105,6 +105,10 @@ Public Class GameForm
             MsgBox("You have invalid Round number. Please try again.")
             Return False
         End If
+        If CInt(ControllerData(10)) >= 5 Then
+            MsgBox("This game is already over. Please select a different save file.")
+            Return False
+        End If
         RoundLabel.Text = ControllerData(10)
         RoundNum = CInt(ControllerData(10))
         Return True
@@ -145,7 +149,7 @@ Public Class GameForm
 
     'get function for getting the currently set budget
     Public Function GetBudget() As Array
-        Dim Temp() As Integer = {Budgets.Agriculture, Budgets.Education, Budgets.Industry, Budgets.Pollution, Budgets.Science}
+        Dim Temp() As Integer = {Budgets.Agriculture, Budgets.Science, Budgets.Industry, Budgets.Education, Budgets.Pollution}
         Return Temp
     End Function
 
@@ -183,10 +187,10 @@ Public Class GameForm
         Dim Temp As Integer = BudgWindow.GetPrevFunds()
         Dim TempArr() As Integer = BudgWindow.GetPrevBudget()
         PrevBudgets.Agriculture = TempArr(0)
-        PrevBudgets.Education = TempArr(1)
+        PrevBudgets.Education = TempArr(3)
         PrevBudgets.Industry = TempArr(2)
-        PrevBudgets.Pollution = TempArr(3)
-        PrevBudgets.Science = TempArr(4)
+        PrevBudgets.Pollution = TempArr(4)
+        PrevBudgets.Science = TempArr(1)
 
         GameModel.Iterate(Budgets)
         GameModel.Update()
@@ -210,7 +214,10 @@ Public Class GameForm
         Budgets.Pollution = 0
         Budgets.Science = 0
         If RoundNum = 5 Then
-
+            Dim ResultsWindow As ResultsForm = New ResultsForm(PlanetMap)
+            ResultsWindow.ShowDialog()
+            MenuForm.EndGame()
+            Me.Close()
         End If
     End Sub
 
