@@ -119,9 +119,10 @@ Public Class Map
     Sub Draw_map(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
         graphic_to_display_graph.SetClip(rectange_window)
         For Each c In list_of_cells
-            c.Draw_cell(graphic_to_display_graph)
+            c.Draw_cell(graphic_to_display_graph, rectange_window.X, rectange_window.Y)
         Next
     End Sub
+
 
     ' Returns a copy of the list of mines.
     Function return_list_of_mines() As List(Of Mine)

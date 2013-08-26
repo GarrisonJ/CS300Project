@@ -48,9 +48,9 @@ Public Class Cell
     ' Renders the cell. Color and location must be defined.
     ' INPUT:
     '   graphic_contex - Graphic contex for pixel to draw itself.
-    Sub Draw_cell(ByRef graphic_contex As Graphics)
+    Sub Draw_cell(ByRef graphic_contex As Graphics, ByVal RectX As Integer, ByVal RectY As Integer)
         If Not IsNothing(Location) And Not IsNothing(SideLength) And Not IsNothing(Cell_Brush) Then
-            Dim rec As Rectangle = New Rectangle(SideLength * Location.X, SideLength * Location.Y, SideLength, SideLength)
+            Dim rec As Rectangle = New Rectangle(SideLength * Location.X + RectX, SideLength * Location.Y + RectY, SideLength, SideLength)
             graphic_contex.FillRectangle(Cell_Brush, rec)
         End If
     End Sub
