@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿'Jonathan Hong
+Imports System.IO
 Imports Microsoft.VisualBasic.FileIO
 
 Public Class MenuForm
@@ -11,8 +12,10 @@ Public Class MenuForm
     Dim DiffWindow As DifficultyForm
     Dim GameOver As Boolean = False
 
+    'set a game over state
     Public Sub EndGame()
         GameOver = True
+        GameWindow.Dispose()
     End Sub
 
     'Loads the game and goes to the game menu
@@ -81,6 +84,11 @@ Public Class MenuForm
 
     'save the game using the open file dialog
     Private Function SaveGame() As Boolean
+        If GameWindow.IsDisposed() Or IsNothing(GameWindow) Then
+            MsgBox("There is no current game to save. Please start a new game or load a game.")
+            GameSaved = True
+            Return False
+        End If
         Dim Resp As Integer
         Dim FileContents As String
         'initialize save dialog params

@@ -1,4 +1,5 @@
-﻿Imports System.Drawing
+﻿'Jonathan Hong
+Imports System.Drawing
 
 Public Class GameForm
     Dim BudgWindow As BudgetForm
@@ -25,6 +26,7 @@ Public Class GameForm
         RoundNum = 1
     End Sub
 
+    'creates the planet map, for use when the state and mines have been set.
     Public Sub CreatePlanetMap()
         PlanetMap = New Planet_state(IPState, 500, 400)
     End Sub
@@ -49,7 +51,7 @@ Public Class GameForm
             MsgBox("You have an invalid number of budgets. Please try again.")
             Return False
         End If
-
+        'set the initial state values
         For I As Integer = 0 To 3
             If Not IsNumeric(ModelData(I)) Then
                 MsgBox("You have invalid istate values. Please try again.")
@@ -120,7 +122,7 @@ Public Class GameForm
         PrevBudgets.Pollution = CDbl(ControllerData(8))
         PrevBudgets.Science = CDbl(ControllerData(9))
         BudgWindow.SetPrevBudget(PrevBudgets)
-
+        'set the round number
         If Not IsNumeric(ControllerData(10)) Then
             MsgBox("You have invalid Round number. Please try again.")
             Return False
@@ -131,7 +133,7 @@ Public Class GameForm
         End If
         RoundLabel.Text = ControllerData(10)
         RoundNum = CInt(ControllerData(10))
-
+        'set the remaining funds
         If Not IsNumeric(ControllerData(11)) Then
             MsgBox("You have invalid Funds number. Please try again.")
             Return False
@@ -168,6 +170,7 @@ Public Class GameForm
         IPState = newState
     End Sub
 
+    'set the previous budget to the given values
     Public Sub SetPrevBudget(ByRef Values() As Integer)
         PrevBudgets.Agriculture = Values(0)
         PrevBudgets.Education = Values(1)

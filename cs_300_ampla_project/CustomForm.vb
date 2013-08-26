@@ -1,7 +1,9 @@
-﻿Public Class CustomForm
+﻿'Jonathan Hong
+Public Class CustomForm
     Dim GameWindow As GameForm
     Dim CustomState As State
 
+    'creates a new custom form for the user to set game variables
     Sub New(ByRef OGameForm As GameForm)
 
         ' This call is required by the designer.
@@ -11,6 +13,7 @@
         GameWindow = OGameForm
     End Sub
 
+    'accept, check values, set game values, exit.
     Private Sub AcceptButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AcceptButton.Click
         Dim StringList() As String = {TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox4.Text, TextBox5.Text}
         'Checks if the input values are Integer, adds them to the current budget list.

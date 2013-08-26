@@ -1,8 +1,10 @@
-﻿Public Class DifficultyForm
+﻿'Jonathan Hong
+Public Class DifficultyForm
     Dim DiffState As State
     Dim GameWindow As GameForm
     Dim CustomWin As CustomForm
 
+    'create a new difficulty form for selecting difficulty or a custom game
     Sub New(ByRef temp As GameForm)
 
         ' This call is required by the designer.
@@ -13,10 +15,12 @@
         CustomWin = New CustomForm(GameWindow)
     End Sub
 
+    'exits the difficulty form and goes back to the menu form.
     Private Sub BackButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BackButton.Click
         Me.Close()
     End Sub
 
+    'sets the game values to easy mode
     Private Sub EasyButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EasyButton.Click
         DiffState.Env = 150
         DiffState.Food = 150
@@ -29,6 +33,7 @@
         Me.Close()
     End Sub
 
+    'sets the game values to medium difficulty
     Private Sub MediumButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MediumButton.Click
         DiffState.Env = 100
         DiffState.Food = 100
@@ -41,6 +46,7 @@
         Me.Close()
     End Sub
 
+    'sets the game values to hard difficulty
     Private Sub HardButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles HardButton.Click
         DiffState.Env = 50
         DiffState.Food = 50
@@ -53,6 +59,7 @@
         Me.Close()
     End Sub
 
+    'open a custom game form for the user to type in values.
     Private Sub CustomButton_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CustomButton.Click
         CustomWin.ShowDialog()
         Me.Close()

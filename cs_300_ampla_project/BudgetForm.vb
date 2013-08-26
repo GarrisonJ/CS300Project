@@ -1,10 +1,13 @@
-﻿Public Class BudgetForm
+﻿'Jonathan Hong.
+
+Public Class BudgetForm
     Dim StartBudget As Integer = 100
     Dim RemBudget As Integer = 100
     Dim BudgetList() As Integer = {0, 0, 0, 0, 0}
     Dim PrevBudget() As Integer = {0, 0, 0, 0, 0}
     Dim GameWindow As GameForm
 
+    'Sets the previous budget 
     Public Sub SetPrevBudget(ByVal Outside As Budget)
         PrevBudget(0) = Outside.Agriculture
         PrevBudget(1) = Outside.Science
@@ -13,6 +16,7 @@
         PrevBudget(4) = Outside.Pollution
     End Sub
 
+    'gets the previous budget
     Public Function GetPrevBudget() As Array
         Return BudgetList
     End Function
@@ -27,6 +31,7 @@
         GameWindow = GW
     End Sub
 
+    'Create a new budget with previous budget and remaining funds
     Sub New(ByRef GW As GameForm, ByVal OldFunds As Integer, ByVal OldBudget As Budget)
 
         ' This call is required by the designer.
@@ -39,6 +44,7 @@
         PrevBudget = {OldBudget.Agriculture, OldBudget.Science, OldBudget.Industry, OldBudget.Education, OldBudget.Pollution}
     End Sub
 
+    'get the current remaining funds
     Public Function GetPrevFunds() As Integer
         Return RemBudget
     End Function
@@ -73,6 +79,7 @@
         SetBudgetVals(BudgetList)
     End Sub
 
+    'changes the previous budget to the current budget for when a round ends.
     Public Sub CurrToPrev()
         PrevBudget = BudgetList
     End Sub
