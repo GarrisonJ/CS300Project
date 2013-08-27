@@ -15,6 +15,7 @@ Public Class MenuForm
     'set a game over state
     Public Sub EndGame()
         GameOver = True
+        GameSaved = True
         GameWindow.Dispose()
     End Sub
 
@@ -66,14 +67,15 @@ Public Class MenuForm
         MyReader.SetDelimiters(";")
         'group 0 is coordinates, group 1 is state, group 2 is budget
         LoadString = MyReader.ReadFields()
-        If LoadString.GetLength(0) <> 3 Then
+        If LoadString.GetLength(0) <> 4 Then
             MsgBox("The file you are trying to load is invalid. Please try again.")
             Exit Sub
         End If
         VData = Split(LoadString(0).Substring(0, LoadString(0).Length - 1), ",")
         MData = Split(LoadString(1), ",")
         CData = Split(LoadString(2), ",")
-        If Not GameWindow.LoadGame(VData, MData, CData) Then
+        Dim InitialMines() As String = Split(LoadString(3).Substring(0, LoadString(3).Length - 1), ",")
+        If Not GameWindow.LoadGame(VData, MData, CData, InitialMines) Then
             Exit Sub
         End If
         Me.Hide()
@@ -84,7 +86,12 @@ Public Class MenuForm
 
     'save the game using the open file dialog
     Private Function SaveGame() As Boolean
-        If GameWindow.IsDisposed() Or IsNothing(GameWindow) Then
+        If IsNothing(GameWindow) Then
+            MsgBox("There is no current game to save. Please start a new game or load a game.")
+            GameSaved = True
+            Return False
+        End If
+        If GameWindow.IsDisposed() Then
             MsgBox("There is no current game to save. Please start a new game or load a game.")
             GameSaved = True
             Return False

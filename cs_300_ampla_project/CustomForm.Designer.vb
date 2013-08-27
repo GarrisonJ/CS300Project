@@ -22,7 +22,7 @@ Partial Class CustomForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.AcceptButton = New System.Windows.Forms.Button()
+        Me.CreateButton = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -35,14 +35,14 @@ Partial Class CustomForm
         Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
-        'AcceptButton
+        'CreateButton
         '
-        Me.AcceptButton.Location = New System.Drawing.Point(179, 227)
-        Me.AcceptButton.Name = "AcceptButton"
-        Me.AcceptButton.Size = New System.Drawing.Size(75, 23)
-        Me.AcceptButton.TabIndex = 0
-        Me.AcceptButton.Text = "Accept"
-        Me.AcceptButton.UseVisualStyleBackColor = True
+        Me.CreateButton.Location = New System.Drawing.Point(179, 227)
+        Me.CreateButton.Name = "CreateButton"
+        Me.CreateButton.Size = New System.Drawing.Size(75, 23)
+        Me.CreateButton.TabIndex = 0
+        Me.CreateButton.Text = "Accept"
+        Me.CreateButton.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -139,14 +139,14 @@ Partial Class CustomForm
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.AcceptButton)
+        Me.Controls.Add(Me.CreateButton)
         Me.Name = "CustomForm"
         Me.Text = "Create Custom Game"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents AcceptButton As System.Windows.Forms.Button
+    Friend WithEvents CreateButton As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label

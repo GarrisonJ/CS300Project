@@ -34,15 +34,15 @@ Public Class GameForm
     'Sets the number of mines to draw
     Public Sub SetMines(ByRef NumMines As Integer)
         For I As Integer = 1 To NumMines
-            PlanetMap.increment_number_of_mines()
+            PlanetMap.increment_number_of_mines_on_both_maps()
         Next
     End Sub
 
     'Checks the 3 data sets given for valid data, then sets each Class's values.
-    Public Function LoadGame(ByRef ViewData As String(), ByRef ModelData As String(), ByRef ControllerData As String()) As Boolean
+    Public Function LoadGame(ByRef ViewData As String(), ByRef ModelData As String(), ByRef ControllerData As String(), ByRef InitialMines As String()) As Boolean
         'Check if valid number of entries
         If ViewData.GetLength(0) Mod 2 <> 0 Then
-            MsgBox("You have an invalid number of coordinates. Please try again.")
+            MsgBox("You have an invalid number of current coordinates. Please try again.")
             Return False
         ElseIf ModelData.GetLength(0) <> 4 Then
             MsgBox("You Have an invalid number of states. Please try again.")
@@ -50,6 +50,8 @@ Public Class GameForm
         ElseIf ControllerData.GetLength(0) <> 16 Then
             MsgBox("You have an invalid number of budgets. Please try again.")
             Return False
+        ElseIf InitialMines.GetLength(0) Mod 2 <> 0 Then
+            MsgBox("You have an invalid number of initial coordinates. Please try again.")
         End If
         'set the initial state values
         For I As Integer = 0 To 3
@@ -84,7 +86,7 @@ Public Class GameForm
         PState.Pop = CDbl(ModelData(3))
         CreatePlanetMap()
 
-        'Loop through each coordinate
+        'Loop through each current coordinate
         For I As Integer = ViewData.GetLowerBound(0) To ViewData.GetUpperBound(0) Step 2
             Dim XValStr As String = ViewData(I)
             Dim YValStr As String = ViewData(I + 1)
@@ -97,7 +99,23 @@ Public Class GameForm
                 Return False
             End If
             Dim Temp = New Point(CDbl(XValStr), CDbl(YValStr))
-            PlanetMap.increment_number_of_mines(Temp)
+            PlanetMap.increment_number_of_mines_on_current_map(Temp)
+        Next
+
+        'Loop through each initial coordinate
+        For J As Integer = InitialMines.GetLowerBound(0) To InitialMines.GetUpperBound(0) Step 2
+            Dim XVal As String = InitialMines(J)
+            Dim YVal As String = InitialMines(J + 1)
+            If Not IsNumeric(XVal) And IsNumeric(YVal) Then
+                MsgBox("The file you loaded has invalid values. Please try again.")
+                Return False
+            End If
+            If CDbl(XVal) < 0 Or CDbl(YVal) < 0 Then
+                MsgBox("The file you loaded has invalid values. Please try again.")
+                Return False
+            End If
+            Dim Temp1 = New Point(CDbl(XVal), CDbl(YVal))
+            PlanetMap.increment_number_of_mines_on_initial_map(Temp1)
         Next
 
         'check each budget value
@@ -143,20 +161,21 @@ Public Class GameForm
             Return False
         End If
         BudgWindow.Dispose()
-        BudgWindow = New BudgetForm(Me, CInt(ControllerData(11)), PrevBudgets)
+        BudgWindow = New BudgetForm(Me, CInt(ControllerData(11)) + Budgets.Agriculture + Budgets.Education + Budgets.Industry + Budgets.Pollution + Budgets.Science, PrevBudgets)
         Return True
     End Function
 
     'Gets the initial state, current state, budget, and mine locations and formats into string
     Public Function GetSave() As String
         Dim Temp As String = ""
-        Temp += PlanetMap.location_of_mines_as_a_string() + ";"
+        Temp += PlanetMap.location_of_current_mines_as_a_string() + ";"
         Temp += CStr(PState.Env) + "," + CStr(PState.Food) + "," + CStr(PState.Inc) + "," + CStr(PState.Pop) + ";"
         Temp += CStr(Budgets.Agriculture) + "," + CStr(Budgets.Education) + "," + CStr(Budgets.Industry) + "," + CStr(Budgets.Pollution) + "," + CStr(Budgets.Science)
         Temp += "," + CStr(PrevBudgets.Agriculture) + "," + CStr(PrevBudgets.Education) + "," + CStr(PrevBudgets.Industry) + "," + CStr(PrevBudgets.Pollution) + "," + CStr(PrevBudgets.Science)
         Temp += "," + CStr(RoundNum)
         Temp += "," + CStr(BudgWindow.GetPrevFunds())
         Temp += "," + CStr(IPState.Env) + "," + CStr(IPState.Food) + "," + CStr(IPState.Inc) + "," + CStr(IPState.Pop)
+        Temp += ";" + PlanetMap.location_of_initial_mines_as_a_string()
         Return Temp
     End Function
 
@@ -242,6 +261,8 @@ Public Class GameForm
         PState.Inc = GameModel.Values.Inc
         PState.Pop = GameModel.Values.Pop
 
+        PlanetMap.update_state(PState)
+
         EnvNum.Text = PState.Env
         FoodNum.Text = PState.Food
         IncNum.Text = PState.Inc
@@ -254,7 +275,7 @@ Public Class GameForm
         Budgets.Industry = 0
         Budgets.Pollution = 0
         Budgets.Science = 0
-        If RoundNum = 5 Then
+        If RoundNum = 6 Then
             Dim ResultsWindow As ResultsForm = New ResultsForm(PlanetMap, PState, IPState)
             ResultsWindow.ShowDialog()
             MenuForm.EndGame()
@@ -264,7 +285,6 @@ Public Class GameForm
 
     'Kept the draw button since could not figure out how to make the map load when the form loaded.
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        PlanetMap.update_state(PState)
         PlanetMap.Display_current_state(Graph, Rect)
     End Sub
 End Class
