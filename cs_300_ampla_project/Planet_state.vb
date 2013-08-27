@@ -47,6 +47,7 @@ Public Class Planet_state
     '   graphic_to_display_graph - Graphics contex for map to display.
     '   rectange_window          - This rectange defines where the map will be drawn.
     Sub Display_current_state(ByRef graphic_to_display_graph As Graphics, ByRef rectange_window As Rectangle)
+        initial_state.Update_map()
         current_state.Draw_map(graphic_to_display_graph, rectange_window)
     End Sub
 
